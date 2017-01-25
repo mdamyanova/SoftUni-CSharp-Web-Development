@@ -402,7 +402,6 @@ REFERENCES Addresses(Id)
 -- 17. Backup database
 
 -- 18. Basic Insert 
-
 INSERT INTO Towns(Name) VALUES
 ('Sofia'),
 ('Plovdiv'),
@@ -424,35 +423,29 @@ INSERT INTO Employees(FirstName, MiddleName, LastName, JobTitle, DepartmentId, H
 ('Peter', 'Pan', 'Pan', 'Intern', 3, '2016-08-28', 599.88, NULL)
 
 -- 19. Basic Select all fields
-
 SELECT * FROM Towns
 SELECT * FROM Departments
 SELECT * FROM Employees
 
 -- 20. Basic Select all fields and order them
-
 SELECT * FROM Towns ORDER BY Name ASC
 SELECT * FROM Departments ORDER BY Name ASC
 SELECT * FROM Employees ORDER BY Salary DESC
 
 -- 21. Basic select some fields 
-
 SELECT Name FROM Towns ORDER BY Name ASC
 SELECT Name FROM Departments ORDER BY Name ASC
 SELECT FirstName, LastName, JobTitle, Salary FROM Employees ORDER BY Salary DESC
 
 -- 22. Increase employees salary
-
 UPDATE Employees
 SET Salary += Salary * 0.1
 SELECT Salary FROM Employees
 
 -- 23. Decrease tax rate 
-
 UPDATE Payments 
 SET TaxRate -= TaxRate * 0.03
 SELECT TaxRate FROM Payments
 
 -- 24. Delete all records
-
 TRUNCATE TABLE Occupancies

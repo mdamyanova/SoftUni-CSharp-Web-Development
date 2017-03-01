@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.OOPIntro", "01.OOPIntro\01.OOPIntro.csproj", "{B0E93ABC-859E-45F1-875D-0E587A9A3BFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0E93ABC-859E-45F1-875D-0E587A9A3BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E93ABC-859E-45F1-875D-0E587A9A3BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E93ABC-859E-45F1-875D-0E587A9A3BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E93ABC-859E-45F1-875D-0E587A9A3BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

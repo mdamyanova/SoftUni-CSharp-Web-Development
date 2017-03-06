@@ -5,7 +5,7 @@ namespace _02.CreateUser
 {
     class Startup
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var pesho = new User()
             {

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.StudentSystem", "01.StudentSystem\01.StudentSystem.csproj", "{988602E8-5912-4C80-8EA2-6CECB7F722F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Photographers", "02.Photographers\02.Photographers.csproj", "{2E172293-12AE-4131-AA38-8286E0D1D22A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{988602E8-5912-4C80-8EA2-6CECB7F722F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988602E8-5912-4C80-8EA2-6CECB7F722F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988602E8-5912-4C80-8EA2-6CECB7F722F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988602E8-5912-4C80-8EA2-6CECB7F722F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E172293-12AE-4131-AA38-8286E0D1D22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E172293-12AE-4131-AA38-8286E0D1D22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E172293-12AE-4131-AA38-8286E0D1D22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E172293-12AE-4131-AA38-8286E0D1D22A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

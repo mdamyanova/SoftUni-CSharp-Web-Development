@@ -1,0 +1,25 @@
+<music>
+  <artist name="Azis">
+    <album title="Ledena kralica">
+      <song title="Ledena kralica" length="3:19"/>
+      <song title="Buda bar" length="6:49"/>
+      <description>
+          Novo ot kralq na chalgata.
+      </description>
+    </album>
+    <album title="Na golo">
+      <song title="Avtomontior"  length="4:44"/>
+      <description>
+	       Lichen album.
+      </description>
+    </album>
+  </artist>
+  <artist name="Poli Genova">
+    <album title="None">
+      <song title="Na inat" length="3:33"/>
+      <description>
+        Song for Eurovision.
+      </description>
+    </album>
+  </artist>
+</music>

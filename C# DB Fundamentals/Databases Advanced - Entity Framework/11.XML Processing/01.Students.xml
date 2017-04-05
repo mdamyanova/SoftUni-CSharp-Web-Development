@@ -1,0 +1,71 @@
+<student>
+	<name>Ivan Ivanov</name>
+	<gender>Male</gender>
+	<birthDate>1999/12/23</birthDate>
+	<phoneNumber>088998899</phoneNumber>
+	<email>ivan.ivanov@abv.bg</email>
+	<university>Software University</university>
+	<specialty>C# Web Developer</specialty>
+	<facultyNumber>12234222</facultyNumber>
+	<exams>
+		<exam>
+		    <name>Programming Basics</name>
+		    <dateTaken>2017/01/01</dateTaken>
+		    <grade>6.00</grade>
+		</exam>
+		<exam>
+			<name>Software Technologies</name>
+		    <dateTaken>2017/02/01</dateTaken>
+		    <grade>5.50</grade>
+		</exam>
+	</exams>
+</student>
+<student>
+	<name>Mariya Marinova</name>
+	<gender>Female</gender>
+	<birthDate>1990/11/02</birthDate>
+	<phoneNumber>088998899</phoneNumber>
+	<email>mmariya@abv.bg</email>
+	<university>Software University</university>
+	<specialty>C# Web Developer</specialty>
+	<facultyNumber>12234223</facultyNumber>
+	<exams>
+		<exam>
+		    <name>Programming Basics</name>
+		    <dateTaken>2017/01/01</dateTaken>
+		    <grade>4.00</grade>
+		</exam>
+		<exam>
+			<name>Software Technologies</name>
+		    <dateTaken>2017/02/01</dateTaken>
+		    <grade>5.50</grade>
+		</exam>
+		<exam>
+			<name>JS Advanced</name>
+		    <dateTaken>2017/03/01</dateTaken>
+		    <grade>5.53</grade>
+		</exam>
+	</exams>
+</student>
+<student>
+	<name>Kiril Spasov</name>
+	<gender>Male</gender>
+	<birthDate>1994/08/02</birthDate>
+	<phoneNumber>088998899</phoneNumber>
+	<email>kiril94@abv.bg</email>
+	<university>Software University</university>
+	<specialty>C# Web Developer</specialty>
+	<facultyNumber>12234223</facultyNumber>
+	<exams>
+		<exam>
+		    <name>Programming Basics</name>
+		    <dateTaken>2017/01/01</dateTaken>
+		    <grade>3.01</grade>
+		</exam>
+		<exam>
+			<name>Software Technologies</name>
+		    <dateTaken>2017/02/01</dateTaken>
+		    <grade>3.00</grade>
+		</exam>
+	</exams>
+</student>

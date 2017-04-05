@@ -1,0 +1,16 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Export.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Export.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Export.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Data.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Model.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\Newtonsoft.Json.dll
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\EntityFramework.dll
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Data.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Data.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Model.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\MassDefect.Model.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\Newtonsoft.Json.xml
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\bin\Debug\EntityFramework.xml
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\obj\Debug\MassDefect.Export.csprojResolveAssemblyReference.cache
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\obj\Debug\MassDefect.Export.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Export\obj\Debug\MassDefect.Export.pdb

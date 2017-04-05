@@ -1,0 +1,13 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\obj\Debug\MassDefect.Data.csprojResolveAssemblyReference.cache
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\MassDefect.Data.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\MassDefect.Data.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\MassDefect.Data.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\EntityFramework.dll
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\MassDefect.Model.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\MassDefect.Model.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\MassDefect.Model.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\EntityFramework.xml
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\obj\Debug\MassDefect.Data.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\Exam-Preparation\MassDefect.Data\obj\Debug\MassDefect.Data.pdb

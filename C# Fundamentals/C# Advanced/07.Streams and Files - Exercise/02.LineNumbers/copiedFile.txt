@@ -1,0 +1,36 @@
+1 using System;
+2 using System.IO;
+3 
+4 namespace _02.LineNumbers
+5 {
+6     public class LineNumbers
+7     {
+8         public static void Main()
+9         {
+10             var reader = new StreamReader("lineNumbers.txt");
+11             var writer = new StreamWriter("copiedFile.txt");
+12 
+13             var lineNumber = 1;
+14 
+15             using (reader)
+16             {
+17                 using (writer)
+18                 {
+19                     string text;
+20                     do
+21                     {
+22                         text = reader.ReadLine();
+23                         writer.WriteLine("{0} {1}", lineNumber, text);
+24                         lineNumber++;
+25 
+26                     } while (text != null);
+27                 }
+28             }
+29 
+30             var result = File.ReadAllText("copiedFile.txt");
+31             Console.WriteLine(result);
+32 
+33         }
+34     }
+35 }
+36 

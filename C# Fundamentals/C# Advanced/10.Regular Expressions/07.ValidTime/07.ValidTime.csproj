@@ -7,7 +7,7 @@
     <ProjectGuid>{5410AFEF-5FF0-41B6-A054-80F644A14A95}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_07.ValidTime</RootNamespace>
-    <AssemblyName>_07.ValidTime</AssemblyName>
+    <AssemblyName>07.ValidTime</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ValidTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
     <ProjectGuid>{1BA371B4-E50C-4EE4-AFA0-050BB647C4F7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_06.ValidUsernames</RootNamespace>
-    <AssemblyName>_06.ValidUsernames</AssemblyName>
+    <AssemblyName>06.ValidUsernames</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ValidUsernames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

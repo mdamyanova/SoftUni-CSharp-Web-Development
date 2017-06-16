@@ -19,18 +19,25 @@ namespace _01.ParkingLot
                 {
                     parking.Add(inputParams[1]);
                 }
-                else if (inputParams[0] == "OUT")
+                else
                 {
-                    if (parking.Contains(inputParams[1]))
-                    {
-                        parking.Remove(inputParams[1]);
-                    }
+                   parking.Remove(inputParams[1]);
                 }
 
                 input = Console.ReadLine();
             }
-
-            Console.WriteLine(parking.Any() ? string.Join("\n", parking) : "Parking Lot is Empty");
+			
+			if(parking.Count == 0)
+			{
+				Console.WriteLine("Parking Lot is Empty");
+			}
+			else 
+			{
+				foreach(var car in parking)
+				{
+					Console.WriteLine(car);
+				}
+			}
         }
     }
 }

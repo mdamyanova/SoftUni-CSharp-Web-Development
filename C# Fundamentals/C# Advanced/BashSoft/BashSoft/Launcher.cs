@@ -4,8 +4,7 @@
     {
         public static void Main()
         {
-            StudentsRepository.InitializeData();
-            StudentsRepository.GetStudentScoreFromCourse("Unity", "Ivan");
+            InputReader.StartReadingCommands();
         }
     }
 }

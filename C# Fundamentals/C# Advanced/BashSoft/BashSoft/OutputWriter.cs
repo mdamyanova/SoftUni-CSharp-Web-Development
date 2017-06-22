@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-
-namespace BashSoft
+﻿namespace BashSoft
 {
+    using System;
+    using System.Collections.Generic;
+
     public static class OutputWriter
     {
         public static void WriteMessage(string message)
         {
-            Console.WriteLine(message);
+            Console.Write(message);
         }
 
         public static void WriteMessageOnNewLine(string message)
         {
             Console.WriteLine(message);
-            Console.WriteLine();
         }
 
         public static void WriteEmptyLine()
@@ -25,7 +22,7 @@ namespace BashSoft
 
         public static void DisplayException(string message)
         {
-            var currentColor = Console.ForegroundColor;
+            ConsoleColor currentColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(message);
             Console.ForegroundColor = currentColor;
@@ -33,7 +30,7 @@ namespace BashSoft
 
         public static void PrintStudent(KeyValuePair<string, List<int>> student)
         {
-            OutputWriter.WriteMessageOnNewLine(string.Format($"{student.Key} - {string.Join(", ", student.Value)}"));
+            OutputWriter.WriteMessageOnNewLine($"{student.Key} - {string.Join(", ", student.Value)}");
         }
     }
 }

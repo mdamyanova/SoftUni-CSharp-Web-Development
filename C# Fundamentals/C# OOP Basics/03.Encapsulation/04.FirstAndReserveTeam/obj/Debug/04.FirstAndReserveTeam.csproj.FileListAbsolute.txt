@@ -1,0 +1,6 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\03.Encapsulation\04.FirstAndReserveTeam\bin\Debug\04.FirstAndReserveTeam.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\03.Encapsulation\04.FirstAndReserveTeam\bin\Debug\04.FirstAndReserveTeam.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\03.Encapsulation\04.FirstAndReserveTeam\bin\Debug\04.FirstAndReserveTeam.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\03.Encapsulation\04.FirstAndReserveTeam\obj\Debug\04.FirstAndReserveTeam.csprojResolveAssemblyReference.cache
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\03.Encapsulation\04.FirstAndReserveTeam\obj\Debug\04.FirstAndReserveTeam.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\03.Encapsulation\04.FirstAndReserveTeam\obj\Debug\04.FirstAndReserveTeam.pdb

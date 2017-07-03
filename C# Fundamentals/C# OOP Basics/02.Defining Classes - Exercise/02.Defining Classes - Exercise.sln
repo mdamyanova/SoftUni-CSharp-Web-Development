@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.Google", "12.Google\12.G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.FamilyTree", "13.FamilyTree\13.FamilyTree.csproj", "{E72C2DA8-E594-42EC-95BA-B4E66EAFFB32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.CatLady", "14.CatLady\14.CatLady.csproj", "{695CABD0-D7C3-4344-9B6B-C7696A2CA90F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15.DrawingTool", "15.DrawingTool\15.DrawingTool.csproj", "{7B7C803A-A196-4B50-9FFF-E651C89D9FCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{E72C2DA8-E594-42EC-95BA-B4E66EAFFB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E72C2DA8-E594-42EC-95BA-B4E66EAFFB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E72C2DA8-E594-42EC-95BA-B4E66EAFFB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695CABD0-D7C3-4344-9B6B-C7696A2CA90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695CABD0-D7C3-4344-9B6B-C7696A2CA90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695CABD0-D7C3-4344-9B6B-C7696A2CA90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695CABD0-D7C3-4344-9B6B-C7696A2CA90F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7C803A-A196-4B50-9FFF-E651C89D9FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7C803A-A196-4B50-9FFF-E651C89D9FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7C803A-A196-4B50-9FFF-E651C89D9FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7C803A-A196-4B50-9FFF-E651C89D9FCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

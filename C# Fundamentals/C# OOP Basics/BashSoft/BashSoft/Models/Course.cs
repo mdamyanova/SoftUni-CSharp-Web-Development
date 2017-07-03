@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BashSoft.IO;
+﻿using System;
+using System.Collections.Generic;
 using BashSoft.Static_data;
 
 namespace BashSoft.Models
@@ -17,14 +17,33 @@ namespace BashSoft.Models
             this.studentsByName = new Dictionary<string, Student>();
         }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException(nameof(this.name), ExceptionMessages.NullOrEmptyValue);
+                }
+
+                this.name = value;
+            }
+        }
+
+        public IReadOnlyDictionary<string, Student> StudentsByName
+        {
+            get { return this.studentsByName; }
+        }
 
         public void EnrollStudent(Student student)
         {
             if (this.studentsByName.ContainsKey(student.UserName))
             {
-                OutputWriter.DisplayException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, student.UserName, this.Name));
-                return;
+                throw new ArgumentException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, student.UserName, this.name));
             }
 
             this.studentsByName.Add(student.UserName, student);

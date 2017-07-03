@@ -53,7 +53,7 @@ namespace BashSoft.IO
             }
             catch (ArgumentException)
             {
-                OutputWriter.DisplayException(ExceptionMessages.ForbiddenSymbolsContainedInName);
+                throw new ArgumentException(ExceptionMessages.ForbiddenSymbolsContainedInName);
             }
         }
 
@@ -70,7 +70,7 @@ namespace BashSoft.IO
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    OutputWriter.DisplayException(ExceptionMessages.UnableToGoHigherInPartitionHierarchy);
+                    throw new ArgumentOutOfRangeException("indexOfLastSlash", ExceptionMessages.UnableToGoHigherInPartitionHierarchy);
                 }
             }
             else
@@ -85,9 +85,9 @@ namespace BashSoft.IO
         {
             if (!Directory.Exists(currentPath))
             {
-                OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
-                return;
+                throw new DirectoryNotFoundException(ExceptionMessages.InvalidPath);
             }
+
             SessionData.currentPath = currentPath;
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BashSoft.IO;
 using BashSoft.Static_data;
@@ -9,7 +10,7 @@ namespace BashSoft.Models
     {
         private string userName;
         private Dictionary<string, Course> enrolledCourses;
-        public Dictionary<string, double> marksByCourseName;
+        private Dictionary<string, double> marksByCourseName;
 
         public Student(string userName)
         {
@@ -18,16 +19,39 @@ namespace BashSoft.Models
             this.marksByCourseName = new Dictionary<string, double>();
         }
 
-        public string UserName { get; set; }
+        public string UserName
+        {
+            get
+            {
+                return this.userName;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException(nameof(this.userName), ExceptionMessages.NullOrEmptyValue);
+                }
+
+                this.userName = value;
+            }
+        }
+
+        public IReadOnlyDictionary<string, Course> EnrolledCourses
+        {
+            get { return enrolledCourses; }
+        }
+
+        public IReadOnlyDictionary<string, double> MarksByCourseName
+        {
+            get { return marksByCourseName; }
+        }
 
         public void EnrollInCourse(Course course)
         {
             if (this.enrolledCourses.ContainsKey(course.Name))
             {
-                OutputWriter.DisplayException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, this.userName, course.Name));
-                return;
+                throw new ArgumentException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, this.userName, course.Name));
             }
-
             this.enrolledCourses.Add(course.Name, course);
         }
 
@@ -35,24 +59,22 @@ namespace BashSoft.Models
         {
             if (!this.enrolledCourses.ContainsKey(courseName))
             {
-                OutputWriter.DisplayException(ExceptionMessages.StudentNotEnrolledInCourse);
-                return;
+                throw new ArgumentException(ExceptionMessages.StudentNotEnrolledInCourse);
             }
 
             if (scores.Length > Course.NumberOfTasksOnExam)
             {
-                OutputWriter.DisplayException(ExceptionMessages.InvalidNumberOfScores);
-                return;
+                throw new ArgumentException(ExceptionMessages.InvalidNumberOfScores);
             }
 
             this.marksByCourseName.Add(courseName, CalculateMark(scores));
         }
 
-        public double CalculateMark(int[] scores)
+        private double CalculateMark(int[] scores)
         {
-            double percentageOfSolvedExam = scores.Sum() /
-                                            (double) (Course.NumberOfTasksOnExam * Course.MaxScoreOnExamTask);
-            double mark = percentageOfSolvedExam * 4 + 2;
+            double persentageOfSolvedExam = scores.Sum() /
+                                            (double)(Course.NumberOfTasksOnExam * Course.MaxScoreOnExamTask);
+            double mark = persentageOfSolvedExam * 4 + 2;
 
             return mark;
         }

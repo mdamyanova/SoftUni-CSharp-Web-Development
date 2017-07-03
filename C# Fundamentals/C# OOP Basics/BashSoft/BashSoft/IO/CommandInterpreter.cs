@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using BashSoft.Judge;
 using BashSoft.Repository;
 using BashSoft.Static_data;
@@ -22,6 +24,32 @@ namespace BashSoft.IO
         {
             string[] data = input.Split(' ');
             string command = data[0];
+            command = command.ToLower();
+
+            try
+            {
+                this.ParseCommand(input, command, data);
+            }
+            catch (DirectoryNotFoundException dnfe)
+            {
+                OutputWriter.DisplayException(dnfe.Message);
+            }
+            catch (ArgumentOutOfRangeException aoore)
+            {
+                OutputWriter.DisplayException(aoore.Message);
+            }
+            catch (ArgumentException ae)
+            {
+                OutputWriter.DisplayException(ae.Message);
+            }
+            catch (Exception e)
+            {
+                OutputWriter.DisplayException(e.Message);
+            }
+        }
+
+        private void ParseCommand(string input, string command, string[] data)
+        {
             switch (command)
             {
                 case "open":
@@ -64,7 +92,6 @@ namespace BashSoft.IO
                 default:
                     DisplayInvalidCommandMessage(input);
                     break;
-
             }
         }
 

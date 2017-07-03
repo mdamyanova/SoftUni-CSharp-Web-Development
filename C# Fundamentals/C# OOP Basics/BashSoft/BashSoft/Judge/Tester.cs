@@ -8,27 +8,24 @@ namespace BashSoft.Judge
     public class Tester
     {
         public void CompareContent(string userOutputPath, string expectedOutputPath)
-        {
-            OutputWriter.WriteMessageOnNewLine("Reading files...");
+        {           
             try
             {
+                OutputWriter.WriteMessageOnNewLine("Reading files...");
                 string mismatchPath = GetMismatchPath(expectedOutputPath);
-
                 string[] actualOutputLines = File.ReadAllLines(userOutputPath);
                 string[] expectedOutputLines = File.ReadAllLines(expectedOutputPath);
 
                 bool hasMismatch;
                 string[] mismatches = GetLinesWithPossibleMismatches(
-                    actualOutputLines,
-                    expectedOutputLines,
-                    out hasMismatch);
+                    actualOutputLines, expectedOutputLines, out hasMismatch);
 
-                PrintOutput(mismatches, hasMismatch, mismatchPath);
+                this.PrintOutput(mismatches, hasMismatch, mismatchPath);
                 OutputWriter.WriteMessageOnNewLine("Files read!");
             }
-            catch (FileNotFoundException)
+            catch (IOException ioe)
             {
-                OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
+               OutputWriter.DisplayException(ioe.Message);
             }
         }
 
@@ -39,17 +36,12 @@ namespace BashSoft.Judge
                 foreach (var line in mismatches)
                 {
                     OutputWriter.WriteMessageOnNewLine(line);
-                }
-                try
-                {
-                    File.WriteAllLines(mismatchPath, mismatches);
-                }
-                catch (DirectoryNotFoundException)
-                {
-                    OutputWriter.DisplayException(ExceptionMessages.InvalidPath);
-                }
-                return;
+                }  
+                
+                File.WriteAllLines(mismatchPath, mismatches);
+               
             }
+
             OutputWriter.WriteMessageOnNewLine("Files are identical. There are no mismatches.");
         }
 
@@ -59,13 +51,16 @@ namespace BashSoft.Judge
             string output = string.Empty;
             OutputWriter.WriteMessageOnNewLine("Comparing files...");
             int minOutputLines = actualOutputLines.Length;
+
             if (actualOutputLines.Length != expectedOutputLines.Length)
             {
                 hasMismatch = true;
                 minOutputLines = Math.Min(actualOutputLines.Length, expectedOutputLines.Length);
                 OutputWriter.DisplayException(ExceptionMessages.ComparisonOfFilesWithDifferentSizes);
             }
+
             string[] mismatches = new string[minOutputLines];
+
             for (int index = 0; index < minOutputLines; index++)
             {
                 string actualLine = actualOutputLines[index];
@@ -83,6 +78,7 @@ namespace BashSoft.Judge
                 }
                 mismatches[index] = output;
             }
+
             return mismatches;
         }
 

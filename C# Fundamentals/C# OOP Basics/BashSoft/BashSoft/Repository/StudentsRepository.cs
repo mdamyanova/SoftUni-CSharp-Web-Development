@@ -40,7 +40,7 @@ namespace BashSoft.Repository
         {
             if (!this.isDataInitialized)
             {
-                OutputWriter.DisplayException(ExceptionMessages.DataNotInitializedExceptionMessage);
+                throw new ArgumentException(ExceptionMessages.DataNotInitializedExceptionMessage);
             }
 
             this.coursesByName = null;
@@ -161,7 +161,7 @@ namespace BashSoft.Repository
         {
             if (this.IsQueryForStudentPossible(courseName, username))
             {
-                OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, this.coursesByName[courseName].studentsByName[username].marksByCourseName[courseName]));
+                OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, this.coursesByName[courseName].studentsByName[username].MarksByCourseName[courseName]));
             }
         }
 
@@ -172,7 +172,7 @@ namespace BashSoft.Repository
                 OutputWriter.WriteMessageOnNewLine($"{courseName}:");
                 foreach (var studentMarksEntry in this.coursesByName[courseName].studentsByName)
                 {
-                    OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMarksEntry.Key, studentMarksEntry.Value.marksByCourseName[courseName]));
+                    OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMarksEntry.Key, studentMarksEntry.Value.MarksByCourseName[courseName]));
                 }
             }
         }
@@ -188,7 +188,7 @@ namespace BashSoft.Repository
 
                 Dictionary<string, double> marks = this.coursesByName[courseName]
                     .studentsByName
-                    .ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                    .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.filter.FilterAndTake(marks, givenFilter, studentsToTake.Value);
             }
@@ -205,7 +205,7 @@ namespace BashSoft.Repository
 
                 Dictionary<string, double> marks = this.coursesByName[courseName]
                     .studentsByName
-                    .ToDictionary(x => x.Key, x => x.Value.marksByCourseName[courseName]);
+                    .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.sorter.OrderAndTake(marks, comparison, studentsToTake.Value);
             }

@@ -15,20 +15,6 @@ namespace _03.Mankind.Models
             this.WorkingHours = workingHours;
         }
 
-        public override string LastName
-        {
-            get { return base.LastName; }
-            set
-            {
-                if (value.Length < 4)
-                {
-                    throw new ArgumentException("Expected length at least 3 symbols! Argument: lastName");
-                }
-
-                base.LastName = value;
-            }
-        }
-
         public double WeekSalary
         {
             get { return this.weekSalary; }

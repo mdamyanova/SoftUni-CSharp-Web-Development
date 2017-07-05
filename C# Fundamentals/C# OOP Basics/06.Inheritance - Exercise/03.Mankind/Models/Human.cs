@@ -31,7 +31,7 @@ namespace _03.Mankind.Models
             }
         }
 
-        public virtual string LastName
+        public string LastName
         {
             get { return this.lastName; }
             set

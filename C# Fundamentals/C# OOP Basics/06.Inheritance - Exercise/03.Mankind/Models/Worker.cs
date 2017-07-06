@@ -20,7 +20,7 @@ namespace _03.Mankind.Models
             get { return this.weekSalary; }
             set
             {
-                if (value < 10)
+                if (value <= 10)
                 {
                     throw new ArgumentException("Expected value mismatch! Argument: weekSalary");
                 }
@@ -45,7 +45,7 @@ namespace _03.Mankind.Models
 
         private double GetSalaryPerHour()
         {
-            return this.WeekSalary / 5 / this.WorkingHours;
+            return this.WeekSalary / (this.WorkingHours * 5);
         }
 
         public override string ToString()

@@ -7,22 +7,44 @@ namespace _03.Mankind
     {
         public static void Main()
         {
+            var inputLine = Console.ReadLine()
+                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            var firstName = inputLine[0];
+            var lastName = inputLine[1];
+            var facultyNumber = inputLine[2];
+
+            Student student;
             try
             {
-                var studentTokens = Console.ReadLine().Trim().Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                var workerTokens = Console.ReadLine().Trim().Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-
-                var student = new Student(studentTokens[0], studentTokens[1], studentTokens[2]);
-                var worker = new Worker(workerTokens[0], workerTokens[1], double.Parse(workerTokens[2]), double.Parse(workerTokens[3]));
-
-                Console.WriteLine(student);
-                Console.WriteLine();
-                Console.WriteLine(worker);
+                student = new Student(firstName, lastName, facultyNumber);
             }
-            catch (ArgumentException ae)
+            catch (Exception e)
             {
-                Console.WriteLine(ae.Message);
-            }            
+                Console.WriteLine(e.Message);
+                return;
+            }
+
+            inputLine = Console.ReadLine()
+                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            firstName = inputLine[0];
+            lastName = inputLine[1];
+            var weekSalary = double.Parse(inputLine[2]);
+            var hoursPerDay = double.Parse(inputLine[3]);
+            Worker worker;
+            try
+            {
+                worker = new Worker(firstName, lastName, weekSalary, hoursPerDay);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+
+            Console.WriteLine(student);
+            Console.WriteLine(worker);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using BashSoft.Exceptions;
 using BashSoft.Static_data;
 
 namespace BashSoft.IO
@@ -53,7 +54,7 @@ namespace BashSoft.IO
             }
             catch (ArgumentException)
             {
-                throw new ArgumentException(ExceptionMessages.ForbiddenSymbolsContainedInName);
+                throw new InvalidFileNameException();
             }
         }
 
@@ -85,7 +86,7 @@ namespace BashSoft.IO
         {
             if (!Directory.Exists(currentPath))
             {
-                throw new DirectoryNotFoundException(ExceptionMessages.InvalidPath);
+                throw new InvalidPathException();
             }
 
             SessionData.currentPath = currentPath;

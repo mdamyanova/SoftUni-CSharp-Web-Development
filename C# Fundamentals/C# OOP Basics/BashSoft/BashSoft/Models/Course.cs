@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using BashSoft.Static_data;
+using BashSoft.Exceptions;
 
 namespace BashSoft.Models
 {
@@ -26,8 +26,8 @@ namespace BashSoft.Models
             set
             {
                 if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException(nameof(this.name), ExceptionMessages.NullOrEmptyValue);
+                { 
+                    throw new InvalidStringException();
                 }
 
                 this.name = value;
@@ -43,7 +43,7 @@ namespace BashSoft.Models
         {
             if (this.studentsByName.ContainsKey(student.UserName))
             {
-                throw new ArgumentException(string.Format(ExceptionMessages.StudentAlreadyEnrolledInGivenCourse, student.UserName, this.name));
+               throw new DublicateEntryInStructureException(student.UserName, this.Name);
             }
 
             this.studentsByName.Add(student.UserName, student);

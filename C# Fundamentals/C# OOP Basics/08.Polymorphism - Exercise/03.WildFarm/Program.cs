@@ -12,7 +12,7 @@ namespace _03.WildFarm
         {
             var input = Console.ReadLine();
 
-            while (input != "Ënd")
+            while (input != "End")
             {
                 var tokens = input.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 var foodTokens = Console.ReadLine().Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);

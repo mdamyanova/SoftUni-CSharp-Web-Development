@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using BashSoft.Exceptions;
+using BashSoft.IO.Commands;
 using BashSoft.Judge;
 using BashSoft.Repository;
 using BashSoft.Static_data;
@@ -23,12 +25,13 @@ namespace BashSoft.IO
         public void InterpredCommand(string input)
         {
             string[] data = input.Split(' ');
-            string command = data[0];
-            command = command.ToLower();
+            string commandName = data[0];
+            commandName = commandName.ToLower();
 
             try
             {
-                this.ParseCommand(input, command, data);
+                var command = this.ParseCommand(input, commandName, data);
+                command.Execute();
             }
             catch (DirectoryNotFoundException dnfe)
             {
@@ -48,50 +51,44 @@ namespace BashSoft.IO
             }
         }
 
-        private void ParseCommand(string input, string command, string[] data)
+        private Command ParseCommand(string input, string command, string[] data)
         {
             switch (command)
             {
                 case "open":
-                    TryOpenData(input, data);
-                    break;
+                    return new OpenFileCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "show":
-                    TryShowWantedData(input, data);
-                    break;
+                    return new ShowCourseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "mkdir":
-                    TryCreateDirectory(input, data);
-                    break;
+                    return new MakeDirectoryCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "ls":
-                    TryTraverseFolder(input, data);
-                    break;
+                    return new TraverseFoldersCommand(input, data, this.judge, this.repository,
+                        this.inputOutputManager);
                 case "cmp":
-                    TryCompareFiles(input, data);
-                    break;
-                case "cdRel":
-                    TryChangePathRelatively(input, data);
-                    break;
-                case "cdAbs":
-                    TryChangePathAbsolute(input, data);
-                    break;
-                case "readDb":
-                    TryReadDb(input, data);
-                    break;
+                    return new CompareFilesCommand(input, data, this.judge, this.repository, this.inputOutputManager);
+                case "cdrel":
+                    return new ChangeRelativePathCommand(input, data, this.judge, this.repository,
+                        this.inputOutputManager);
+                case "cdabs":
+                    return new ChangeAbsolutePathCommand(input, data, this.judge, this.repository,
+                        this.inputOutputManager);
+                case "readdb":
+                    return new ReadDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "help":
-                    TryGetHelp(input, data);
-                    break;
+                    return new GetHelpCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "filter":
-                    TryFilterAndTake(input, data);
-                    break;
+                    return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository,
+                        this.inputOutputManager);
                 case "dropdb":
-                    TryDropDb(input, data);
-                    break;
-                case "order": break;
+                    return new DropDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
+                case "order":
+                    return new PrintOrderedStudetsCommand(input, data, this.judge, this.repository,
+                        this.inputOutputManager);
                 case "decOrder": break;
                 case "download": break;
                 case "downloadAsynch": break;
                 default:
-                    DisplayInvalidCommandMessage(input);
-                    break;
+                   throw new InvalidCommandException(input);
             }
         }
 
@@ -108,7 +105,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -128,7 +125,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -141,13 +138,8 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
-        }
-
-        private void DisplayInvalidCommandMessage(string input)
-        {
-            OutputWriter.DisplayException($"The command '{input}' is invalid");
         }
 
         private void TryGetHelp(string input, string[] data)
@@ -177,7 +169,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -190,7 +182,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -202,7 +194,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -227,7 +219,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -240,7 +232,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -253,7 +245,7 @@ namespace BashSoft.IO
             }
             else
             {
-                DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
             }
         }
 
@@ -261,7 +253,7 @@ namespace BashSoft.IO
         {
             if (data.Length != 1)
             {
-                this.DisplayInvalidCommandMessage(input);
+                throw new InvalidCommandException(input);
                 return;
             }
 

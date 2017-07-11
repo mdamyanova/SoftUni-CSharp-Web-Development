@@ -13,7 +13,7 @@ namespace BashSoft.IO.Commands
         private StudentsRepository repository;
         private IOManager inputOutputManager;
 
-        public Command(string input, string[] data, Tester judge, StudentsRepository repository,
+        protected Command(string input, string[] data, Tester judge, StudentsRepository repository,
             IOManager inputOutputManager)
         {
             this.Input = input;
@@ -57,6 +57,7 @@ namespace BashSoft.IO.Commands
         }
 
         protected StudentsRepository Repository
+
         {
             get { return this.repository; }
         }

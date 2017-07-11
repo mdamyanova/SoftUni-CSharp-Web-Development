@@ -55,24 +55,24 @@ namespace BashSoft.Repository
 
             if (File.Exists(path))
             {
-                string pattern = @"([A-Z][a-zA-Z#\++]*_[A-Z][a-z]{2}_\d{4})\s+([A-Za-z]+\d{2}_\d{2,4})\s([\s0-9]+)";
-                Regex rgx = new Regex(pattern);
-                string[] allInputLines = File.ReadAllLines(path);
+                var pattern = @"([A-Z][a-zA-Z#\++]*_[A-Z][a-z]{2}_\d{4})\s+([A-Za-z]+\d{2}_\d{2,4})\s([\s0-9]+)";
+                var rgx = new Regex(pattern);
+                var allInputLines = File.ReadAllLines(path);
 
                 for (int line = 0; line < allInputLines.Length; line++)
                 {
-                    string inputLine = allInputLines[line];
+                    var inputLine = allInputLines[line];
 
                     if (!string.IsNullOrEmpty(inputLine) && rgx.IsMatch(inputLine))
                     {
-                        Match currentMatch = rgx.Match(inputLine);
-                        string courseName = currentMatch.Groups[1].Value;
-                        string username = currentMatch.Groups[2].Value;
-                        string scoresStr = currentMatch.Groups[3].Value;
+                        var currentMatch = rgx.Match(inputLine);
+                        var courseName = currentMatch.Groups[1].Value;
+                        var username = currentMatch.Groups[2].Value;
+                        var scoresStr = currentMatch.Groups[3].Value;
 
                         try
                         {
-                            int[] scores = scoresStr.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                            var scores = scoresStr.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                                 .Select(int.Parse)
                                 .ToArray();
 
@@ -98,8 +98,8 @@ namespace BashSoft.Repository
                                 this.coursesByName.Add(courseName, new Course(courseName));
                             }
 
-                            Course course = coursesByName[courseName];
-                            Student student = studentsByName[username];
+                            var course = coursesByName[courseName];
+                            var student = studentsByName[username];
 
                             student.EnrollInCourse(course);
                             student.SetMarkOnCourse(courseName, scores);
@@ -187,7 +187,7 @@ namespace BashSoft.Repository
                     studentsToTake = this.coursesByName[courseName].studentsByName.Count;
                 }
 
-                Dictionary<string, double> marks = this.coursesByName[courseName]
+                var marks = this.coursesByName[courseName]
                     .studentsByName
                     .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
@@ -204,7 +204,7 @@ namespace BashSoft.Repository
                     studentsToTake = this.coursesByName[courseName].studentsByName.Count;
                 }
 
-                Dictionary<string, double> marks = this.coursesByName[courseName]
+                var marks = this.coursesByName[courseName]
                     .studentsByName
                     .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 

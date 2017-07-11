@@ -18,7 +18,7 @@ namespace BashSoft.IO
             while (true)
             {
                 OutputWriter.WriteMessage($"{SessionData.currentPath}> ");
-                string input = Console.ReadLine().Trim();
+                var input = Console.ReadLine().Trim();
 
                 if (input == endCommand)
                 {

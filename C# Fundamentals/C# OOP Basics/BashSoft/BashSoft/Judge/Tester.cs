@@ -12,12 +12,12 @@ namespace BashSoft.Judge
             try
             {
                 OutputWriter.WriteMessageOnNewLine("Reading files...");
-                string mismatchPath = GetMismatchPath(expectedOutputPath);
-                string[] actualOutputLines = File.ReadAllLines(userOutputPath);
-                string[] expectedOutputLines = File.ReadAllLines(expectedOutputPath);
+                var mismatchPath = GetMismatchPath(expectedOutputPath);
+                var actualOutputLines = File.ReadAllLines(userOutputPath);
+                var expectedOutputLines = File.ReadAllLines(expectedOutputPath);
 
                 bool hasMismatch;
-                string[] mismatches = GetLinesWithPossibleMismatches(
+                var mismatches = GetLinesWithPossibleMismatches(
                     actualOutputLines, expectedOutputLines, out hasMismatch);
 
                 this.PrintOutput(mismatches, hasMismatch, mismatchPath);
@@ -48,9 +48,9 @@ namespace BashSoft.Judge
         private string[] GetLinesWithPossibleMismatches(string[] actualOutputLines, string[] expectedOutputLines, out bool hasMismatch)
         {
             hasMismatch = false;
-            string output = string.Empty;
+            var output = string.Empty;
             OutputWriter.WriteMessageOnNewLine("Comparing files...");
-            int minOutputLines = actualOutputLines.Length;
+            var minOutputLines = actualOutputLines.Length;
 
             if (actualOutputLines.Length != expectedOutputLines.Length)
             {
@@ -59,12 +59,12 @@ namespace BashSoft.Judge
                 OutputWriter.DisplayException(ExceptionMessages.ComparisonOfFilesWithDifferentSizes);
             }
 
-            string[] mismatches = new string[minOutputLines];
+            var mismatches = new string[minOutputLines];
 
             for (int index = 0; index < minOutputLines; index++)
             {
-                string actualLine = actualOutputLines[index];
-                string expectedLine = expectedOutputLines[index];
+                var actualLine = actualOutputLines[index];
+                var expectedLine = expectedOutputLines[index];
                 if (!actualLine.Equals(expectedLine))
                 {
                     output = $"Mismatch at line {index} -- expected: \"{expectedLine}\", actual: \"{actualLine}\"";
@@ -76,6 +76,7 @@ namespace BashSoft.Judge
                     output = actualLine;
                     output += Environment.NewLine;
                 }
+
                 mismatches[index] = output;
             }
 

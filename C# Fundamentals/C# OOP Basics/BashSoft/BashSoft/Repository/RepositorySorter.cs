@@ -30,7 +30,7 @@ namespace BashSoft.Repository
 
         private void PrintStudents(Dictionary<string, double> studentsSorted)
         {
-            foreach (KeyValuePair<string, double> studentWithMark in studentsSorted)
+            foreach (var studentWithMark in studentsSorted)
             {
                 OutputWriter.PrintStudent(studentWithMark);
             }

@@ -22,7 +22,7 @@ namespace BashSoft.IO
 
         public static void DisplayException(string message)
         {
-            ConsoleColor currentColor = Console.ForegroundColor;
+            var currentColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(message);
             Console.ForegroundColor = currentColor;

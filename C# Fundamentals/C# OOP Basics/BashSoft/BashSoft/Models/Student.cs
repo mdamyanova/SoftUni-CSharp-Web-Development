@@ -21,10 +21,7 @@ namespace BashSoft.Models
 
         public string UserName
         {
-            get
-            {
-                return this.userName;
-            }
+            get { return this.userName; }
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -73,9 +70,9 @@ namespace BashSoft.Models
 
         private double CalculateMark(int[] scores)
         {
-            double persentageOfSolvedExam = scores.Sum() /
+            var persentageOfSolvedExam = scores.Sum() /
                                             (double)(Course.NumberOfTasksOnExam * Course.MaxScoreOnExamTask);
-            double mark = persentageOfSolvedExam * 4 + 2;
+            var mark = persentageOfSolvedExam * 4 + 2;
 
             return mark;
         }

@@ -1,0 +1,27 @@
+﻿using System;
+using System.Reflection;
+using _02.MultipleImplementation.Interfaces;
+
+namespace _02.MultipleImplementation
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            Type identifiableInterface = typeof(Citizen).GetInterface("IIdentifiable");
+            Type birthableInterface = typeof(Citizen).GetInterface("IBirthable");
+            PropertyInfo[] properties = identifiableInterface.GetProperties();
+            Console.WriteLine(properties.Length);
+            Console.WriteLine(properties[0].PropertyType.Name);
+            properties = birthableInterface.GetProperties();
+            Console.WriteLine(properties.Length);
+            Console.WriteLine(properties[0].PropertyType.Name);
+            string name = Console.ReadLine();
+            int age = int.Parse(Console.ReadLine());
+            string id = Console.ReadLine();
+            string birthdate = Console.ReadLine();
+            IIdentifiable identifiable = new Citizen(name, age, id, birthdate);
+            IBirthable birthable = new Citizen(name, age, id, birthdate);
+        }
+    }
+}

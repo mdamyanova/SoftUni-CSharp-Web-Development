@@ -15,7 +15,7 @@ namespace _09.CollectionHierarchy.Models
         public int Add(string item)
         {           
             this.Items.Add(item);
-            return this.Items.IndexOf(item);
+            return this.Items.Count - 1;
         }
     }
 }

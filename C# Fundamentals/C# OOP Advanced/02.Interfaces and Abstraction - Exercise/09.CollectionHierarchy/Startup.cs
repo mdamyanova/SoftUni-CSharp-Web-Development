@@ -8,7 +8,7 @@ namespace _09.CollectionHierarchy
     {
         public static void Main()
         {
-            var input = Console.ReadLine().Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries);
+            var input = Console.ReadLine().Split();
             var countRemove = int.Parse(Console.ReadLine());
 
             var addCollection = new AddCollection();

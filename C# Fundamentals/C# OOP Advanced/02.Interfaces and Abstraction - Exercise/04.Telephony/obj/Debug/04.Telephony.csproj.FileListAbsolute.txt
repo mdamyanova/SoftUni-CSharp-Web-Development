@@ -1,0 +1,6 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\04.Telephony\bin\Debug\04.Telephony.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\04.Telephony\bin\Debug\04.Telephony.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\04.Telephony\bin\Debug\04.Telephony.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\04.Telephony\obj\Debug\04.Telephony.csprojResolveAssemblyReference.cache
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\04.Telephony\obj\Debug\04.Telephony.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\04.Telephony\obj\Debug\04.Telephony.pdb

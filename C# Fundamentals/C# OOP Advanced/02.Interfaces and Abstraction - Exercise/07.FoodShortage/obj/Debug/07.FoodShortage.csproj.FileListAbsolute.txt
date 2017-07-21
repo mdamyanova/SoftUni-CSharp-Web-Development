@@ -1,0 +1,6 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\07.FoodShortage\bin\Debug\07.FoodShortage.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\07.FoodShortage\bin\Debug\07.FoodShortage.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\07.FoodShortage\bin\Debug\07.FoodShortage.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\07.FoodShortage\obj\Debug\07.FoodShortage.csprojResolveAssemblyReference.cache
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\07.FoodShortage\obj\Debug\07.FoodShortage.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\07.FoodShortage\obj\Debug\07.FoodShortage.pdb

@@ -1,0 +1,5 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\06.BirthdayCelebrations\bin\Debug\06.BirthdayCelebrations.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\06.BirthdayCelebrations\bin\Debug\06.BirthdayCelebrations.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\06.BirthdayCelebrations\bin\Debug\06.BirthdayCelebrations.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\06.BirthdayCelebrations\obj\Debug\06.BirthdayCelebrations.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\06.BirthdayCelebrations\obj\Debug\06.BirthdayCelebrations.pdb

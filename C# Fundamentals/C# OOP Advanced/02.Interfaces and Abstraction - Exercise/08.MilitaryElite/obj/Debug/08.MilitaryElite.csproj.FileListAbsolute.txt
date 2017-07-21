@@ -1,0 +1,6 @@
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\08.MilitaryElite\bin\Debug\08.MilitaryElite.exe.config
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\08.MilitaryElite\bin\Debug\08.MilitaryElite.exe
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\08.MilitaryElite\bin\Debug\08.MilitaryElite.pdb
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\08.MilitaryElite\obj\Debug\08.MilitaryElite.csprojResolveAssemblyReference.cache
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\08.MilitaryElite\obj\Debug\08.MilitaryElite.exe
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\08.MilitaryElite\obj\Debug\08.MilitaryElite.pdb

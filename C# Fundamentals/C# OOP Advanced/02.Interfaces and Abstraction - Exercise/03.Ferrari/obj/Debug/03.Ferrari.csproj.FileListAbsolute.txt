@@ -1,0 +1,5 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\03.Ferrari\bin\Debug\03.Ferrari.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\03.Ferrari\bin\Debug\03.Ferrari.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\03.Ferrari\bin\Debug\03.Ferrari.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\03.Ferrari\obj\Debug\03.Ferrari.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\03.Ferrari\obj\Debug\03.Ferrari.pdb

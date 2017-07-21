@@ -1,0 +1,5 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\01.DefineAnInterfaceIPerson\bin\Debug\01.DefineAnInterfaceIPerson.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\01.DefineAnInterfaceIPerson\bin\Debug\01.DefineAnInterfaceIPerson.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\01.DefineAnInterfaceIPerson\bin\Debug\01.DefineAnInterfaceIPerson.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\01.DefineAnInterfaceIPerson\obj\Debug\01.DefineAnInterfaceIPerson.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\01.DefineAnInterfaceIPerson\obj\Debug\01.DefineAnInterfaceIPerson.pdb

@@ -1,0 +1,6 @@
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\05.BorderControl\bin\Debug\05.BorderControl.exe.config
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\05.BorderControl\bin\Debug\05.BorderControl.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\05.BorderControl\bin\Debug\05.BorderControl.pdb
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\05.BorderControl\obj\Debug\05.BorderControl.exe
+c:\users\mireladamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\05.BorderControl\obj\Debug\05.BorderControl.pdb
+C:\Users\MirelaDamyanova\documents\visual studio 2017\Projects\02.Interfaces and Abstraction - Exercise\05.BorderControl\obj\Debug\05.BorderControl.csprojResolveAssemblyReference.cache

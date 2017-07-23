@@ -1,14 +1,11 @@
-﻿using System.CodeDom;
-using BashSoft.Contracts;
+﻿using BashSoft.Contracts;
 using BashSoft.Exceptions;
-using BashSoft.Judge;
-using BashSoft.Repository;
 
 namespace BashSoft.IO.Commands
 {
     public class GetHelpCommand : Command
     {
-        public GetHelpCommand(string input, string[] data, Tester judge, StudentsRepository repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public GetHelpCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
         {
         }
 

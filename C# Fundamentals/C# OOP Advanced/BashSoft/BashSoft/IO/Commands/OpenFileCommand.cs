@@ -1,15 +1,13 @@
 ﻿using System.Diagnostics;
 using BashSoft.Contracts;
 using BashSoft.Exceptions;
-using BashSoft.Judge;
-using BashSoft.Repository;
 using BashSoft.Static_data;
 
 namespace BashSoft.IO.Commands
 {
     public class OpenFileCommand : Command
     {
-        public OpenFileCommand(string input, string[] data, Tester judge, StudentsRepository repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public OpenFileCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
         {
         }
 

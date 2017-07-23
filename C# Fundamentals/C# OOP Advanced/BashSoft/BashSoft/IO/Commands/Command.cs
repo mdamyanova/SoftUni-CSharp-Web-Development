@@ -1,8 +1,6 @@
 ﻿using System;
 using BashSoft.Contracts;
 using BashSoft.Exceptions;
-using BashSoft.Judge;
-using BashSoft.Repository;
 
 namespace BashSoft.IO.Commands
 {
@@ -10,11 +8,11 @@ namespace BashSoft.IO.Commands
     {
         private string input;
         private string[] data;
-        private Tester judge;
-        private StudentsRepository repository;
+        private IContentComparer judge;
+        private IDatabase repository;
         private IDirectoryManager inputOutputManager;
 
-        protected Command(string input, string[] data, Tester judge, StudentsRepository repository,
+        protected Command(string input, string[] data, IContentComparer judge, IDatabase repository,
             IDirectoryManager inputOutputManager)
         {
             this.Input = input;
@@ -52,12 +50,12 @@ namespace BashSoft.IO.Commands
             }
         }
 
-        protected Tester Judge
+        protected IContentComparer Judge
         {
             get { return this.judge; }
         }
 
-        protected StudentsRepository Repository
+        protected IDatabase Repository
 
         {
             get { return this.repository; }

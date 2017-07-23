@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using BashSoft.Contracts;
 using BashSoft.Exceptions;
 using BashSoft.IO;
 using BashSoft.Models;
@@ -10,15 +11,15 @@ using BashSoft.Static_data;
 
 namespace BashSoft.Repository
 {
-    public class StudentsRepository
+    public class StudentsRepository : IDatabase
     {
         private bool isDataInitialized = false;
-        private Dictionary<string, Course> coursesByName;
-        private Dictionary<string, Student> studentsByName;
-        private RepositoryFilter filter;
-        private RepositorySorter sorter;
+        private Dictionary<string, ICourse> coursesByName;
+        private Dictionary<string, IStudent> studentsByName;
+        private IDataFilter filter;
+        private IDataSorter sorter;
 
-        public StudentsRepository(RepositoryFilter filter, RepositorySorter sorter)
+        public StudentsRepository(IDataFilter filter, IDataSorter sorter)
         {
             this.filter = filter;
             this.sorter = sorter;
@@ -32,8 +33,8 @@ namespace BashSoft.Repository
                 return;
             }
 
-            this.coursesByName = new Dictionary<string, Course>();
-            this.studentsByName = new Dictionary<string, Student>();
+            this.coursesByName = new Dictionary<string, ICourse>();
+            this.studentsByName = new Dictionary<string, IStudent>();
             this.ReadData(fileName);
         }
 
@@ -146,7 +147,7 @@ namespace BashSoft.Repository
 
         private bool IsQueryForStudentPossible(string courseName, string studentName)
         {
-            if (this.IsQueryForCoursePossible(courseName) && this.coursesByName[courseName].studentsByName.ContainsKey(studentName))
+            if (this.IsQueryForCoursePossible(courseName) && this.coursesByName[courseName].StudentsByName.ContainsKey(studentName))
             {
                 return true;
             }
@@ -162,7 +163,7 @@ namespace BashSoft.Repository
         {
             if (this.IsQueryForStudentPossible(courseName, username))
             {
-                OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, this.coursesByName[courseName].studentsByName[username].MarksByCourseName[courseName]));
+                OutputWriter.PrintStudent(new KeyValuePair<string, double>(username, this.coursesByName[courseName].StudentsByName[username].MarksByCourseName[courseName]));
             }
         }
 
@@ -171,7 +172,7 @@ namespace BashSoft.Repository
             if (IsQueryForCoursePossible(courseName))
             {
                 OutputWriter.WriteMessageOnNewLine($"{courseName}:");
-                foreach (var studentMarksEntry in this.coursesByName[courseName].studentsByName)
+                foreach (var studentMarksEntry in this.coursesByName[courseName].StudentsByName)
                 {
                     OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMarksEntry.Key, studentMarksEntry.Value.MarksByCourseName[courseName]));
                 }
@@ -184,11 +185,11 @@ namespace BashSoft.Repository
             {
                 if (studentsToTake == null)
                 {
-                    studentsToTake = this.coursesByName[courseName].studentsByName.Count;
+                    studentsToTake = this.coursesByName[courseName].StudentsByName.Count;
                 }
 
                 var marks = this.coursesByName[courseName]
-                    .studentsByName
+                    .StudentsByName
                     .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.filter.FilterAndTake(marks, givenFilter, studentsToTake.Value);
@@ -201,11 +202,11 @@ namespace BashSoft.Repository
             {
                 if (studentsToTake == null)
                 {
-                    studentsToTake = this.coursesByName[courseName].studentsByName.Count;
+                    studentsToTake = this.coursesByName[courseName].StudentsByName.Count;
                 }
 
                 var marks = this.coursesByName[courseName]
-                    .studentsByName
+                    .StudentsByName
                     .ToDictionary(x => x.Key, x => x.Value.MarksByCourseName[courseName]);
 
                 this.sorter.OrderAndTake(marks, comparison, studentsToTake.Value);

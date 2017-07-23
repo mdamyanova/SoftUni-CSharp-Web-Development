@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
+using BashSoft.Contracts;
 using BashSoft.IO;
 using BashSoft.Static_data;
 
 namespace BashSoft.Judge
 {
-    public class Tester
+    public class Tester : IContentComparer
     {
         public void CompareContent(string userOutputPath, string expectedOutputPath)
         {           

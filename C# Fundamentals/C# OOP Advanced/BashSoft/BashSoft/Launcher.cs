@@ -9,9 +9,9 @@ namespace BashSoft
     {
         public static void Main()
         {
-            var tester = new Tester();
+            IContentComparer tester = new Tester();
             IDirectoryManager manager = new IOManager();
-            var repo = new StudentsRepository(new RepositoryFilter(), new RepositorySorter());
+            IDatabase repo = new StudentsRepository(new RepositoryFilter(), new RepositorySorter());
 
             IInterpreter currentInterpreter = new CommandInterpreter(tester, repo, manager);
             IReader reader = new InputReader(currentInterpreter);

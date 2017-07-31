@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using BashSoft.Contracts;
+using BashSoft.DataStructures;
 using BashSoft.Exceptions;
 using BashSoft.IO;
 using BashSoft.Models;
@@ -177,6 +178,20 @@ namespace BashSoft.Repository
                     OutputWriter.PrintStudent(new KeyValuePair<string, double>(studentMarksEntry.Key, studentMarksEntry.Value.MarksByCourseName[courseName]));
                 }
             }
+        }
+
+        public ISimpleOrderedBag<ICourse> GetAllCoursesSorted(IComparer<ICourse> cmp)
+        {
+            var sortedCourses = new SimpleSortedList<ICourse>(cmp);
+            sortedCourses.AddAll(this.coursesByName.Values);
+            return sortedCourses;
+        }
+
+        public ISimpleOrderedBag<IStudent> GetAllStudentsSorted(IComparer<IStudent> cmp)
+        {
+            var sortedStudents = new SimpleSortedList<IStudent>(cmp);
+            sortedStudents.AddAll(this.studentsByName.Values);
+            return sortedStudents;
         }
 
         public void FilterAndTake(string courseName, string givenFilter, int? studentsToTake = null)

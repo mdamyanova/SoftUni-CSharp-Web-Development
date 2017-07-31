@@ -69,6 +69,16 @@ namespace BashSoft.Models
             this.marksByCourseName.Add(courseName, CalculateMark(scores));
         }
 
+        public int CompareTo(IStudent other)
+        {
+            return this.UserName.CompareTo(other.UserName);
+        }
+
+        public override string ToString()
+        {
+            return this.UserName;
+        }
+
         private double CalculateMark(int[] scores)
         {
             var persentageOfSolvedExam = scores.Sum() /

@@ -57,7 +57,9 @@
     <Compile Include="Contracts\IOrderedTaker.cs" />
     <Compile Include="Contracts\IReader.cs" />
     <Compile Include="Contracts\IRequester.cs" />
+    <Compile Include="Contracts\ISimpleOrderedBag.cs" />
     <Compile Include="Contracts\IStudent.cs" />
+    <Compile Include="DataStructures\SimpleSortedList.cs" />
     <Compile Include="Exceptions\CourseNotFoundException.cs" />
     <Compile Include="Exceptions\DublicateEntryInStructureException.cs" />
     <Compile Include="Exceptions\InvalidCommandException.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="IO\Commands\ChangeRelativePathCommand.cs" />
     <Compile Include="IO\Commands\Command.cs" />
     <Compile Include="IO\Commands\CompareFilesCommand.cs" />
+    <Compile Include="IO\Commands\DisplayCommand.cs" />
     <Compile Include="IO\Commands\DropDatabaseCommand.cs" />
     <Compile Include="IO\Commands\GetHelpCommand.cs" />
     <Compile Include="IO\Commands\MakeDirectoryCommand.cs" />

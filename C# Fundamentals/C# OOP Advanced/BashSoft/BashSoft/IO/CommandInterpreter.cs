@@ -3,8 +3,6 @@ using System.IO;
 using BashSoft.Contracts;
 using BashSoft.Exceptions;
 using BashSoft.IO.Commands;
-using BashSoft.Judge;
-using BashSoft.Repository;
 
 namespace BashSoft.IO
 {
@@ -65,23 +63,26 @@ namespace BashSoft.IO
                         this.inputOutputManager);
                 case "cmp":
                     return new CompareFilesCommand(input, data, this.judge, this.repository, this.inputOutputManager);
-                case "cdrel":
+                case "cdRel":
                     return new ChangeRelativePathCommand(input, data, this.judge, this.repository,
                         this.inputOutputManager);
-                case "cdabs":
+                case "cdAbs":
                     return new ChangeAbsolutePathCommand(input, data, this.judge, this.repository,
                         this.inputOutputManager);
-                case "readdb":
+                case "readDb":
                     return new ReadDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "help":
                     return new GetHelpCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "filter":
                     return new PrintFilteredStudentsCommand(input, data, this.judge, this.repository,
                         this.inputOutputManager);
-                case "dropdb":
+                case "dropDb":
                     return new DropDatabaseCommand(input, data, this.judge, this.repository, this.inputOutputManager);
                 case "order":
                     return new PrintOrderedStudentsCommand(input, data, this.judge, this.repository,
+                        this.inputOutputManager);
+                case "display":
+                    return new DisplayCommand(input, data, this.judge, this.repository,
                         this.inputOutputManager);
                 //case "decOrder": break;
                 //case "download": break;

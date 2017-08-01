@@ -41,11 +41,11 @@ namespace _08.CardGame
 
             if (playerOne.HighestCard.CompareTo(playerTwo.HighestCard) > 0)
             {
-                Console.WriteLine("{0} wins with {1}", playerOne.Name, playerOne.HighestCard);
+                Console.WriteLine("{0} wins with {1}.", playerOne.Name, playerOne.HighestCard);
             }
             else
             {
-                Console.WriteLine("{0} wins with {1}", playerTwo.Name, playerTwo.HighestCard);
+                Console.WriteLine("{0} wins with {1}.", playerTwo.Name, playerTwo.HighestCard);
             }
         }
 

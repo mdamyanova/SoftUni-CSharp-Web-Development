@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
 namespace _09.TrafficLights
 {
@@ -8,20 +7,23 @@ namespace _09.TrafficLights
     {
         public static void Main()
         {
-            var inputColors = Console.ReadLine().Split();
-            var trafficLights = inputColors.Select(t => new TrafficLight((LightColor) Enum.Parse(typeof(LightColor), t))).ToList();
-            var numberOfRotations = int.Parse(Console.ReadLine());
+            var lights = Console.ReadLine().Split(' ');
+            var n = int.Parse(Console.ReadLine());
+            var sb = new StringBuilder();
 
-            for (int i = 0; i < numberOfRotations; i++)
+            for (int i = 1; i <= n; i++)
             {
-                foreach (var trafficLight in trafficLights)
+                foreach (var item in lights)
                 {
-                    trafficLight.ChangeColor();
-                    Console.Write(trafficLight.CurrentColor + " ");
+                    var index = (int)Enum.Parse(typeof(TrafficLights), item);
+                    index = (index + i) % 3;
+                    sb.Append($"{(TrafficLights)index} ");
                 }
 
-                Console.WriteLine();
+                sb.AppendLine();
             }
+
+            Console.WriteLine(sb);
         }
     }
 }

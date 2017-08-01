@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.CardGame", "08.CardGame\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.TrafficLights", "09.TrafficLights\09.TrafficLights.csproj", "{B979872D-D1FC-45EA-B842-3969986562F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.11.InfernoInfinity", "10.11.InfernoInfinity\10.11.InfernoInfinity.csproj", "{E2B190C6-9E75-4DF6-A669-FEC1D18522A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{B979872D-D1FC-45EA-B842-3969986562F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B979872D-D1FC-45EA-B842-3969986562F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B979872D-D1FC-45EA-B842-3969986562F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B190C6-9E75-4DF6-A669-FEC1D18522A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B190C6-9E75-4DF6-A669-FEC1D18522A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B190C6-9E75-4DF6-A669-FEC1D18522A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B190C6-9E75-4DF6-A669-FEC1D18522A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

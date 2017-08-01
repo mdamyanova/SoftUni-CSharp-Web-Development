@@ -9,9 +9,11 @@ namespace _01.CardSuit
             var suits = Enum.GetValues(typeof(CardSuit));
 
             var input = Console.ReadLine();
+           
             switch (input)
             {
                 case "Card Suits":
+                    Console.WriteLine("Card Suits:");
                     foreach (var suit in suits)
                     {
                         Console.WriteLine($"Ordinal value: {(int) suit}; Name value: {suit}");

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B979872D-D1FC-45EA-B842-3969986562F6}</ProjectGuid>
+    <ProjectGuid>{E2B190C6-9E75-4DF6-A669-FEC1D18522A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_09.TrafficLights</RootNamespace>
-    <AssemblyName>09.TrafficLights</AssemblyName>
+    <RootNamespace>_10._11.InfernoInfinity</RootNamespace>
+    <AssemblyName>10.11.InfernoInfinity</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,12 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Attributes\MyClassAttribute.cs" />
+    <Compile Include="Core\Controller\Controller.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Entities\Gems\Amethyst.cs" />
+    <Compile Include="Entities\Gems\Emerald.cs" />
+    <Compile Include="Entities\Gems\Ruby.cs" />
+    <Compile Include="Entities\Weapons\Axe.cs" />
+    <Compile Include="Entities\Weapons\Knife.cs" />
+    <Compile Include="Entities\Weapons\Sword.cs" />
+    <Compile Include="Enums\GemQuality.cs" />
+    <Compile Include="Enums\WeaponQuality.cs" />
+    <Compile Include="Factories\GemFactory.cs" />
+    <Compile Include="Factories\WeaponFactory.cs" />
+    <Compile Include="Interfaces\IGem.cs" />
+    <Compile Include="Interfaces\IWeapon.cs" />
+    <Compile Include="Models\Gem.cs" />
+    <Compile Include="Models\Weapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrafficLights.cs" />
+    <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

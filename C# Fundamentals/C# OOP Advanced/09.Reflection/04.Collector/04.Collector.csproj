@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B979872D-D1FC-45EA-B842-3969986562F6}</ProjectGuid>
+    <ProjectGuid>{C14C21AC-7769-4FC3-89A0-9C8488026A1F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_09.TrafficLights</RootNamespace>
-    <AssemblyName>09.TrafficLights</AssemblyName>
+    <RootNamespace>_04.Collector</RootNamespace>
+    <AssemblyName>04.Collector</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,9 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hacker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrafficLights.cs" />
+    <Compile Include="Spy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

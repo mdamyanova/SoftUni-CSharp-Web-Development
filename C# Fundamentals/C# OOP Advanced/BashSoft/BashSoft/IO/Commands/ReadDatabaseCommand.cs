@@ -5,9 +5,12 @@ using BashSoft.Repository;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
+    [Alias("readdb")]
     public class ReadDatabaseCommand : Command
     {
-        public ReadDatabaseCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public ReadDatabaseCommand(string input, string[] data) : base(input, data)
         {
         }
 

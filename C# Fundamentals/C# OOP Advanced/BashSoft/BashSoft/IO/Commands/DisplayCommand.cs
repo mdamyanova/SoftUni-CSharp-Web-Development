@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Odbc;
 using BashSoft.Contracts;
 using BashSoft.Exceptions;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
+    [Alias("display")]
     public class DisplayCommand : Command
     {
-        public DisplayCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public DisplayCommand(string input, string[] data) : base(input, data)
         {
         }
 

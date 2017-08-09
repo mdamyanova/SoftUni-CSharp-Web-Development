@@ -1,13 +1,13 @@
-﻿using BashSoft.Contracts;
-using BashSoft.Exceptions;
-using BashSoft.Judge;
-using BashSoft.Repository;
+﻿using BashSoft.Exceptions;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
+    [Alias("cdabs")]
     public class ChangeAbsolutePathCommand : Command
     {
-        public ChangeAbsolutePathCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public ChangeAbsolutePathCommand(string input, string[] data) : base(input, data)
         {
         }
 

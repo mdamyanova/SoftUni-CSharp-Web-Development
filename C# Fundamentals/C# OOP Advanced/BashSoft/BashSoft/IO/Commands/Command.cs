@@ -4,22 +4,26 @@ using BashSoft.Exceptions;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
     public abstract class Command : IExecutable
     {
         private string input;
         private string[] data;
+
+        [Inject]
         private IContentComparer judge;
+
+        [Inject]
         private IDatabase repository;
+
+        [Inject]
         private IDirectoryManager inputOutputManager;
 
-        protected Command(string input, string[] data, IContentComparer judge, IDatabase repository,
-            IDirectoryManager inputOutputManager)
+        protected Command(string input, string[] data)
         {
             this.Input = input;
             this.Data = data;
-            this.judge = judge;
-            this.repository = repository;
-            this.inputOutputManager = inputOutputManager;
         }
 
         public string Input

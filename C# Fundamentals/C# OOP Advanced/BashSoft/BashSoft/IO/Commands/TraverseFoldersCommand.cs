@@ -6,9 +6,12 @@ using BashSoft.Static_data;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
+    [Alias("ls")]
     public class TraverseFoldersCommand : Command
     {
-        public TraverseFoldersCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public TraverseFoldersCommand(string input, string[] data) : base(input, data)
         {
         }
 

@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\AliasAttribute.cs" />
+    <Compile Include="Attributes\InjectAttribute.cs" />
     <Compile Include="Contracts\IContentComparer.cs" />
     <Compile Include="Contracts\ICourse.cs" />
     <Compile Include="Contracts\IDatabase.cs" />

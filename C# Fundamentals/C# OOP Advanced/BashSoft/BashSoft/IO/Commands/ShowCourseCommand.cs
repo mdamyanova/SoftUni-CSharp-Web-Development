@@ -5,9 +5,12 @@ using BashSoft.Repository;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
+    [Alias("show")]
     public class ShowCourseCommand : Command
     {
-        public ShowCourseCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public ShowCourseCommand(string input, string[] data) : base(input, data)
         {
         }
 

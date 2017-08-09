@@ -3,9 +3,12 @@ using BashSoft.Exceptions;
 
 namespace BashSoft.IO.Commands
 {
+    using BashSoft.Attributes;
+
+    [Alias("drobdb")]
     public class DropDatabaseCommand : Command
     {
-        public DropDatabaseCommand(string input, string[] data, IContentComparer judge, IDatabase repository, IDirectoryManager inputOutputManager) : base(input, data, judge, repository, inputOutputManager)
+        public DropDatabaseCommand(string input, string[] data) : base(input, data)
         {
         }
 

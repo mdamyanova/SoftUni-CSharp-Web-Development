@@ -45,7 +45,6 @@
         }
 
         // 07.Shop Hierarchy - Complex Query
-
         private static void SaveItems(ShopDbContext context)
         {
             var input = Console.ReadLine();
@@ -110,7 +109,6 @@
         }
 
         // 06.Shop Hierarchy - Extended
-
         private static void PrintCustomersWithOrdersAndReviews(ShopDbContext context)
         {
             var result = context
@@ -132,8 +130,6 @@
             }
         }    
 
-        // commands 
-
         private static void RegisterCustomer(DbContext context, string input)
         {
             var tokens = input.Split(';');
@@ -151,7 +147,6 @@
         }
 
         // 06.Shop Hierarchy - Extended
-
         private static void MakeOrder(DbContext context, string input)
         {
             var customerId = int.Parse(input);
@@ -169,7 +164,6 @@
         }
 
         // 07.Shop Hierarchy - Complex Query
-
         private static void MakeOrderWithItems(DbContext context, string input)
         {
             var numsTokens = input.Split(';').Select(int.Parse).ToArray();
@@ -233,7 +227,6 @@
         }
 
         // 08.Explicit Data Loading
-
         private static void PrintCustomerAllData(ShopDbContext context)
         {
             var customerId = int.Parse(Console.ReadLine());
@@ -257,7 +250,6 @@
         }
 
         // 09.Query Loaded Data
-
         private static void PrintOrdersWithMoreThanOneItem(ShopDbContext context)
         {
             var customerId = int.Parse(Console.ReadLine());

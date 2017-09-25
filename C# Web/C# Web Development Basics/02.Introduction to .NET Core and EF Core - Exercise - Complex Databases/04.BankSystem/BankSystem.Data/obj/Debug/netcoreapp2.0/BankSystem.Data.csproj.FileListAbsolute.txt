@@ -1,0 +1,5 @@
+D:\C-Sharp-Web-Development\C# Web\C# Web Development Basics\02.Introduction to .NET Core and EF Core - Exercise\04.BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Data.deps.json
+D:\C-Sharp-Web-Development\C# Web\C# Web Development Basics\02.Introduction to .NET Core and EF Core - Exercise\04.BankSystem\BankSystem.Data\bin\Debug\netcoreapp2.0\BankSystem.Data.dll
+D:\C-Sharp-Web-Development\C# Web\C# Web Development Basics\02.Introduction to .NET Core and EF Core - Exercise\04.BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.csproj.CoreCompileInputs.cache
+D:\C-Sharp-Web-Development\C# Web\C# Web Development Basics\02.Introduction to .NET Core and EF Core - Exercise\04.BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.AssemblyInfoInputs.cache
+D:\C-Sharp-Web-Development\C# Web\C# Web Development Basics\02.Introduction to .NET Core and EF Core - Exercise\04.BankSystem\BankSystem.Data\obj\Debug\netcoreapp2.0\BankSystem.Data.AssemblyInfo.cs

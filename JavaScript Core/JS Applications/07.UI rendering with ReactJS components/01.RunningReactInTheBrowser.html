@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Running React in the Browser</title>
+        <script src="https://unpkg.com/react/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/babel-standalone"></script>
+    </head>
+    <body>
+        <div id="app">A react component will be rendered here</div>
+        <script type="text/babel">
+            ReactDOM.render(<div>Hello, React!</div>, document.getElementById('app'));
+        </script>
+    </body>
+</html>

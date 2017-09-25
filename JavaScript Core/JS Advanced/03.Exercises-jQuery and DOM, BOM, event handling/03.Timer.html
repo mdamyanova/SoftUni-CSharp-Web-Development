@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <style>
+        #timer {
+            font-size: 5em;
+        }
+    </style>
+</head>
+<body>
+<div id="timer">
+    <span id="hours" class="timer">00</span>:
+    <span id="minutes" class="timer">00</span>:
+    <span id="seconds" class="timer">00</span>
+    <button id="start-timer">Start</button>
+    <button id="stop-timer">Stop</button>
+</div>
+<script src="timer.js"></script>
+<script>
+    window.onload=function(){
+        timer();
+    }
+</script>
+</body>
+</html>
+<script>
+    function timer() {
+        let secondsElement = $('#seconds');
+        let minutesElement = $('#minutes');
+        let hoursElement = $('#hours');
+
+        let startBtn = $('#start-timer');
+        let stopBtn = $('#stop-timer');
+
+        let interval = undefined;
+        startBtn.click(function () {
+            if(!interval){
+                interval = setInterval(step, 1000);
+            }
+        });
+
+        stopBtn.click(function () {
+            clearInterval(interval);
+            interval = undefined;
+        });
+
+        let totalSeconds = 0;
+
+        function step() {
+            totalSeconds++;
+            secondsElement.text(formatTime(totalSeconds % 60));
+
+            let minutes = totalSeconds / 60;
+            minutesElement.text(formatTime(minutes % 60));
+
+            let hours = totalSeconds / 3600;
+            hoursElement.text(formatTime(hours));
+        }
+
+        function formatTime(num) {
+            return pad(Math.floor(num));
+        }
+
+        function pad(num) {
+            if(num <= 9){
+                num = `0${num}`;
+            }
+            return num;
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating JSX Component</title>
+    <script src="https://unpkg.com/react/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+    let Person = React.createClass({
+        render: function () {
+            return(
+                <div>
+                    <h1>{this.props.person}</h1>
+                    <p>Tel. {this.props.phone}</p>
+                </div>
+            )
+        }
+    });
+
+    ReactDOM.render(<Person person = 'Samuil' phone = '0877 2 232 232'/>, document.getElementById('app'));
+</script>
+</body>
+</html>

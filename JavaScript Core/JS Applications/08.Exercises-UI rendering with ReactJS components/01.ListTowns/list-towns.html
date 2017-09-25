@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Town</title>
+    <script src="https://unpkg.com/react/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+    function listTowns(selector) {
+        let Form = React.createClass({
+           render: function () {
+               return <form onSubmit={this.props.onsubmit}>
+                   <input type="text"/>
+                   <input type="submit" defaultValue="Submit"/>
+               </form>
+           }
+        });
+
+        let List = React.createClass({
+            render: function () {
+                let towns = this.proprs.towns.filter(t => t != '');
+                towns = towns.map(function(town, index) {
+                    return <ul>
+                        <li key={index}>{town}</li>
+                    </ul>
+                })
+            }
+        });
+
+        let App = React.createClass({
+           getInitialState: function () {
+               return {
+                   towns: []
+               }
+           },
+            onSubmitHandler: function (event) {
+                event.preventDefault();
+                let towns = event.target.children[0].value.split(', ');
+                this.setState({
+                    towns: towns
+                })
+            },
+            render: function () {
+                return (<div>
+                    <Form onsubmit={this.onSubmitHandler}/>
+                    <List towns={this.state.towns}/>
+                        </div>
+                )
+            }
+        });
+
+        ReactDOM.render(
+            <App/>,
+            document.getElementById(selector)
+        );
+    }
+</script>
+</html>

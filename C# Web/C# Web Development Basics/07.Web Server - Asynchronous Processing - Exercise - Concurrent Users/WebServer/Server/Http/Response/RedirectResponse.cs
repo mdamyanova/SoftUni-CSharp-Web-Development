@@ -1,7 +1,7 @@
 ﻿namespace WebServer.Server.Http.Response
 {
     using System.Net;
-    using WebServer.Server.Common;
+    using Common;
 
     public class RedirectResponse : HttpResponse
     {

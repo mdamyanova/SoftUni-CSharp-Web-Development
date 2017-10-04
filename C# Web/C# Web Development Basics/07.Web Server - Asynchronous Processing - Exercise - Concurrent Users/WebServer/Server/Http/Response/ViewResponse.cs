@@ -2,7 +2,7 @@
 {
     using System;
     using System.Net;
-    using WebServer.Server.Contracts;
+    using Server.Contracts;
 
     public class ViewResponse : HttpResponse
     {

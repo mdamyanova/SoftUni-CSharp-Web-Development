@@ -6,8 +6,8 @@
     using System.Net;
     using Enums;
     using Contracts;
-    using WebServer.Server.Common;
-    using WebServer.Server.Exceptions;
+    using Common;
+    using Exceptions;
 
     public class HttpRequest : IHttpRequest
     { 
@@ -47,9 +47,7 @@
 
         private void ParseRequest(string requestString)
         {
-            var requestLines = requestString.Split(
-                new[] {Environment.NewLine}, 
-                StringSplitOptions.RemoveEmptyEntries);
+            var requestLines = requestString.Split(Environment.NewLine);
 
             if(!requestLines.Any())
             {
@@ -96,7 +94,7 @@
             for (int i = 1; i < emptyLineAfterHeadersIndex; i++)
             {
                 var currentLine = requestLines[1];
-                var headerParts = currentLine.Split(new[] {':'}, StringSplitOptions.RemoveEmptyEntries);
+                var headerParts = currentLine.Split(new[] {": "}, StringSplitOptions.RemoveEmptyEntries);
 
                 if (headerParts.Length != 2)
                 {

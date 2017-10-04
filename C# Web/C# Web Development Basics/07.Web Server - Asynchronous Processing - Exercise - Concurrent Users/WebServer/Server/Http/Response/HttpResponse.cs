@@ -2,7 +2,7 @@
 {
     using System.Net;
     using System.Text;
-    using WebServer.Server.Http.Contracts;
+    using Contracts;
 
     public abstract class HttpResponse : IHttpResponse
     {

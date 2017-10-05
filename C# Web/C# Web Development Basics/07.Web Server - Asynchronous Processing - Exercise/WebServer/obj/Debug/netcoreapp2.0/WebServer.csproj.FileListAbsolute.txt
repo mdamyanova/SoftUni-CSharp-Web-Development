@@ -1,0 +1,11 @@
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\bin\Debug\netcoreapp2.0\WebServer.deps.json
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\bin\Debug\netcoreapp2.0\WebServer.runtimeconfig.json
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\bin\Debug\netcoreapp2.0\WebServer.runtimeconfig.dev.json
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\bin\Debug\netcoreapp2.0\WebServer.dll
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\bin\Debug\netcoreapp2.0\WebServer.pdb
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\obj\Debug\netcoreapp2.0\WebServer.csprojResolveAssemblyReference.cache
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\obj\Debug\netcoreapp2.0\WebServer.csproj.CoreCompileInputs.cache
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\obj\Debug\netcoreapp2.0\WebServer.AssemblyInfoInputs.cache
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\obj\Debug\netcoreapp2.0\WebServer.AssemblyInfo.cs
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\obj\Debug\netcoreapp2.0\WebServer.dll
+C:\Users\MirelaDamyanova\Documents\Visual Studio 2017\Projects\07.Web Server - Asynchronous Processing - Exercise\WebServer\obj\Debug\netcoreapp2.0\WebServer.pdb

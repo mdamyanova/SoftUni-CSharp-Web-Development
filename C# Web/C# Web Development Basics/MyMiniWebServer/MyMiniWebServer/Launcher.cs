@@ -1,6 +1,9 @@
 ﻿namespace MyMiniWebServer
 {
     using Application;
+    using MyMiniWebServer.ByTheCakeApplication;
+    using MyMiniWebServer.CalculatorApplication;
+    using MyMiniWebServer.LoginFormApplication;
     using Server;
     using Server.Contracts;
     using Server.Routing;
@@ -14,7 +17,13 @@
 
         public void Run()
         {
+            // choose the main application 
+
             var mainApplication = new MainApplication();
+            // var mainApplication = new ByTheCakeApp();
+            // var mainApplication = new CalculatorApp();
+            // var mainApplication = new LoginFormApp();
+
             var appRouteConfig = new AppRouteConfig();
             mainApplication.Configure(appRouteConfig);
 

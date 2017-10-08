@@ -1,10 +1,10 @@
 ﻿namespace MyMiniWebServer.Server.Handlers
 {
-    using Common;
-    using Contracts;
-    using Http;
-    using Http.Contracts;
     using System;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Handlers.Contracts;
+    using MyMiniWebServer.Server.Http;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public class RequestHandler : IRequestHandler
     {

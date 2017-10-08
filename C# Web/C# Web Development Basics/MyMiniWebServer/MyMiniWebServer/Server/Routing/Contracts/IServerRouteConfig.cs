@@ -1,7 +1,7 @@
 ﻿namespace MyMiniWebServer.Server.Routing.Contracts
 {
-    using Enums;
     using System.Collections.Generic;
+    using MyMiniWebServer.Server.Enums;
 
     public interface IServerRouteConfig
     {

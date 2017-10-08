@@ -1,6 +1,6 @@
 ﻿namespace MyMiniWebServer.Server.Contracts
 {
-    using Routing.Contracts;
+    using MyMiniWebServer.Server.Routing.Contracts;
 
     public interface IApplication
     {

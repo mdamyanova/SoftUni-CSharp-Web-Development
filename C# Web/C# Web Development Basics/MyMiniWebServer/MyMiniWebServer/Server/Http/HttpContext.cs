@@ -1,7 +1,7 @@
 ﻿namespace MyMiniWebServer.Server.Http
 {
-    using Common;
-    using Contracts;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public class HttpContext : IHttpContext
     {

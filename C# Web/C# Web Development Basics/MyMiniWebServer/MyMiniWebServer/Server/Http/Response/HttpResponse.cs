@@ -1,8 +1,9 @@
 ﻿namespace MyMiniWebServer.Server.Http.Response
 {
-    using Contracts;
-    using Enums;
     using System.Text;
+    using MyMiniWebServer.Server.Enums;
+    using MyMiniWebServer.Server.Http;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public abstract class HttpResponse : IHttpResponse
     {

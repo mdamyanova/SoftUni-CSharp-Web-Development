@@ -1,12 +1,12 @@
 ﻿namespace MyMiniWebServer.Server
 {
-    using Contracts;
-    using Routing;
-    using Routing.Contracts;
     using System;
     using System.Net;
     using System.Net.Sockets;
     using System.Threading.Tasks;
+    using MyMiniWebServer.Server.Contracts;
+    using MyMiniWebServer.Server.Routing;
+    using MyMiniWebServer.Server.Routing.Contracts;
 
     public class WebServer : IRunnable
     {

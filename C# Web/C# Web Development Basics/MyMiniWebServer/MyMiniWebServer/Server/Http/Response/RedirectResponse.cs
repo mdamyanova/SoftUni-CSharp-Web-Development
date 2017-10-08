@@ -1,7 +1,8 @@
 ﻿namespace MyMiniWebServer.Server.Http.Response
 {
-    using Common;
-    using Enums;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Enums;
+    using MyMiniWebServer.Server.Http;
 
     public class RedirectResponse : HttpResponse
     {

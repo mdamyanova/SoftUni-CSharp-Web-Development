@@ -1,7 +1,7 @@
 ﻿namespace MyMiniWebServer.Server.Http.Contracts
 {
-    using Enums;
     using System.Collections.Generic;
+    using MyMiniWebServer.Server.Enums;
 
     public interface IHttpRequest
     {
@@ -12,9 +12,7 @@
         IHttpCookieCollection Cookies { get; }
 
         string Path { get; }
-
-        IDictionary<string, string> QueryParameters { get; }
-
+        
         HttpRequestMethod Method { get; }
 
         string Url { get; }

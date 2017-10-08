@@ -1,8 +1,9 @@
 ﻿namespace MyMiniWebServer.Server.Http.Response
 {
-    using Enums;
-    using Exceptions;
-    using Server.Contracts;
+    using MyMiniWebServer.Server.Contracts;
+    using MyMiniWebServer.Server.Enums;
+    using MyMiniWebServer.Server.Exceptions;
+    using MyMiniWebServer.Server.Http;
 
     public class ViewResponse : HttpResponse
     {

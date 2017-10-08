@@ -1,14 +1,14 @@
 ﻿namespace MyMiniWebServer.Server
 {
-    using Common;
-    using Handlers;
-    using Http;
-    using Http.Contracts;
-    using Routing.Contracts;
     using System;
     using System.Net.Sockets;
     using System.Text;
     using System.Threading.Tasks;
+    using MyMiniWebServer.Server.Http;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Handlers;
+    using MyMiniWebServer.Server.Http.Contracts;
+    using MyMiniWebServer.Server.Routing.Contracts;
 
     public class ConnectionHandler
     {
@@ -59,7 +59,7 @@
             
             while (true)
             {
-                int numberOfBytesRead = await this.client.ReceiveAsync(data, SocketFlags.None);
+                int numberOfBytesRead = await this.client.ReceiveAsync(data.Array, SocketFlags.None);
 
                 if (numberOfBytesRead == 0)
                 {
@@ -70,7 +70,7 @@
 
                 result.Append(bytesAsString);
 
-                if (numberOfBytesRead < 1024)
+                if (numberOfBytesRead < 1023)
                 {
                     break;
                 }

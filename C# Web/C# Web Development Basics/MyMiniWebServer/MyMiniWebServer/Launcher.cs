@@ -19,8 +19,8 @@
         {
             // choose the main application 
 
-            var mainApplication = new MainApplication();
-            // var mainApplication = new ByTheCakeApp();
+            //var mainApplication = new MainApplication();
+            var mainApplication = new ByTheCakeApp();
             // var mainApplication = new CalculatorApp();
             // var mainApplication = new LoginFormApp();
 

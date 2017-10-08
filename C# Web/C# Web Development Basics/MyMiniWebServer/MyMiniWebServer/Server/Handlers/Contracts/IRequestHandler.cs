@@ -1,6 +1,6 @@
 ﻿namespace MyMiniWebServer.Server.Handlers.Contracts
 {
-    using Http.Contracts;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public interface IRequestHandler
     {

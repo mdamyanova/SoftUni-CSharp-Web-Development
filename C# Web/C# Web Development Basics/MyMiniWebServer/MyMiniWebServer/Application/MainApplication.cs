@@ -1,6 +1,6 @@
 ﻿namespace MyMiniWebServer.Application
 {
-    using Application.Controllers;
+    using Controllers;
     using Server.Contracts;
     using Server.Routing.Contracts;
 

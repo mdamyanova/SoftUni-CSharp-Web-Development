@@ -1,6 +1,6 @@
 ﻿namespace MyMiniWebServer.Server.Http.Contracts
 {
-    using Enums;
+    using MyMiniWebServer.Server.Enums;
 
     public interface IHttpResponse
     {

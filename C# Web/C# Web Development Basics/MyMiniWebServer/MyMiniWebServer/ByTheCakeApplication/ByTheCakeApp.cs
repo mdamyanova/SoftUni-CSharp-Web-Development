@@ -1,8 +1,8 @@
 ﻿namespace MyMiniWebServer.ByTheCakeApplication
 {
-    using MyMiniWebServer.ByTheCakeApplication.Controllers;
-    using MyMiniWebServer.Server.Contracts;
-    using MyMiniWebServer.Server.Routing.Contracts;
+    using Controllers;
+    using Server.Contracts;
+    using Server.Routing.Contracts;
 
     public class ByTheCakeApp : IApplication
     {
@@ -24,8 +24,38 @@
 
             appRouteConfig
                 .Get(
-                "/search", 
-                req => new CakesController().Search(req.UrlParameters));
+                    "/search", 
+                    req => new CakesController().Search(req));
+
+            appRouteConfig
+                .Get(
+                    "/login",
+                    req => new AccountController().Login());
+
+            appRouteConfig
+                .Post(
+                    "/login",
+                    req => new AccountController().Login(req));
+
+            appRouteConfig
+                .Post(
+                    "/logout",
+                    req => new AccountController().Logout(req));
+
+            appRouteConfig
+                .Get(
+                    "/shopping/add/{(?<id>[0-9]+)}",
+                    req => new ShoppingController().AddToCart(req));
+
+            appRouteConfig
+                .Get(
+                    "/cart",
+                    req => new ShoppingController().ShowCart(req));
+
+            appRouteConfig
+                .Post(
+                    "/shopping/finish-order",
+                    req => new ShoppingController().FinishOrder(req));
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿namespace MyMiniWebServer.Server.Http
 {
-    using Server.Common;
     using System;
+    using MyMiniWebServer.Server.Common;
 
     public class HttpCookie
     {
+        // expires is in days
         public HttpCookie(string key, string value, int expires = 3)
         {
             CoreValidator.ThrowIfNullOrEmpty(key, nameof(key));

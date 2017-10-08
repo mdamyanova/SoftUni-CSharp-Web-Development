@@ -1,8 +1,8 @@
 ﻿namespace MyMiniWebServer.Server.Http
 {
-    using Common;
-    using Contracts;
     using System.Collections.Generic;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public class HttpSession : IHttpSession
     {
@@ -42,5 +42,7 @@
 
         public T Get<T>(string key)
             => (T)this.Get(key);
+
+        public bool Contains(string key) => this.values.ContainsKey(key);
     }
 }

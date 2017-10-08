@@ -1,6 +1,7 @@
 ﻿namespace MyMiniWebServer.Server.Http.Contracts
 {
     using System.Collections.Generic;
+    using MyMiniWebServer.Server.Http;
 
     public interface IHttpCookieCollection : IEnumerable<HttpCookie>
     {

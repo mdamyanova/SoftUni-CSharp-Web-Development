@@ -1,11 +1,12 @@
 ﻿namespace MyMiniWebServer.Server.Http
 {
-    using Common;
-    using Contracts;
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Text;
-    using System.Collections;
+    using MyMiniWebServer.Server.Http;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public class HttpHeaderCollection : IHttpHeaderCollection
     {

@@ -1,13 +1,14 @@
 ﻿namespace MyMiniWebServer.Server.Http
 {
-    using Common;
-    using Contracts;
-    using Enums;
-    using Exceptions;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
+    using MyMiniWebServer.Server.Http;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Enums;
+    using MyMiniWebServer.Server.Exceptions;
+    using MyMiniWebServer.Server.Http.Contracts;
 
     public class HttpRequest : IHttpRequest
     {
@@ -20,7 +21,6 @@
             this.requestText = requestText;
 
             this.FormData = new Dictionary<string, string>();
-            this.QueryParameters = new Dictionary<string, string>();
             this.UrlParameters = new Dictionary<string, string>();
             this.Headers = new HttpHeaderCollection();
             this.Cookies = new HttpCookieCollection();
@@ -35,9 +35,7 @@
         public IHttpCookieCollection Cookies { get; private set; }
 
         public string Path { get; private set; }
-
-        public IDictionary<string, string> QueryParameters { get; private set; }
-
+        
         public HttpRequestMethod Method { get; private set; }
 
         public string Url { get; private set; }
@@ -60,7 +58,7 @@
 
             if (!requestLines.Any())
             {
-                BadRequestException.ThrowInvalidRequest();
+                BadRequestException.ThrowFromInvalidRequest();
             }
 
             var requestLine = requestLines.First().Split(
@@ -69,13 +67,13 @@
 
             if (requestLine.Length != 3 || requestLine[2].ToLower() != "http/1.1")
             {
-                BadRequestException.ThrowInvalidRequest();
+                BadRequestException.ThrowFromInvalidRequest();
             }
 
             this.Method = this.ParseMethod(requestLine.First());
             this.Url = requestLine[1];
             this.Path = this.ParsePath(this.Url);
-
+            
             this.ParseHeaders(requestLines);
             this.ParseCookies();
             this.ParseParameters();
@@ -89,7 +87,7 @@
             HttpRequestMethod parsedMethod;
             if (!Enum.TryParse(method, true, out parsedMethod))
             {
-                BadRequestException.ThrowInvalidRequest();
+                BadRequestException.ThrowFromInvalidRequest();
             }
 
             return parsedMethod;
@@ -109,7 +107,7 @@
 
                 if (headerParts.Length != 2)
                 {
-                    BadRequestException.ThrowInvalidRequest();
+                    BadRequestException.ThrowFromInvalidRequest();
                 }
 
                 var headerKey = headerParts[0];
@@ -122,7 +120,7 @@
 
             if (!this.Headers.ContainsKey(HttpHeader.Host))
             {
-                BadRequestException.ThrowInvalidRequest();
+                BadRequestException.ThrowFromInvalidRequest();
             }
         }
         
@@ -176,7 +174,7 @@
             var query = this.Url
                 .Split(new[] { '?' }, StringSplitOptions.RemoveEmptyEntries)
                 .Last();
-
+            
             this.ParseQuery(query, this.UrlParameters);
         }
 

@@ -6,7 +6,7 @@
     {
         private const string InvalidRequestMessage = "Request is not valid.";
 
-        public static object ThrowInvalidRequest()
+        public static object ThrowFromInvalidRequest()
             => throw new BadRequestException(InvalidRequestMessage);
 
         public BadRequestException(string message)

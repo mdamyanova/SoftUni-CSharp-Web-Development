@@ -1,9 +1,9 @@
 ﻿namespace MyMiniWebServer.Server.Routing
 {
-    using Common;
-    using Contracts;
-    using Handlers;
     using System.Collections.Generic;
+    using MyMiniWebServer.Server.Common;
+    using MyMiniWebServer.Server.Handlers;
+    using MyMiniWebServer.Server.Routing.Contracts;
 
     public class RoutingContext : IRoutingContext
     {

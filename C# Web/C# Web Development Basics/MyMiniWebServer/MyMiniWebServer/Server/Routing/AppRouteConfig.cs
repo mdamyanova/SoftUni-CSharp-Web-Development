@@ -1,12 +1,12 @@
 ﻿namespace MyMiniWebServer.Server.Routing
 {
-    using Contracts;
-    using Enums;
-    using Handlers;
-    using MyMiniWebServer.Server.Http.Contracts;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using MyMiniWebServer.Server.Enums;
+    using MyMiniWebServer.Server.Handlers;
+    using MyMiniWebServer.Server.Http.Contracts;
+    using MyMiniWebServer.Server.Routing.Contracts;
 
     public class AppRouteConfig : IAppRouteConfig
     {

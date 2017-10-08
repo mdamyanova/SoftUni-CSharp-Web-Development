@@ -1,11 +1,11 @@
 ﻿namespace MyMiniWebServer.Server.Routing.Contracts
 {
-    using Enums;
-    using Handlers;
-    using Http.Contracts;
     using System;
     using System.Collections.Generic;
-    
+    using MyMiniWebServer.Server.Enums;
+    using MyMiniWebServer.Server.Handlers;
+    using MyMiniWebServer.Server.Http.Contracts;
+
     public interface IAppRouteConfig
     {
         IReadOnlyDictionary<HttpRequestMethod, IDictionary<string, RequestHandler>> Routes { get; }

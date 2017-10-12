@@ -1,12 +1,12 @@
 ﻿namespace MyMiniWebServer.ByTheCakeApplication.Infrastructure
 {
-    using Server.Enums;
-    using Server.Http.Contracts;
-    using Server.Http.Response;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using MyMiniWebServer.ByTheCakeApplication.Views;
+    using Views;
+    using Server.Enums;
+    using Server.Http.Contracts;
+    using Server.Http.Response;
 
     public abstract class Controller 
     {
@@ -17,7 +17,8 @@
         {
             this.ViewData = new Dictionary<string, string>
             {
-                ["authDisplay"] = "block"
+                ["authDisplay"] = "block",
+                ["showError"] = "none"
             };
         }
 
@@ -36,6 +37,12 @@
             }
             
             return new ViewResponse(HttpStatusCode.Ok, new FileView(result));
+        }
+
+        protected void AddError(string errorMessage)
+        {
+            this.ViewData["showError"] = "block";
+            this.ViewData["error"] = errorMessage;
         }
 
         private string ProcessFileHtml(string fileName)

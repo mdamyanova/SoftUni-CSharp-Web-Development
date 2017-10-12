@@ -1,13 +1,14 @@
 ﻿namespace MyMiniWebServer.Server.Handlers
 {
     using System;
+    using System.Linq;
     using System.Text.RegularExpressions;
-    using MyMiniWebServer.Server.Http.Response;
-    using MyMiniWebServer.Server.Common;
-    using MyMiniWebServer.Server.Handlers.Contracts;
-    using MyMiniWebServer.Server.Http;
-    using MyMiniWebServer.Server.Http.Contracts;
-    using MyMiniWebServer.Server.Routing.Contracts;
+    using Common;
+    using Handlers.Contracts;
+    using Http;
+    using Http.Contracts;
+    using Http.Response;
+    using Routing.Contracts;
 
     public class HttpHandler : IRequestHandler
     {
@@ -25,12 +26,12 @@
             try
             {
                 // Check if user is authenticated
-                var loginPath = "/login";
+                var anonymousPaths = new[] { "/login", "/register" };
 
-                if (context.Request.Path != loginPath &&
+                if (!anonymousPaths.Contains(context.Request.Path) &&
                     !context.Request.Session.Contains(SessionStore.CurrentUserKey))
                 {
-                    return new RedirectResponse(loginPath);
+                    return new RedirectResponse(anonymousPaths.First());
                 }
 
                 var requestMethod = context.Request.Method;

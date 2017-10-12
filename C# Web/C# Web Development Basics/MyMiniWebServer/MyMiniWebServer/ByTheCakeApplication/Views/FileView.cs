@@ -1,6 +1,6 @@
 ﻿namespace MyMiniWebServer.ByTheCakeApplication.Views
 {
-    using MyMiniWebServer.Server.Contracts;
+    using Server.Contracts;
 
     public class FileView : IView
     {

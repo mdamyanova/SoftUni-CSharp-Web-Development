@@ -1,6 +1,6 @@
-﻿namespace MyMiniWebServer.ByTheCakeApplication.Models
+﻿namespace MyMiniWebServer.ByTheCakeApplication.ViewModels.Products
 {
-    public class Cake
+    public class ProductListingViewModel
     {
         public int Id { get; set; }
 

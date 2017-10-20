@@ -2,7 +2,7 @@
 {
     using System.Text;
     using BindingModels;
-    using SimpleMvc.Framework.Interfaces.Generic;
+    using Framework.Interfaces.Generic;
 
     public class All : IRenderable<AllUsernamesViewModel>
     {

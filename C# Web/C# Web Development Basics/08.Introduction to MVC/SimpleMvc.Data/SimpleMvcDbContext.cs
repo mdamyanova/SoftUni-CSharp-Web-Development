@@ -1,7 +1,7 @@
 ﻿namespace SimpleMvc.Data
 {
     using Microsoft.EntityFrameworkCore;
-    using SimpleMvc.Domain;
+    using Domain;
 
     public class SimpleMvcDbContext : DbContext
     {
@@ -9,10 +9,22 @@
 
         public DbSet<Note> Notes { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        public SimpleMvcDbContext()
         {
-            builder
-                .UseSqlServer("Server=.;Database=SimpleMvcDb;Integrated Security=True;");
+            this.InitializeDatabase();
+        }
+
+        private void InitializeDatabase()
+        {
+            this.Database.EnsureCreated();
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                "Server = .; Database = SimpleMvcDb; Trusted_Connection = True;");
+
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -1,6 +1,6 @@
 ﻿namespace SimpleMvc.Framework.Helpers
 {
-    using SimpleMvc.Framework.Controllers;
+    using Framework.Controllers;
 
     public static class ControllerHelpers
     {

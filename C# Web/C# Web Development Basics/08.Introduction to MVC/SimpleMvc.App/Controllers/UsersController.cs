@@ -2,18 +2,19 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.InteropServices.ComTypes;
-    using Microsoft.EntityFrameworkCore.Extensions.Internal;
-    using SimpleMvc.App.BindingModels;
-    using SimpleMvc.Data;
-    using SimpleMvc.Domain;
-    using SimpleMvc.Framework.Attributes.Methods;
-    using SimpleMvc.Framework.Controllers;
-    using SimpleMvc.Framework.Interfaces;
-    using SimpleMvc.Framework.Interfaces.Generic;
+    using BindingModels;
+    using Data;
+    using Domain;
+    using Framework.Attributes.Methods;
+    using Framework.Controllers;
+    using Framework.Interfaces;
+    using Framework.Interfaces.Generic;
+    using WebServer.Exceptions;
 
     public class UsersController : Controller
     {
+        private SimpleMvcDbContext db = new SimpleMvcDbContext();
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -23,16 +24,23 @@
         [HttpPost]
         public IActionResult Register(RegisterUserBindingModel model)
         {
-            var user = new User
+            using (this.db)
             {
-                Username = model.Username,
-                Password = model.Password
-            };
+                if (this.db.Users.Any(u => u.Username == model.Username))
+                {
+                    //it's good to show some kind of page here
+                    throw new BadRequestException("Username is already in use.");
+                }
 
-            using (var db = new SimpleMvcDbContext())
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
+                var user = new User
+                {
+                    Username = model.Username,
+                    Password = model.Password
+                };
+
+
+                this.db.Users.Add(user);
+                this.db.SaveChanges();
             }
 
             return this.View();
@@ -41,11 +49,11 @@
         [HttpGet]
         public IActionResult<AllUsernamesViewModel> All()
         {
-            List<string> usernames = null;
+            List<string> usernames;
 
-            using (var db = new SimpleMvcDbContext())
+            using (this.db)
             {
-                usernames = db.Users.Select(u => u.Username).ToList();
+                usernames = this.db.Users.Select(u => u.Username).ToList();
             }
 
             var viewModel = new AllUsernamesViewModel
@@ -54,6 +62,42 @@
             };
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult<UserProfileViewModel> Profile(int id)
+        {
+            var user = this.db.Users.FirstOrDefault(u => u.Id == id);
+
+            var viewModel = new UserProfileViewModel
+            {
+                UserId = user.Id,
+                Username = user.Username,
+                Notes = user.Notes.Select(
+                    n => new NoteViewModel
+                    {
+                        Title = n.Title,
+                        Content = n.Content
+                    })
+            };
+
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult<UserProfileViewModel> Profile(AddNoteBindingModel model)
+        {
+            var user = this.db.Users.Find(model.UserId);
+            var note = new Note
+            {
+                Title = model.Title,
+                Content = model.Content,                
+            };
+
+            user.Notes.Add(note);
+            this.db.SaveChanges();
+
+            return this.Profile(model.UserId);
         }
     }
 }

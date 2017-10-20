@@ -1,7 +1,7 @@
 ﻿namespace SimpleMvc.App.Controllers
 {
-    using SimpleMvc.Framework.Controllers;
-    using SimpleMvc.Framework.Interfaces;
+    using Framework.Controllers;
+    using Framework.Interfaces;
 
     public class HomeController : Controller
     {

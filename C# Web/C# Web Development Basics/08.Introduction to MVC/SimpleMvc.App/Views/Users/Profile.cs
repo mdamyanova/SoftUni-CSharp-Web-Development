@@ -2,7 +2,7 @@
 {
     using System.Text;
     using BindingModels;
-    using SimpleMvc.Framework.Interfaces.Generic;
+    using Framework.Interfaces.Generic;
 
     public class Profile : IRenderable<UserProfileViewModel>
     {
@@ -21,11 +21,12 @@
             sb.AppendLine("<h5>List of notes</h5>");
             sb.AppendLine("<ul>");
 
+            // TODO: Fix this
             foreach (var note in this.Model.Notes)
             {
                 sb.AppendLine($"<li><strong>{note.Title}</strong> - {note.Content}</li>");
             }
-
+            
             sb.AppendLine("</ul>");
 
             return sb.ToString();

@@ -1,6 +1,6 @@
 ﻿namespace SimpleMvc.App.Views.Users
 {
-    using SimpleMvc.Framework.Interfaces;
+    using Framework.Interfaces;
 
     public class Register : IRenderable
     {

@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Net;
     using System.Reflection;
     using Attributes.Methods;
     using Controllers;
@@ -29,81 +28,18 @@
 
             // retrieve GET parameters from request's URL if there're any
 
-            var url = WebUtility.UrlDecode(request.Url);
-
-            if (url.Contains("?"))
-            {
-                // we have get params
-                var paramsLine = url.Substring(url.IndexOf('?'));
-
-                if (paramsLine.Contains("&"))
-                {
-                    // we have more than one kvp
-                    this.AddKvpsToDictionary(this.getParams, paramsLine);
-                }
-                else
-                {
-                    // we have one kvp
-                    this.AddKvpToDictionary(this.getParams, paramsLine);
-                }
-            }
-
+            this.getParams = new Dictionary<string, string>(request.UrlParameters);
+           
             // retrieve POST parameters from request's content if there are any
 
-            // TODO: Fix the damn post method 
-
-            this.postParams = request.FormData;
-
-            //var postContent = "";
-
-            //if (!string.IsNullOrEmpty(postContent))
-            //{
-            //    if (postContent.Contains("&"))
-            //    {
-            //        // we have more than one kvp
-            //        this.AddKvpsToDictionary(this.postParams, postContent);
-            //    }
-            //    else
-            //    {
-            //        // we have one kvp
-            //        this.AddKvpToDictionary(this.postParams, postContent);
-            //    }
+            this.postParams = new Dictionary<string, string>(request.FormData);
 
             // retrieve the request method
 
             this.requestMethod = request.Method.ToString().ToUpper();
 
             // retrieve the controller and action name
-
-            if (url.Contains("/"))
-            {
-                var parts = url.Split("/");
-
-                if (parts.Length == ControllerAndActionUrlLength)
-                {
-                    // we have valid url 
-                    var controllerName = parts[1];
-                    var actionName = parts[2];
-
-                    var controller = controllerName.First().ToString().ToUpper()
-                                     + controllerName.Substring(1)
-                                     + "Controller";
-
-                    var actionSubstring = actionName.Substring(1);
-
-                    if (actionName.Contains("?"))
-                    {
-                        actionSubstring =
-                            actionName.Substring(1, actionName.IndexOf("?", StringComparison.Ordinal) - 1);
-                    }
-
-                    var action = actionName.First().ToString().ToUpper()
-                                 + actionSubstring;
-
-                    this.controllerName = controller;
-                    this.actionName = action;
-                }
-            }
+            this.PrepareControllerAndActionNames(request);
 
             // retrieve the method that should be executed
 
@@ -177,21 +113,38 @@
             return response;
         }
 
-        private void AddKvpToDictionary(IDictionary<string, string> dictionary, string line)
+        private void PrepareControllerAndActionNames(IHttpRequest request)
         {
-            var kvp = line.Split("=");
-            dictionary[kvp[0]] = kvp[1];
-        }
+            var url = request.Path;
 
-        private void AddKvpsToDictionary(IDictionary<string, string> dictionary, string line)
-        {
-            var tokens = line.Split("&");
-
-            foreach (var token in tokens)
+            if (url.Contains("/"))
             {
-                var kvp = token.Split("=");
+                var parts = url.Split("/");
 
-                dictionary.Add(kvp[0], kvp[1]);
+                if (parts.Length == ControllerAndActionUrlLength)
+                {
+                    // we have valid url 
+                    var controllerName = parts[1];
+                    var actionName = parts[2];
+
+                    var controller = controllerName.First().ToString().ToUpper()
+                                     + controllerName.Substring(1)
+                                     + "Controller";
+
+                    var actionSubstring = actionName.Substring(1);
+
+                    if (actionName.Contains("?"))
+                    {
+                        actionSubstring =
+                            actionName.Substring(1, actionName.IndexOf("?", StringComparison.Ordinal) - 1);
+                    }
+
+                    var action = actionName.First().ToString().ToUpper()
+                                 + actionSubstring;
+
+                    this.controllerName = controller;
+                    this.actionName = action;
+                }
             }
         }
 

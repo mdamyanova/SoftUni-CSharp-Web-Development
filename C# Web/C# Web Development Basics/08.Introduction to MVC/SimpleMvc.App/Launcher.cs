@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimpleMvc.App
+﻿namespace SimpleMvc.App
 {
     using SimpleMvc.Framework;
     using SimpleMvc.Framework.Routes;

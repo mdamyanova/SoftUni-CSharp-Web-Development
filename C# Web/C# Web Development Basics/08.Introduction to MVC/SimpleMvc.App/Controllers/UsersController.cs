@@ -49,16 +49,29 @@
         [HttpGet]
         public IActionResult<AllUsernamesViewModel> All()
         {
-            List<string> usernames;
+            Dictionary<int, string> usersAndIds;
 
             using (this.db)
             {
-                usernames = this.db.Users.Select(u => u.Username).ToList();
+                usersAndIds = new Dictionary<int, string>();
+
+                var usersFromDb = this.db
+                    .Users
+                    .Select(u => new
+                    {
+                        u.Id,
+                        u.Username
+                    });
+
+                foreach (var userFromDb in usersFromDb)
+                {
+                    usersAndIds[userFromDb.Id] = userFromDb.Username;
+                }
             }
 
             var viewModel = new AllUsernamesViewModel
             {
-                Usernames = usernames
+                UsersWithIds = usersAndIds
             };
 
             return this.View(viewModel);

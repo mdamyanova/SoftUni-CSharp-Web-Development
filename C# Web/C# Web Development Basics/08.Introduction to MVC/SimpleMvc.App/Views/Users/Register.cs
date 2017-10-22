@@ -7,6 +7,7 @@
         public string Render()
         {
             return
+                "<a href =\"/home/index\">< Home</a>" +
                 "<h3>Register new user</h3>" +
                 "<form action=\"register\" method=\"POST\">" +
                 "Username:" +

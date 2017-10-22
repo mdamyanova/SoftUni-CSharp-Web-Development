@@ -4,6 +4,6 @@
 
     public class AllUsernamesViewModel
     {
-        public IList<string> Usernames { get; set; }
+        public IDictionary<int, string> UsersWithIds { get; set; }
     }
 }

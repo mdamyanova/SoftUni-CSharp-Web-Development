@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xml:th="http://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ToDo List</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8"/>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet"/>
+</head>
+<body>
+<nav class=" navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/index}">ToDo List</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" th:each="item, param : ${items}">
+            <span th:text="${item}"></span>
+            <a th:href="@{/delete/{id}(id=${param.index})}">Delete</a>
+        </li>
+    </ul>
+    <form class="form-horizontal" th:method="POST">
+        <fieldset>
+            <legend>New Item</legend>
+            <div class="form-group">
+                <label for="newItem" class="col-lg-2 control-label">Item</label>
+                <div class="col-lg-10">
+                    <input type="text" autofocus="autofocus" name="newItem" title="newItem" class="form-control" id="newItem"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Add Item</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <hr/>
+    <footer>
+        <p>&copy; Software University</p>
+    </footer>
+</div>
+</body>
+</html>

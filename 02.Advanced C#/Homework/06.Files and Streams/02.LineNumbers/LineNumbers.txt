@@ -1,0 +1,52 @@
+1 using System;
+2 using System.IO;
+3 using System.Text;
+4 
+5 class LineNumbers
+6 {
+7     static void Main(string[] args)
+8     {
+9         StreamReader reader = null;
+10         StreamWriter writer = null;
+11 
+12         // open input (current) file
+13         try
+14         {
+15             reader = new StreamReader(@"..\..\LineNumbers.cs", Encoding.GetEncoding("windows-1251"));
+16         }
+17         catch (FileNotFoundException)
+18         {
+19             Console.WriteLine("File not found.");
+20         }
+21 
+22         // create output file
+23         try
+24         {
+25             writer = new StreamWriter(@"..\..\LineNumbers.txt");
+26         }
+27         catch (IOException)
+28         {
+29             Console.WriteLine("Unable to create output file.");
+30         }
+31 
+32 
+33         string s;
+34         int lineNumber = 1;
+35         using (reader)
+36         using (writer)
+37         {
+38             do // algorithm: read one line from input file, write line number + that line to output file
+39             {
+40                 s = reader.ReadLine();
+41                 writer.WriteLine("{0} {1}", lineNumber, s);
+42                 lineNumber++;
+43             } while (s != null);
+44         }
+45         Console.WriteLine("Task complete:\n");
+46 
+47         // print output file to the console
+48         string fileContents = File.ReadAllText(@"..\..\LineNumbers.txt");
+49         Console.WriteLine(fileContents);
+50     }
+51 }
+52 

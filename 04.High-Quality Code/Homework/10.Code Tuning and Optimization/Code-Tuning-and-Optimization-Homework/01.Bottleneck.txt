@@ -1,0 +1,2 @@
+The bottleneck is in class OrbitCalculator, method EarthRotation, from line 96 to line 101.  
+I fixed the code with deleting the method. After the fix, the program works correctly and fast.

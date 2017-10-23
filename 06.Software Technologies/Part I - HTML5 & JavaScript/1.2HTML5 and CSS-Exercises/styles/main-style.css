@@ -1,0 +1,56 @@
+a{
+    text-decoration: none;
+    color: #565656;
+}
+
+.article{
+    margin-left: 5%;
+    border-radius: 15px;
+    background-color: #5d5d5d;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    width: 90%;
+    height: 55%;
+    padding: 10px;
+    text-align: left;
+}
+
+.single-post{
+    margin-bottom: 5%;
+}
+
+.dot{
+    margin-top: 10px;
+    margin-right: 5px;
+    float: left;
+    width: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.title{
+    font: 32px Oswald;
+    font-weight: 600;
+}
+
+.subtitle{
+    font: 16px Lato;
+    font-style: italic;
+    font-weight: 100;
+    margin-left: 3%;
+}
+
+.content{
+    padding-top: 2.5%;
+    font: 16px Lato;
+    font-weight: 500;
+    width: 80%;
+    margin-left: 3%;
+    word-break: normal;
+}
+
+footer{
+    width: 100%;
+
+    bottom: 0;
+    text-align: center;
+}

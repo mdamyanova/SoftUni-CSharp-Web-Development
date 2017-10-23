@@ -1,0 +1,32 @@
+﻿•	Which .NET data types are value types? Which types are reference types?
+- Value types are: primitive types like 
+int, char, double, bool, etc.; structures like DateTime and Enumerations.
+- Reference objects are System.Object, System.String, classes, interfaces,
+pointers, dynamic objects, arrays and delegates.
+
+•	How do value and reference types differ when assigned to a variable? 
+- When we assing value types, their value is copied to the variable.
+- When we assing reference types, only the reference(address) is copied and the object stays the same.
+
+•	How do value and reference types behave when passed as argument to a method?
+- Value types are passed by value(by copy) when method is called.
+- Reference types are passed by reference(by address) when method is called.
+
+•	Where in memory are value types allocated? Where are reference types allocated?
+- Value types stays in the program execution stack.
+- Reference types stays in the dynamic memory(managed heap).
+
+•	What is data mutation? Can value types be mutated? Can reference types be mutated?
+- Primitive value types are immutable and can only be copied to another address in the stack. 
+- Reference types can be muteted.
+
+•	What is the difference between mutating and setting (assigning) a variable? Give examples.
+- Mutating is changing the value of the object. Setting is when we create a new address in the heap.
+- Example: Person p1 = new Person();
+		   p1.Name = "Gosho";    //mutation
+		   p1 = new Person(); 	 //setting
+
+•	What are the out and ref keywords used for? In what do they differ?
+- Out and ref keywords both are passed by stack address for both value types and reference types.
+- The difference is that ref tells the compiler that the object is initialized before entering the
+function, and out tells the compiler that the object will be initialized inside the function.

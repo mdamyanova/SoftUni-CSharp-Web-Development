@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Files</title>
+</head>
+<body>
+<form>
+    Enter path to directory:
+    <input type="text"
+           name="path"
+           th:value="${path}" />
+    <input type="submit" />
+</form>
+<h1>Files</h1>
+<div th:each="f : ${allFiles}">
+    <a th:text="${f.name} th:href ="@{/files(path=${f.path})}" />
+</div>
+</body>
+</html>

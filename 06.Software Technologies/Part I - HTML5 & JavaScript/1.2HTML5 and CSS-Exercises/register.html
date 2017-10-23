@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/form-style.css">
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+<div class="wrapper">
+    <aside class="sidebar">
+        <div class="logo"><img src="images/father-logo.jpg" alt=""></div>
+        <hr>
+        <nav>
+            <ul>
+                <a href="index.html" class="single-menu-element-link">
+                    <li class="single-menu-element">Начало</li>
+                </a>
+                <a href="login.html" class="single-menu-element-link">
+                    <li class="single-menu-element">Вписване</li>
+                </a>
+                <a href="register.html" class="single-menu-element-link">
+                    <li class="single-menu-element">Регистрация</li>
+                </a>
+            </ul>
+            <hr>
+            <h2 class="resent-posts-title">Последни статии</h2>
+            <hr>
+            <ul>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">В търсене на майка</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">До татко и обратно</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Бира и татко</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Трифон Зарезан или Св. Валентин</li>
+                </a>
+                <a href="#" class="single-menu-element-link">
+                    <li class="single-recent-post">Честита Нова Година!</li>
+                </a>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <header class="blog-title">Регистрация</header>
+        <div class="user-login-block">
+            <form>
+                <h1 class="title-form">Потребителско име:</h1>
+                <input type="text" value="" placeholder="Въведете потребителско име" id="username"/>
+                <h1 class="title-form">Име:</h1>
+                <input type="text" value="" placeholder="Въведете името си" id="fullname"/>
+                <h1 class="title-form">Парола:</h1>
+                <input type="password" value="" placeholder="Въведете парола" id="password"/>
+                <h1 class="title-form">Потвърждаване на парола:</h1>
+                <input type="text" value="" placeholder="Повторете паролата" id="confirmpassword"/>
+                <h1 class="title-form">Аз съм:</h1>
+                <select name="gender">
+                    <option value="1">Майка</option>
+                    <option value="2">Татко</option>
+                    <option value="3">Друго</option>
+                </select>
+                <br>
+                <button id="login-request-button">Регистрация</button>
+            </form>
+            <a class="form-link" href="login.html">Вписване</a>
+        </div>
+        <footer>
+            <p class="footer-text">&copy; Software University Foundation, No Rights Reserved,
+                Made for Educational Purposes Only</p>
+        </footer>
+    </main>
+</div>
+</body>
+</html>

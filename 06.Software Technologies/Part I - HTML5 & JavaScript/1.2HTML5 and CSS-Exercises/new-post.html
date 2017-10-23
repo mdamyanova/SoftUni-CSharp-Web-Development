@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/form-style.css">
+        <link rel="stylesheet" type="text/css" href="styles/new-post-style.css">
+        <meta charset="UTF-8">
+        <title>Нова статия</title>
+    </head>
+    <body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo"><img src="images/father-logo.jpg" alt=""></div>
+            <embed name="rakija" src="audio/Mile Kitic-Rakija.mp3" loop="true" hidden="true" autostart="true"></embed>
+            <hr>
+            <nav>
+                <ul>
+                    <a href="index.html" class="single-menu-element-link">
+                        <li class="single-menu-element">Начало</li>
+                    </a>
+                    <a href="new-post.html" class="single-menu-element-link">
+                        <li class="single-menu-element">Нова статия</li>
+                    </a>
+                    <a href="login.html" class="single-menu-element-link">
+                        <li class="single-menu-element">Изход</li>
+                    </a>
+                </ul>
+                <hr>
+                <h2 class="resent-posts-title">Последни статии</h2>
+                <hr>
+                <ul>
+                    <a href="#" class="single-menu-element-link">
+                        <li class="single-recent-post">В търсене на майка</li>
+                    </a>
+                    <a href="#" class="single-menu-element-link">
+                        <li class="single-recent-post">До татко и обратно</li>
+                    </a>
+                    <a href="#" class="single-menu-element-link">
+                        <li class="single-recent-post">Бира и татко</li>
+                    </a>
+                    <a href="#" class="single-menu-element-link">
+                        <li class="single-recent-post">Трифон Зарезан или Св. Валентин</li>
+                    </a>
+                    <a href="#" class="single-menu-element-link">
+                        <li class="single-recent-post">Честита Нова Година!</li>
+                    </a>
+                </ul>
+            </nav>
+        </aside>
+    <main>
+        <header class="new-post"></header>
+            <div class="new-post-block">
+                <h2 id="editor-title">Създай нова статия</h2>
+                <form id="post-form">
+                    <ul class="title-author">
+                        <li class="single-element-form">
+                            <h1 class="title-form">Заглавие на статията:</h1>
+                            <input type="text" value="" placeholder="Заглавие" id="title"/>
+                        </li>
+                        <li class="single-element-form">
+                            <h1 class="title-form">Автор:</h1>
+                            <input type="text" value="" placeholder="Автор" id="author">
+                        </li>
+                            <h1 class="title-form">Съдържание:</h1>
+                            <textarea class="content-field" type="text" value="" placeholder="Съдържание" id="content">
+                            </textarea>
+                            <br>
+                            <button id="create-request-new-post">Публикуване</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        <footer>
+            <p class="footer-text">&copy; Software University Foundation, No Rights Reserved,
+                Made for Educational Purposes Only</p>
+        </footer>
+    </main>
+    </div>
+    </body>
+</html>

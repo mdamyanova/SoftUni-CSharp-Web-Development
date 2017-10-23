@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/layout :: head"
+      th:with="pageTitle='Main Page with Layouts'" />
+<body>
+<header th:include="fragments/layout :: header" />
+<main>
+    <h1>Main Page</h1>
+    <p>The main page content comes here …</p>
+</main>
+<footer th:include="fragments/layout :: footer" />
+</body>
+</html>

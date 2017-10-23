@@ -1,0 +1,39 @@
+﻿//Write a program that reads a sequence of n integers and calculates and prints 
+//the frequencies of all couples of two consecutive numbers. For example, for the 
+//input sequence { 3 4 2 3 4 2 1 12 2 3 4 }, we have 10 couples (6 distinct), shown on 
+//the right with their occurrence counts and frequencies (in percentage).
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class CoupleFrequency
+{
+    static void Main()
+    {
+       int[] numbers = Console.ReadLine().Split().
+                        Select(int.Parse).ToArray();
+        int couples = numbers.Length - 1;
+
+        var coupleFrequencies = new Dictionary<string, int>();
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            string currCouple = string.Format("{0} {1}",
+                            numbers[i - 1], numbers[i]);
+            if (!coupleFrequencies.ContainsKey(currCouple))
+            {
+                coupleFrequencies.Add(currCouple, 0);
+            }
+
+            coupleFrequencies[currCouple]++;
+        }
+        foreach (var coupleFrequency in coupleFrequencies)
+        {
+            double frequency = coupleFrequency.Value*100.0/couples;
+            Console.WriteLine("{0} -> {1:f2}%", 
+                coupleFrequency.Key,
+                frequency);
+        }
+
+    }
+}

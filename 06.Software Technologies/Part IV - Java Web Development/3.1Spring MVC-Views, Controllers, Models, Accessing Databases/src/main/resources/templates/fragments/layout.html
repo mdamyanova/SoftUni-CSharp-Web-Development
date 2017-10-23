@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title th:if="${pageTitle}" th:text="${pageTitle}" />
+</head>
+<body>
+<header th:fragment="header">Site Header …</header>
+<main th:fragment="main">Main Fragment</main>
+<footer th:fragment="footer">&copy; My Footer</footer>
+</body>
+</html>

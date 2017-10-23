@@ -1,0 +1,50 @@
+.new-post-title{
+    width: 250px;
+}
+
+.new-post-block{
+    background: #8b8b8b;
+    width: 60%;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#editor-title{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font: 24px Lato-Black;
+    text-align: center;
+}
+
+#post-form{
+    background: #f2f2f2;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.single-element-form{
+    display: inline-block;
+    width: 40%;
+    padding-top: 10px;
+}
+
+.content-field {
+    resize: none;
+    border: 3px solid #f2f2f2;
+    outline: none;
+    width: 400px;
+    text-align: left;
+    height: 300px;
+    border-radius: 15px;
+    font: 12px Lato-Light;
+    padding: 10px;
+}
+
+.content-field:focus{
+    font: 12px Lato;
+    font-weight: 100;
+    outline: none;
+    border: 3px solid #5d5d5d;
+}

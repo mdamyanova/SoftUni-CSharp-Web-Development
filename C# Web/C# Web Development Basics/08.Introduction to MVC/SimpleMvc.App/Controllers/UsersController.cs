@@ -7,8 +7,7 @@
     using Domain;
     using Framework.Attributes.Methods;
     using Framework.Controllers;
-    using Framework.Interfaces;
-    using Framework.Interfaces.Generic;
+    using SimpleMvc.Framework.Contracts;
     using WebServer.Exceptions;
 
     public class UsersController : Controller
@@ -47,38 +46,58 @@
         }
 
         [HttpGet]
-        public IActionResult<AllUsernamesViewModel> All()
+        public IActionResult Login()
         {
+            return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginUserBindingModel loginUserBinding)
+        {
+            using (this.db)
+            {
+                var foundUser = this.db.Users.FirstOrDefault(u => u.Username == loginUserBinding.Username);
+
+                if (foundUser == null)
+                {
+                    return RedirectToAction("/home/login");
+                }
+
+                this.db.SaveChanges();
+                this.SignIn(foundUser.Username);
+            }
+
+            return RedirectToAction("/home/index");
+        }
+
+        [HttpGet]
+        public IActionResult All()
+        {
+            if (!this.User.IsAuthenticated)
+            {
+                return RedirectToAction("/users/login");
+            }
+
             Dictionary<int, string> usersAndIds;
 
             using (this.db)
             {
-                usersAndIds = new Dictionary<int, string>();
-
-                var usersFromDb = this.db
-                    .Users
-                    .Select(u => new
-                    {
-                        u.Id,
-                        u.Username
-                    });
-
-                foreach (var userFromDb in usersFromDb)
-                {
-                    usersAndIds[userFromDb.Id] = userFromDb.Username;
-                }
+                usersAndIds = this.db.Users.ToDictionary(u => u.Id, u => u.Username);
             }
 
-            var viewModel = new AllUsernamesViewModel
-            {
-                UsersWithIds = usersAndIds
-            };
-
-            return this.View(viewModel);
+            this.Model["users"] =
+                usersAndIds.Any()
+                    ? string.Join(string.Empty, usersAndIds.Select(
+                        u => $"<li><a href\"/users/profile?id={u.Key}\">{u.Value}</a></li>"));
+            
+            return this.View();
         }
 
+
+        //todo
+
         [HttpGet]
-        public IActionResult<UserProfileViewModel> Profile(int id)
+        public IActionResult Profile(int id)
         {
             var user = this.db.Users.FirstOrDefault(u => u.Id == id);
 
@@ -98,7 +117,7 @@
         }
 
         [HttpPost]
-        public IActionResult<UserProfileViewModel> Profile(AddNoteBindingModel model)
+        public IActionResult Profile(AddNoteBindingModel model)
         {
             var user = this.db.Users.Find(model.UserId);
             var note = new Note
@@ -111,6 +130,14 @@
             this.db.SaveChanges();
 
             return this.Profile(model.UserId);
+        }
+
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            this.SignOut();
+
+            return RedirectToAction("/home/index");
         }
     }
 }

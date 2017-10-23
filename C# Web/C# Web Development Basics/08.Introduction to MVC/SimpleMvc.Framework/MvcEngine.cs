@@ -9,9 +9,6 @@
         public static void Run(WebServer server)
         {
             RegisterAssemblyName();
-            RegisterControllersData();
-            RegisterViewsData();
-            RegisterModelsData();
 
             try
             {
@@ -27,22 +24,6 @@
         {
             MvcContext.Get.AssemblyName =
                 Assembly.GetEntryAssembly().GetName().Name;
-        }
-
-        private static void RegisterControllersData()
-        {
-            MvcContext.Get.ControllersFolder = "Controllers";
-            MvcContext.Get.ControllersSuffix = "Controller";
-        }
-
-        private static void RegisterViewsData()
-        {
-            MvcContext.Get.ViewsFolder = "Views";
-        }
-
-        private static void RegisterModelsData()
-        {
-            MvcContext.Get.ModelsFolder = "Models";
         }
     }
 }

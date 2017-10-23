@@ -1,44 +1,98 @@
 ﻿namespace SimpleMvc.Framework.Controllers
 {
+    using System.Linq;
+    using System.Reflection;
     using System.Runtime.CompilerServices;
-    using Interfaces;
-    using Interfaces.Generic;
     using Helpers;
-    using ViewEngine.Generic;
-    using ViewEngine;
+    using ActionResults;
+    using Contracts;
+    using Models;
+    using Attributes.Properties;
+    using SimpleMvc.Framework.Security;
+    using Views;
+    using WebServer.Http;
+    using WebServer.Http.Contracts;
 
     public abstract class Controller
     {
-        protected IActionResult View([CallerMemberName] string caller = "")
+        protected Controller()
         {
+            this.Model = new ViewModel();
+            this.User = new Authentication();
+        }
+
+        protected ViewModel Model { get; }
+
+        protected internal IHttpRequest Request { get; internal set; }
+
+        protected internal Authentication User { get; private set; }
+
+        private void InitializeViewModelData()
+        {
+            this.Model["displayType"] = this.User.IsAuthenticated ? "block" : "none";
+        }
+
+        protected IViewable View([CallerMemberName] string caller = "")
+        {
+            this.InitializeViewModelData();
+            
             var controllerName = ControllerHelpers.GetControllerName(this);
 
             var fullQualifiedName = ControllerHelpers.GetViewFullQualifiedName(controllerName, caller);
 
-            return new ActionResult(fullQualifiedName);
+            var view = new View(fullQualifiedName, this.Model.Data);
+
+            return new ViewResult(view);
         }
 
-        protected IActionResult View(string controller, string action)
+        protected IRedirectable RedirectToAction(string redirectUrl)
         {
-            var fullQualifiedName = ControllerHelpers.GetViewFullQualifiedName(controller, action);
-
-            return new ActionResult(fullQualifiedName);
+            return new RedirectResult(redirectUrl);
         }
 
-        protected IActionResult<T> View<T>(T model, [CallerMemberName] string caller = "")
+        protected bool IsValidModel(object bindingModel)
         {
-            var controllerName = ControllerHelpers.GetControllerName(this);
+            foreach (var property in bindingModel.GetType().GetProperties())
+            {
+                var attributes = property.GetCustomAttributes().Where(a => a is PropertyAttribute);
 
-            var fullQualifiedName = ControllerHelpers.GetViewFullQualifiedName(controllerName, caller);
+                if (!attributes.Any())
+                {
+                    continue;
+                }
 
-            return new ActionResult<T>(fullQualifiedName, model);
+                foreach (var attribute in attributes)
+                {
+                    if (!attribute.IsValid(property.GetValue(bindingModel)))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
-        protected IActionResult<T> View<T>(T model, string controller, string action)
+        protected internal void InitializeController()
         {
-            var fullQualifiedName = ControllerHelpers.GetViewFullQualifiedName(controller, action);
+            var user = this.Request
+                .Session
+                .Get<string>(SessionStore.CurrentUserKey);
 
-            return new ActionResult<T>(fullQualifiedName, model);
+            if (user != null)
+            {
+                this.User = new Authentication();
+            }
+        }
+
+        protected void SignIn(string name)
+        {
+            this.Request.Session.Add(SessionStore.CurrentUserKey, name);
+        }
+
+        protected void SignOut()
+        {
+            this.Request.Session.Clear();
         }
     }
 }

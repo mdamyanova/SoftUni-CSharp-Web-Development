@@ -6,9 +6,9 @@ all Homeworks and some Exam Preparations
 1. [Advanced C#](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/02.Advanced%20C%23) - September 2015
 1. [Object-Oriented Programming](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/03.Object-Oriented%20Programming) - November 2015
 1. [High-Quality Code](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/04.High-Quality%20Code) - December 2015
-1. [Tech Module]()
-   * [Programming Fundamentals]() - May 2016
-   * [Software Technologies]() - June 2016
+1. [Tech Module](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/05.Tech%20Module)
+   * [Programming Fundamentals](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/05.Tech%20Module/05.01.Programming%20Fundamentals) - May 2016
+   * [Software Technologies](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/05.Tech%20Module/05.02.Software%20Technologies) - June 2016
 1. [JavaScript Core](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/07.JavaScript%20Core)
    * [JavaScript Fundamentals](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/07.JavaScript%20Core/07.01.JS%20Fundamentals) - September 2016
    * [JavaScript Advanced](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/07.JavaScript%20Core/07.02.JS%20Advanced) - October 2016

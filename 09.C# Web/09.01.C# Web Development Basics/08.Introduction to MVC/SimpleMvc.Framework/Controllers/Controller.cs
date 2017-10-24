@@ -7,7 +7,7 @@
     using ActionResults;
     using Contracts;
     using Models;
-    using Attributes.Properties;
+    using SimpleMvc.Framework.Attributes.Validation;
     using SimpleMvc.Framework.Security;
     using Views;
     using WebServer.Http;
@@ -50,20 +50,27 @@
             return new RedirectResult(redirectUrl);
         }
 
+        protected IActionResult NotFound()
+        {
+            return new NotFoundResult();
+        }
+
         protected bool IsValidModel(object bindingModel)
         {
-            foreach (var property in bindingModel.GetType().GetProperties())
-            {
-                var attributes = property.GetCustomAttributes().Where(a => a is PropertyAttribute);
+            var properties = bindingModel.GetType().GetProperties();
 
-                if (!attributes.Any())
-                {
-                    continue;
-                }
+            foreach (var property in properties)
+            {
+                var attributes = property
+                    .GetCustomAttributes()
+                    .Where(a => a is PropertyValidationAttribute)
+                    .Cast<PropertyValidationAttribute>();
 
                 foreach (var attribute in attributes)
                 {
-                    if (!attribute.IsValid(property.GetValue(bindingModel)))
+                    var propertyValue = property.GetValue(bindingModel);
+
+                    if (!attribute.IsValid(propertyValue))
                     {
                         return false;
                     }
@@ -81,7 +88,7 @@
 
             if (user != null)
             {
-                this.User = new Authentication();
+                this.User = new Authentication(user);
             }
         }
 

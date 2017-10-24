@@ -1,7 +1,6 @@
 ﻿namespace SimpleMvc.Framework.Routes
 {
     using System;
-    using System.Globalization;
     using System.IO;
     using System.Linq;
     using WebServer.Contracts;
@@ -23,7 +22,7 @@
                 var fileContent = this.ReadFileContent(fileFullName, fileExtension);
                 fileReponse = new FileResponse(HttpStatusCode.Found, fileContent);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return new NotFoundResponse();
             }

@@ -1,6 +1,8 @@
 ﻿namespace SimpleMvc.Framework.ActionResults
 {
     using Contracts;
+    using WebServer.Http.Contracts;
+    using WebServer.Http.Response;
 
     public class RedirectResult : IRedirectable
     {
@@ -11,9 +13,9 @@
         
         public string RedirectUrl { get; }
 
-        public string Invoke()
+        public IHttpResponse Invoke()
         {
-            return this.RedirectUrl;
+            return new RedirectResponse(this.RedirectUrl);
         }
     }
 }

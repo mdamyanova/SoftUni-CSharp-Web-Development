@@ -1,7 +1,9 @@
 ﻿namespace SimpleMvc.Framework.Contracts
 {
+    using WebServer.Http.Contracts;
+
     public interface IActionResult
     {
-        string Invoke();
+        IHttpResponse Invoke();
     }
 }

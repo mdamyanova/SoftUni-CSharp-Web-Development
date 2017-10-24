@@ -88,32 +88,33 @@
             this.Model["users"] =
                 usersAndIds.Any()
                     ? string.Join(string.Empty, usersAndIds.Select(
-                        u => $"<li><a href\"/users/profile?id={u.Key}\">{u.Value}</a></li>"));
+                        u => $"<li><a href\"/users/profile?id={u.Key}\">{u.Value}</a></li>"))
+                    : string.Empty;
             
             return this.View();
         }
-
-
-        //todo
 
         [HttpGet]
         public IActionResult Profile(int id)
         {
             var user = this.db.Users.FirstOrDefault(u => u.Id == id);
 
-            var viewModel = new UserProfileViewModel
-            {
-                UserId = user.Id,
-                Username = user.Username,
-                Notes = user.Notes.Select(
-                    n => new NoteViewModel
-                    {
-                        Title = n.Title,
-                        Content = n.Content
-                    })
-            };
+            //todo
 
-            return this.View(viewModel);
+            //this.Model[""] = ....
+            //var viewModel = new UserProfileViewModel
+            //{
+            //    UserId = user.Id,
+            //    Username = user.Username,
+            //    Notes = user.Notes.Select(
+            //        n => new NoteViewModel
+            //        {
+            //            Title = n.Title,
+            //            Content = n.Content
+            //        })
+            //}
+
+            return this.View();
         }
 
         [HttpPost]

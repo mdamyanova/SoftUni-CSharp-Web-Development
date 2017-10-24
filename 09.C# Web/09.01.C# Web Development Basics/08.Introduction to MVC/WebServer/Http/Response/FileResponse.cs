@@ -1,5 +1,6 @@
 ﻿namespace WebServer.Http.Response
 {
+    using global::WebServer.Common;
     using global::WebServer.Enums;
     using global::WebServer.Exceptions;
 
@@ -7,6 +8,8 @@
     {
         public FileResponse(HttpStatusCode statusCode, byte[] fileData)
         {
+            CoreValidator.ThrowIfNull(fileData, nameof(fileData));
+
             this.ValidateStatusCode(statusCode);
 
             this.FileData = fileData;

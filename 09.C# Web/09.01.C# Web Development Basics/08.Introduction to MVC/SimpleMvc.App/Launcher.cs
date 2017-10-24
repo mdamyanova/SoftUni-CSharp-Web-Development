@@ -9,7 +9,7 @@
     {   
         public static void Main()
         {
-            var server = new WebServer(8000, new ControllerRouter());
+            var server = new WebServer(8000, new ControllerRouter(), new ResourceRouter());
 
             InitializeDatabase();
 

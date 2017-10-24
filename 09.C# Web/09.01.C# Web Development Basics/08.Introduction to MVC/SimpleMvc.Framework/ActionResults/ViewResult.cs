@@ -1,6 +1,9 @@
 ﻿namespace SimpleMvc.Framework.ActionResults
 {
     using Contracts;
+    using WebServer.Enums;
+    using WebServer.Http.Contracts;
+    using WebServer.Http.Response;
 
     public class ViewResult : IViewable
     {
@@ -11,9 +14,9 @@
 
         public IRenderable View { get; set; }
 
-        public string Invoke()
+        public IHttpResponse Invoke()
         {
-            return this.View.Render();
+            return new ContentResponse(HttpStatusCode.Ok, this.View.Render());
         }       
     }
 }

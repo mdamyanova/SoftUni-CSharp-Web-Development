@@ -8,11 +8,15 @@
     public class View : IRenderable
     {
         public const string BaseLayoutFileName = "Layout";
+
         public const string ContentPlaceholder = "{{{content}}}";
-        public const string HtmlExtension = ".html";
-        public const string LocalErrorPath = "\\SimpleMvc.Framework\\Errors\\error.html";
+
+        public const string FileExtension = ".html";
+
+        public const string LocalErrorPath = "\\SimpleMvc.Framework\\Errors\\Error.html";
 
         private readonly string templateFullQualifiedName;
+
         private readonly IDictionary<string, string> viewData;
 
         public View(string templateFullQualifiedName, IDictionary<string, string> viewData)
@@ -23,66 +27,67 @@
 
         public string Render()
         {
-            var fullHtml = this.ReadFile();
+            var fileHtml = this.ReadFile();
 
             if (this.viewData.Any())
             {
-                foreach (var parameter in this.viewData)
+                foreach (var data in this.viewData)
                 {
-                    fullHtml = fullHtml.Replace($"{{{{{{{parameter.Key}}}}}}}", parameter.Value);
+                    fileHtml = fileHtml.Replace($"{{{{{{{data.Key}}}}}}}", data.Value);
                 }
             }
 
-            return fullHtml;
+            return fileHtml;
         }
 
         private string ReadFile()
         {
-            var layoutHtml = this.RenderLayoutHtml();
+            var layoutHtml = this.ReadLayoutFile();
 
-            var templateFullQualifiedNameWithExtension = this.templateFullQualifiedName + HtmlExtension;
+            var templateFullFilePath = $"{this.templateFullQualifiedName}{FileExtension}";
 
-            if (!File.Exists(templateFullQualifiedNameWithExtension))
+            if (!File.Exists(templateFullFilePath))
             {
-                var errorPath = this.GetErrorPath();
-                var errorHtml = File.ReadAllText(errorPath);
-                this.viewData.Add("error", "Requested view does not exist!");
-                return errorHtml;
+                this.viewData["error"] = $"The requested view ({templateFullFilePath}) could not be found!";
+                return this.GetErrorHtml();
             }
 
-            //TODO
+            var templateHtml = File.ReadAllText(templateFullFilePath);
+
+            return layoutHtml.Replace(ContentPlaceholder, templateHtml);
         }
 
-        private string RenderLayoutHtml()
+        private string ReadLayoutFile()
         {
-            var layoutHtmlQualifiedName = string.Format(
+            var layoutHtmlFile = string.Format(
                 "{0}\\{1}{2}",
                 MvcContext.Get.ViewsFolder,
                 BaseLayoutFileName,
-                HtmlExtension);
+                FileExtension);
 
-            if (!File.Exists(layoutHtmlQualifiedName))
+            if (!File.Exists(layoutHtmlFile))
             {
-                var errorPath = this.GetErrorPath();
-                var errorHtml = File.ReadAllText(errorPath);
-                this.viewData.Add("error", "Layout view does not exist!");
-                return errorHtml;
+                this.viewData["error"] = $"Layout view ({layoutHtmlFile}) could not be found!";
+                return this.GetErrorHtml();
             }
 
-            var layoutHtmlFileContent = File.ReadAllText(layoutHtmlQualifiedName);
-
-            return layoutHtmlFileContent;
+            return File.ReadAllText(layoutHtmlFile);
         }
 
         private string GetErrorPath()
         {
-            var appDirectoryPath = Directory.GetCurrentDirectory();
-            var parentDirectory = Directory.GetParent(appDirectoryPath);
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var parentDirectory = Directory.GetParent(currentDirectory);
             var parentDirectoryPath = parentDirectory.FullName;
 
-            var errorPagePath = parentDirectoryPath + LocalErrorPath;
+            return $"{parentDirectoryPath}{LocalErrorPath}";
+        }
 
-            return errorPagePath;
+        private string GetErrorHtml()
+        {
+            var errorPath = this.GetErrorPath();
+            var errorHtml = File.ReadAllText(errorPath);
+            return errorHtml;
         }
     }
 }

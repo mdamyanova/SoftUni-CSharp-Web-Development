@@ -4,116 +4,104 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using Attributes.Methods;
-    using Controllers;
+    using SimpleMvc.Framework.Attributes.Methods;
     using SimpleMvc.Framework.Contracts;
+    using SimpleMvc.Framework.Controllers;
+    using SimpleMvc.Framework.Helpers;
     using WebServer.Contracts;
-    using WebServer.Enums;
+    using WebServer.Exceptions;
     using WebServer.Http.Contracts;
     using WebServer.Http.Response;
 
     public class ControllerRouter : IHandleable
     {
-        private const int ControllerAndActionUrlLength = 3;
+        private IDictionary<string, string> getParameters;
+        private IDictionary<string, string> postParameters;
+        private string requestMethod;
+        private Controller controllerInstance;
+        private string controllerName;
+        private string actionName;
+        private object[] methodParameters;
 
         public IHttpResponse Handle(IHttpRequest request)
         {
-            IDictionary<string, string> getParams = new Dictionary<string, string>(request.UrlParameters);    
-            IDictionary<string, string> postParams = new Dictionary<string, string>(request.FormData);
+            this.controllerInstance = null;
+            this.actionName = null;
+            this.methodParameters = null;
 
-            var requestMethod = request.Method.ToString().ToUpper();
+            this.getParameters = new Dictionary<string, string>(request.UrlParameters);
+            this.postParameters = new Dictionary<string, string>(request.FormData);
+            this.requestMethod = request.Method.ToString().ToUpper();
 
-            var controllerName = "";
-            var actionName = "";
+            this.PrepareControllerAndActionNames(request);
 
-            //todo
-            this.PrepareControllerAndActionNames(request, controllerName, actionName);
+            var methodInfo = this.GetActionForExecution();
 
-            var controller = this.GetController(controllerName);
-
-            if (controller != null)
-            {
-                controller.Request = request;
-                controller.InitializeController();               
-            }
-
-            var method = this.GetMethod(controller, requestMethod, actionName);
-
-            if (method == null)
+            if (methodInfo == null)
             {
                 return new NotFoundResponse();
             }
 
-            IEnumerable<ParameterInfo> parameters = method.GetParameters();
-
-            var methodParams = this.AddParameters(parameters, getParams, postParams);
+            this.PrepareMethodParameters(methodInfo);
 
             try
             {
-                var response = this.GetResponse(method, controller, methodParams);
-                return response;
+                if (this.controllerInstance != null)
+                {
+                    this.controllerInstance.Request = request;
+                    this.controllerInstance.InitializeController();
+                }
+
+                return this.GetResponse(methodInfo, this.controllerInstance);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return new InternalServerErrorResponse(e);
-                throw;
+                return new InternalServerErrorResponse(ex);
             }
         }
 
-        private void PrepareControllerAndActionNames(IHttpRequest request, string controllerName, string actionName)
+        private void PrepareControllerAndActionNames(IHttpRequest request)
         {
-            // todo: see if this works 
+            var pathParts = request.Path.Split(
+                new[] { '/', '?' },
+                StringSplitOptions.RemoveEmptyEntries);
 
-            var url = request.Path;
-
-            if (url.Contains("/"))
+            if (pathParts.Length < 2)
             {
-                var parts = url.Split("/");
-
-                if (parts.Length == ControllerAndActionUrlLength)
+                if (request.Path == "/")
                 {
-                    // we have valid url 
-                    controllerName = parts[1];
-                    actionName = parts[2];
+                    this.controllerName = "HomeController";
+                    this.actionName = "Index";
 
-                    var controller = controllerName.First().ToString().ToUpper()
-                                     + controllerName.Substring(1)
-                                     + "Controller";
-
-                    var actionSubstring = actionName.Substring(1);
-
-                    if (actionName.Contains("?"))
-                    {
-                        actionSubstring =
-                            actionName.Substring(1, actionName.IndexOf("?", StringComparison.Ordinal) - 1);
-                    }
-
-                    var action = actionName.First().ToString().ToUpper()
-                                 + actionSubstring;
-
-                    controllerName = controller;
-                    actionName = action;
+                    return;
                 }
+
+                BadRequestException.ThrowFromInvalidRequest();
             }
+
+            this.controllerName = $"{pathParts[0].Capitalize()}{MvcContext.Get.ControllersSuffix}";
+            this.actionName = pathParts[1].Capitalize();
         }
 
-        private MethodInfo GetMethod(Controller controller, string requestMethod, string actionName)
+        private MethodInfo GetActionForExecution()
         {
-            foreach (var methodInfo in this.GetSuitableMethods(controller, actionName))
+            foreach (var method in this.GetSuitableMethods())
             {
-                var attributes =
-                    methodInfo.GetCustomAttributes().Where(a => a is HttpMethodAttribute);
+                var httpMethodAttributes = method
+                    .GetCustomAttributes()
+                    .Where(a => a is HttpMethodAttribute)
+                    .Cast<HttpMethodAttribute>();
 
-                if (!attributes.Any() && requestMethod == "GET")
+                if (!httpMethodAttributes.Any() && this.requestMethod == "GET")
                 {
-                    return methodInfo;
+                    return method;
                 }
 
-                foreach (HttpMethodAttribute attribute in attributes)
+                foreach (var httpMethodAttribute in httpMethodAttributes)
                 {
-                    if (attribute.IsValid(requestMethod))
+                    if (httpMethodAttribute.IsValid(this.requestMethod))
                     {
-                        return methodInfo;
+                        return method;
                     }
                 }
             }
@@ -121,105 +109,123 @@
             return null;
         }
 
-        private IEnumerable<MethodInfo> GetSuitableMethods(Controller controller, string actionName)
-        {         
+        private IEnumerable<MethodInfo> GetSuitableMethods()
+        {
+            var controller = this.GetControllerInstance();
+
             if (controller == null)
             {
                 return new MethodInfo[0];
             }
 
-            return 
-                controller
+            return controller
                 .GetType()
                 .GetMethods()
-                .Where(m => m.Name == actionName);
+                .Where(m => m.Name.ToLower() == this.actionName.ToLower());
         }
 
-        private Controller GetController(string controllerName)
+        private object GetControllerInstance()
         {
+            if (this.controllerInstance != null)
+            {
+                return this.controllerInstance;
+            }
+
             var controllerFullQualifiedName = string.Format(
                 "{0}.{1}.{2}, {0}",
                 MvcContext.Get.AssemblyName,
                 MvcContext.Get.ControllersFolder,
-                controllerName);
+                this.controllerName);
 
-            var type = Type.GetType(controllerFullQualifiedName);
+            var controllerType = Type.GetType(controllerFullQualifiedName);
 
-            if (type == null)
+            if (controllerType == null)
             {
                 return null;
             }
 
-            var controller = (Controller)Activator.CreateInstance(type);
-
-            return controller;
+            this.controllerInstance = Activator.CreateInstance(controllerType) as Controller;
+            return this.controllerInstance;
         }
 
-        private object[] AddParameters(IEnumerable<ParameterInfo> parameters,
-            IDictionary<string, string> getParams,
-            IDictionary<string, string> postParams)
+        private void PrepareMethodParameters(MethodInfo methodInfo)
         {
-            var methodParams = new object[parameters.Count()];
-            var index = 0;
+            var parameters = methodInfo.GetParameters();
 
-            foreach (var parameter in parameters)
+            this.methodParameters = new object[parameters.Length];
+
+            for (var i = 0; i < parameters.Length; i++)
             {
+                var parameter = parameters[i];
+
                 if (parameter.ParameterType.IsPrimitive
                     || parameter.ParameterType == typeof(string))
                 {
-                    methodParams[index] = this.ProcessPrimitiveParameter(parameter, getParams);
+                    this.ProcessPrimitiveParameter(parameter, i);
                 }
                 else
                 {
-                    methodParams[index] = this.ProcessComplexParameter(parameter, postParams);
-                    index++;
+                    this.ProcessModelParameter(parameter, i);
+                }
+            }
+        }
+
+        private void ProcessPrimitiveParameter(ParameterInfo parameter, int index)
+        {
+            var getParameterValue = this.getParameters[parameter.Name];
+
+            var value = Convert.ChangeType(
+                getParameterValue,
+                parameter.ParameterType);
+
+            this.methodParameters[index] = value;
+        }
+
+        private void ProcessModelParameter(ParameterInfo parameter, int index)
+        {
+            var modelType = parameter.ParameterType;
+            var modelInstance = Activator.CreateInstance(modelType);
+
+            var modelProperties = modelType.GetProperties();
+
+            foreach (var modelProperty in modelProperties)
+            {
+                var postParameterValue = this.postParameters[modelProperty.Name];
+
+                var value = Convert.ChangeType(
+                    postParameterValue,
+                    modelProperty.PropertyType);
+
+                modelProperty.SetValue(
+                    modelInstance,
+                    value);
+            }
+
+            this.methodParameters[index] = Convert.ChangeType(
+                modelInstance,
+                modelType);
+        }
+
+        private IHttpResponse GetResponse(MethodInfo method, object controller)
+        {
+            var actionResult = method.Invoke(controller, this.methodParameters)
+                as IActionResult;
+
+            if (actionResult == null)
+            {
+                var methodResultAsHttpResponse = actionResult as IHttpResponse;
+
+                if (methodResultAsHttpResponse != null)
+                {
+                    return methodResultAsHttpResponse;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Controller actions should return either IActionResult or IHttpResponse.");
                 }
             }
 
-            return methodParams;
-        }
-
-        private object ProcessPrimitiveParameter(ParameterInfo parameter, IDictionary<string, string> getParams)
-        {
-            var value = getParams[parameter.Name];
-
-            return Convert.ChangeType(value, parameter.ParameterType);
-        }
-
-        private object ProcessComplexParameter(ParameterInfo parameter, IDictionary<string, string> postParams)
-        {
-            var bindingModelType = parameter.ParameterType;
-            var bindingModel = Activator.CreateInstance(bindingModelType);
-            var properties = bindingModelType.GetProperties();
-
-            foreach (var property in properties)
-            {
-                property.SetValue(bindingModel, Convert.ChangeType(postParams[property.Name], property.PropertyType));
-            }
-
-            return Convert.ChangeType(bindingModel, bindingModelType);
-        }
-
-        private IHttpResponse GetResponse(MethodInfo method, Controller controller, object[] methodParams)
-        {
-            var actionResult = method.Invoke(controller, methodParams);
-
-            IHttpResponse response = null;
-
-            if (actionResult is IViewable)
-            {
-                var content = ((IViewable) actionResult).Invoke();
-
-                response = new ContentResponse(HttpStatusCode.Ok, content);
-            }
-            else if (actionResult is IRedirectable)
-            {
-                var redirectUrl = ((IRedirectable) actionResult).Invoke();
-
-                response = new RedirectResponse(redirectUrl);
-            }
-
-            return response;
+            return actionResult.Invoke();
         }
     }
 }

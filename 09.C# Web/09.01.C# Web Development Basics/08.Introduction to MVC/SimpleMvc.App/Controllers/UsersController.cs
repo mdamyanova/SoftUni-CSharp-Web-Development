@@ -7,6 +7,7 @@
     using Domain;
     using Framework.Attributes.Methods;
     using Framework.Controllers;
+    using SimpleMvc.Framework.ActionResults;
     using SimpleMvc.Framework.Contracts;
     using WebServer.Exceptions;
 
@@ -27,8 +28,7 @@
             {
                 if (this.db.Users.Any(u => u.Username == model.Username))
                 {
-                    //it's good to show some kind of page here
-                    throw new BadRequestException("Username is already in use.");
+                    return new NotFoundResult();
                 }
 
                 var user = new User
@@ -60,14 +60,14 @@
 
                 if (foundUser == null)
                 {
-                    return RedirectToAction("/home/login");
+                    return this.RedirectToAction("/home/login");
                 }
 
                 this.db.SaveChanges();
                 this.SignIn(foundUser.Username);
             }
 
-            return RedirectToAction("/home/index");
+            return this.RedirectToAction("/home/index");
         }
 
         [HttpGet]
@@ -75,7 +75,7 @@
         {
             if (!this.User.IsAuthenticated)
             {
-                return RedirectToAction("/users/login");
+                return this.RedirectToAction("/users/login");
             }
 
             Dictionary<int, string> usersAndIds;
@@ -138,7 +138,7 @@
         {
             this.SignOut();
 
-            return RedirectToAction("/home/index");
+            return this.RedirectToAction("/home/index");
         }
     }
 }

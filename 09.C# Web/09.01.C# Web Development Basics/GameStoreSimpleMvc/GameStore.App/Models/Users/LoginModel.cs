@@ -1,6 +1,6 @@
 ﻿namespace GameStore.App.Models.Users
 {
-    using GameStore.App.Infrastructure.Validation;
+    using Infrastructure.Validation;
 
     public class LoginModel
     {

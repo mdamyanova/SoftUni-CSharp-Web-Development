@@ -1,9 +1,9 @@
 ﻿namespace GameStore.App.Services
 {
     using System.Linq;
-    using GameStore.App.Data;
-    using GameStore.App.Data.Models;
-    using GameStore.App.Services.Contracts;
+    using Data;
+    using Data.Models;
+    using Services.Contracts;
 
     public class UsersService : IUsersService
     {
@@ -16,11 +16,14 @@
                     return false;
                 }
 
+                var isAdmin = !db.Users.Any();
+
                 var user = new User
                 {
                     Email = email,
                     Name = name,
-                    Password = password
+                    Password = password,
+                    IsAdmin = isAdmin
                 };
 
                 db.Add(user);

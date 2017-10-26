@@ -22,12 +22,32 @@
                         <a class="nav-link" href="#">Cart</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" style="display: {{{anonymousDisplay}}}">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="/users/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="users/register">Register</a>
+                        <a class="nav-link" href="/users/register">Register</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav" style="display: {{{userDisplay}}}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Logout</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav" style="display: {{{adminDisplay}}}">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="AdminDropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/admin/all">Games</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -35,7 +55,16 @@
         </div>
     </nav>
 </header>
-    
+<div class="row text-center">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <div class="alert alert-danger" style="display: {{{show-error}}}">
+            {{{error}}}
+        </div>
+    </div>
+</div>
+
 {{{content}}}
 
 <!--Footer-->

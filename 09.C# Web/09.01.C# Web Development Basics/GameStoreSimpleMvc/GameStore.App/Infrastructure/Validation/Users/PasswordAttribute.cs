@@ -1,4 +1,4 @@
-﻿namespace GameStore.App.Infrastructure.Validation
+﻿namespace GameStore.App.Infrastructure.Validation.Users
 {
     using System.Linq;
     using SimpleMvc.Framework.Attributes.Validation;

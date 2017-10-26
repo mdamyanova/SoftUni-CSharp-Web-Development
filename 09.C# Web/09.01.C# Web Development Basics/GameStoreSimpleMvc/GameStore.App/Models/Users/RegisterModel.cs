@@ -1,5 +1,6 @@
 ﻿namespace GameStore.App.Models.Users
 {
+    using GameStore.App.Infrastructure.Validation.Users;
     using Infrastructure.Validation;
 
     public class RegisterModel

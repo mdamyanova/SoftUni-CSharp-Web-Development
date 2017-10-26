@@ -28,13 +28,13 @@ namespace GameStore.App.Migrations
                     b.Property<string>("Description")
                         .IsRequired();
 
-                    b.Property<string>("ImageThumbnail");
-
                     b.Property<decimal>("Price");
 
                     b.Property<DateTime>("ReleaseDate");
 
                     b.Property<double>("Size");
+
+                    b.Property<string>("Thumbnail");
 
                     b.Property<string>("Title")
                         .IsRequired()

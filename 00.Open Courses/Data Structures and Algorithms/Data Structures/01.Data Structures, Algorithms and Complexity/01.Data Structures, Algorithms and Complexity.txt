@@ -1,0 +1,29 @@
+1. Add(T)Complexity
+With the Array.Copy(this.arr, index + 1, newArr, index, this.arr.Length - index - 1); we take every element from the first array and copy it to the other one, so we iterate through the array N times where N is the number of elements in it. The running time is O(n).
+
+2. Remove(index) Complexity - Worst case
+In this method we take the first half of the array and copy it and then we copy the other half withoud the removed index. We iterating through the array n-1 times, because we are iterating all elements without the removed index. The running time is O(n).
+
+3. Remove(index) Complexity - Best case
+This case is same as worst case, because it's doesn't matter which index we want to remove, the operations are the same. The running time is O(n).
+
+4. Remove(index) Comlexity - Average case 
+Same as best case and worst case. The running time is O(n).
+
+5. RemoveFirst(T) Complexity
+Since the RemoveFirst method uses Remove method, the complexity is same as the complexity of Remove method. The running time is O(n).
+
+6. RemoveLast(T) Complexity
+Again, this method uses the Remove method, therefore the complexity is the same. The running time is O(n).
+
+7. Length Complexity 
+The method return only the length of the array. The running time is O(1).
+
+8. This[index] Complexity
+Since the method doesn't iterate through the array, the running time is O(1).
+
+9. First Complexity
+Same as the previous, the method access directly to the element. The running time is O(1).
+
+10. Last Complexity
+Same as the method First, but uses the .Length property to access to the element. The running time is O(1).

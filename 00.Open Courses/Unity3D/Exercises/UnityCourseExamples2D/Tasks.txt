@@ -1,0 +1,5 @@
+Make a copy of Flappy Bird.
+Use art from internet.
+Additionally make fire as obstacle.
+All in one scene.
+On Mouse button Down the bird should go up.

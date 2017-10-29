@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: c2940940cd20a574184deaef520aab39
+timeCreated: 1457456505
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: walkingGuy_0
+    21300002: walkingGuy_1
+    21300004: walkingGuy_2
+    21300006: walkingGuy_3
+    21300008: walkingGuy_4
+    21300010: walkingGuy_5
+    21300012: walkingGuy_6
+    21300014: walkingGuy_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walkingGuy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: -58.5}
+        - {x: 4, y: -60.5}
+        - {x: 11, y: -62.5}
+        - {x: 12, y: -67.5}
+        - {x: 28, y: -153.5}
+        - {x: 80, y: -136.5}
+        - {x: 80, y: 159.5}
+        - {x: -62, y: 159.5}
+        - {x: -79, y: 26.5}
+        - {x: -79, y: -149.5}
+        - {x: -39, y: -158.5}
+        - {x: -29, y: -158.5}
+        - {x: -26, y: -157.5}
+        - {x: 8, y: -68.5}
+        - {x: 9, y: -64.5}
+        - {x: 1, y: -59.5}
+    - name: walkingGuy_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 154.5}
+        - {x: -62, y: 148.5}
+        - {x: -92, y: -46.5}
+        - {x: -92, y: -113.5}
+        - {x: -80, y: -149.5}
+        - {x: 63, y: -149.5}
+        - {x: 74, y: -148.5}
+        - {x: 75, y: -146.5}
+        - {x: 75, y: 154.5}
+    - name: walkingGuy_2
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 142.5}
+        - {x: 86, y: 159.5}
+        - {x: 78, y: 160.5}
+        - {x: -10, y: 160.5}
+        - {x: -53, y: 140.5}
+        - {x: -68, y: -12.5}
+        - {x: -68, y: -144.5}
+        - {x: -12, y: -148.5}
+        - {x: 49, y: -148.5}
+        - {x: 50, y: -147.5}
+        - {x: 51, y: 84.5}
+        - {x: 49, y: 93.5}
+    - name: walkingGuy_3
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 161.5}
+        - {x: -52, y: -95.5}
+        - {x: -32, y: -139.5}
+        - {x: 7, y: -147.5}
+        - {x: 34, y: -147.5}
+        - {x: 91, y: 47.5}
+        - {x: 91, y: 161.5}
+    - name: walkingGuy_4
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -51.5}
+        - {x: 16, y: -63.5}
+        - {x: 23, y: -74.5}
+        - {x: 52, y: -76.5}
+        - {x: 79, y: 118.5}
+        - {x: 79, y: 159.5}
+        - {x: -61, y: 159.5}
+        - {x: -61, y: -146.5}
+        - {x: -33, y: -153.5}
+        - {x: 28, y: -153.5}
+        - {x: 71, y: -135.5}
+        - {x: 17, y: -81.5}
+        - {x: 15, y: -50.5}
+        - {x: 16, y: -49.5}
+    - name: walkingGuy_5
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: 154.5}
+        - {x: -65, y: 122.5}
+        - {x: -65, y: -147.5}
+        - {x: -58, y: -158.5}
+        - {x: -31, y: -158.5}
+        - {x: -29, y: -151.5}
+        - {x: -30, y: -141.5}
+        - {x: -29, y: -148.5}
+        - {x: -27, y: -154.5}
+        - {x: -5, y: -158.5}
+        - {x: 54, y: -158.5}
+        - {x: 71, y: -55.5}
+        - {x: 71, y: 154.5}
+    - name: walkingGuy_6
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78, y: 160.5}
+        - {x: -62, y: 160.5}
+        - {x: -62, y: -155.5}
+        - {x: 46, y: -155.5}
+        - {x: 84, y: 89.5}
+        - {x: 86, y: 101.5}
+        - {x: 86, y: 159.5}
+    - name: walkingGuy_7
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 0
+        width: 184
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: -58.5}
+        - {x: 0, y: -90.5}
+        - {x: -25, y: -114.5}
+        - {x: -26, y: -116.5}
+        - {x: 14, y: -159.5}
+        - {x: 42, y: -159.5}
+        - {x: 91, y: 88.5}
+        - {x: 91, y: 160.5}
+        - {x: 85, y: 161.5}
+        - {x: -61, y: 161.5}
+        - {x: -66, y: 160.5}
+        - {x: -72, y: 105.5}
+        - {x: -72, y: -147.5}
+        - {x: -71, y: -147.5}
+        - {x: -27, y: -159.5}
+        - {x: -18, y: -159.5}
+        - {x: -15, y: -158.5}
+        - {x: -14, y: -154.5}
+        - {x: -29, y: -118.5}
+        - {x: -8, y: -85.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

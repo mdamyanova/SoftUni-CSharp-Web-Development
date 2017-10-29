@@ -1,0 +1,32 @@
+Initialize engine version: 4.6.0f3 (30840d631a27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: ATI Radeon HD 4600 Series (ID=0x9490)
+    Vendor:   ATI
+    VRAM:     1013 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\TestExamProject\Builds\ExamGame_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\TestExamProject\Builds\ExamGame_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\TestExamProject\Builds\ExamGame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\TestExamProject\Builds\ExamGame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\TestExamProject\Builds\ExamGame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\TestExamProject\Builds\ExamGame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.056 seconds
+desktop: 1920x1200 59Hz; virtual: 3360x1200 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: D:\TestExamProject\Builds\ExamGame_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\TestExamProject\Builds\ExamGame_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 5.420517 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2953.
+Total: 0.941563 ms (FindLiveObjects: 0.114892 ms CreateObjectMapping: 0.017510 ms MarkObjects: 0.375703 ms  DeleteObjects: 0.011059 ms)
+
+UnloadTime: 18.742489 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 165.
+Total: 1.192544 ms (FindLiveObjects: 0.006758 ms CreateObjectMapping: 0.013209 ms MarkObjects: 0.209202 ms  DeleteObjects: 0.616547 ms)
+

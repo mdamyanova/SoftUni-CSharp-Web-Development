@@ -1,0 +1,28 @@
+3.Чрез новия UI на Unity направете един бутон, който при натискане ще започне да запълва прогрес бар,
+а при повторно натискане ще спира.
+Ако бъде натиснат пак ще продължава и ако стигне края ще започва отначало.
+
+public Slider targetSlider;
+bool isRunning;
+int multiplier = 1;
+
+    
+// Update is called once per frame
+void Update () 
+{    
+	if(isRunning)
+	{
+		targetSlider.value += (Time.deltaTime * multiplier);
+
+		if(targetSlider.value >= targetSlider.maxValue || targetSlider.value <= targetSlider.minValue)
+		{    
+			multiplier = multiplier * -1;
+		}
+	}
+
+}
+
+public void OnButtonClicked()
+{
+	isRunning = !isRunning;
+}  

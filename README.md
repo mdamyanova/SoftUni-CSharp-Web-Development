@@ -22,3 +22,7 @@ all Homeworks and some Exam Preparations
    * [C# Object-Oriented Programming Advanced](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/08.C%23%20Fundamentals/08.03.C%23%20OOP%20Advanced) - July 2017
 1. [C# Web](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/09.C%23%20Web)
    * [C# Web Development Basics](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/09.C%23%20Web/09.01.C%23%20Web%20Development%20Basics) - September 2017
+
+##### Open Courses
+1. [Python Programming](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/00.Open%20Courses/Python) - January 2016
+1. [Unity 3D](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/00.Open%20Courses/Unity3D) - February 2016

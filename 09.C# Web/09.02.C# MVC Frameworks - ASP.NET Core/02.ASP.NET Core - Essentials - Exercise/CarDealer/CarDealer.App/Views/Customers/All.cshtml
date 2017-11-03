@@ -9,7 +9,7 @@
         <th>Birth date</th> 
         <th>Is young driver</th>
     </tr>
-    @foreach (var customer in this.Model)
+    @foreach (var customer in this.Model.Customers)
     {
         <tr>
             <td>@customer.Name</td>

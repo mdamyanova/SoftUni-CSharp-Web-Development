@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "All";
+}
+
+<h2>All</h2>
+<table style="width:100%">
+    <tr>
+        <th>Id</th>
+        <th>Name</th> 
+        <th>Parts</th>
+    </tr>
+    @foreach (var supplier in this.Model.Suppliers)
+    {
+        <tr>
+            <td>@supplier.Id</td>
+            <td>@supplier.Name</td> 
+            <td>@supplier.Parts</td>
+        </tr>
+    }
+</table>

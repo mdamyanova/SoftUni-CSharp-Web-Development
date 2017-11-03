@@ -1,18 +1,18 @@
 ﻿namespace CarDealer.App.Helpers
 {
     using System.Linq;
-    using CarDealer.App.Models;
+    using Models;
+    using Models.Collections;
     using Data;
 
     public static class CarDealerDbQueries
     {
-        private static readonly CarDealerDbContext db = new CarDealerDbContext();
         //TODO: Check for exceptions
 
         //TODO: Not right query, fix it
-        public static ListingCustomersViewModel GetOrderedCustomers(string order)
+        public static ListingCustomersViewModel GetOrderedCustomers(CarDealerDbContext db, string order)
         {
-            var result = db.Customers.Select(c => new CustomersViewModel
+            var result = db.Customers.Select(c => new CustomerViewModel
             {
                 Name = c.Name,
                 BirthDate = c.BirthDate,
@@ -33,32 +33,37 @@
             };
         }
 
-        public static void GetCarsFromMake(string make)
+        public static ListingCarsViewModel GetCarsFromMake(CarDealerDbContext db, string make)
         {
             var result = db
                 .Cars
 
-                .Select(c => new
+                .Select(c => new CarViewModel
                 {
-                    c.Make,
-                    c.Model,
-                    c.TravelledDistance
+                    Make = c.Make,
+                    Model = c.Model,
+                    TravelledDistance = c.TravelledDistance
                 })
                 .Where(c => c.Make == make)
                 .OrderBy(c => c.Model)
                 .ThenByDescending(c => c.TravelledDistance);
+
+            return new ListingCarsViewModel
+            {
+                Cars = result.ToList()
+            };
         }
 
-        public static void GetFilterSuppliers(string type)
+        public static ListingSuppliersViewModel GetFilterSuppliers(CarDealerDbContext db, string type)
         {
             var result = db
                 .Suppliers
-                .Select(s => new
+                .Select(s => new SupplierViewModel
                 {
-                    s.Id,
-                    s.Name,
+                    Id = s.Id,
+                    Name = s.Name,
                     Parts = s.Parts.Count,
-                    s.IsImporter
+                    IsImporter = s.IsImporter
                 });
 
             if (type == "local")
@@ -69,9 +74,14 @@
             {
                 result = result.Where(s => s.IsImporter);
             }
+
+            return new ListingSuppliersViewModel
+            {
+                Suppliers = result.ToList()
+            };
         }
 
-        public static void GetCarsWithPartsById(int id)
+        public static void GetCarsWithPartsById(CarDealerDbContext db, int id)
         {
             var result = db
                 .Cars
@@ -89,7 +99,7 @@
                 });
         }
 
-        public static void GetTotalSalesByCustomer(int id)
+        public static void GetTotalSalesByCustomer(CarDealerDbContext db, int id)
         {
             // todo 
             var result = db
@@ -103,7 +113,7 @@
                 });
         }
 
-        public static void GetTotalSalesWithAppliedDiscount(object value)
+        public static void GetTotalSalesWithAppliedDiscount(CarDealerDbContext db, object value)
         {
             //TODO: find clever way
         }

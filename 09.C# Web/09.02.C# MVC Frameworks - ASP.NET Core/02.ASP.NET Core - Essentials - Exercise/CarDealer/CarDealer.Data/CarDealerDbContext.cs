@@ -9,7 +9,7 @@
         {
         }
 
-        public CarDealerDbContext(DbContextOptions<CarDealerDbContext> options) 
+        public CarDealerDbContext(DbContextOptions<CarDealerDbContext> options)
             : base(options)
         { }
 

@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class CustomerViewModel
+    public class CustomerModel
     {
         public string Name { get; set; }
 

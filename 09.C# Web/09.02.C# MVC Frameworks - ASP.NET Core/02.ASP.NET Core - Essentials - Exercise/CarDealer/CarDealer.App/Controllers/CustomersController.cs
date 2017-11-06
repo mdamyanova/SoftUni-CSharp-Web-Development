@@ -13,9 +13,8 @@
             this.db = db;
         }
 
-        // nice :) 
         [HttpGet("customers/all/{order}")]
-        public IActionResult All(string order)
+        public IActionResult All(string order = "ascending")
         {
             if (order == "ascending" || order == "descending")
             {
@@ -24,7 +23,12 @@
             }
 
             return this.NotFound();
+        }
 
+        [HttpGet("customers/{id}")]
+        public IActionResult Sales(string id)
+        {
+            return null;
         }
     }
 }

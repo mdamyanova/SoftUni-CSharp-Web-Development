@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.App.Models
 {
-    public class SupplierViewModel
+    public class SupplierModel
     {
         public int Id { get; set; }
 

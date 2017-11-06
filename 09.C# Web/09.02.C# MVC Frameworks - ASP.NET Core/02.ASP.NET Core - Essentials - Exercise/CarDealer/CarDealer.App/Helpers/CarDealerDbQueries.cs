@@ -7,12 +7,9 @@
 
     public static class CarDealerDbQueries
     {
-        //TODO: Check for exceptions
-
-        //TODO: Not right query, fix it
-        public static ListingCustomersViewModel GetOrderedCustomers(CarDealerDbContext db, string order)
+        public static ListingCustomersModel GetOrderedCustomers(CarDealerDbContext db, string order)
         {
-            var result = db.Customers.Select(c => new CustomerViewModel
+            var result = db.Customers.Select(c => new CustomerModel
             {
                 Name = c.Name,
                 BirthDate = c.BirthDate,
@@ -27,18 +24,18 @@
                     .OrderByDescending(c => c.BirthDate)
                     .ThenBy(c => c.IsYoungDriver);
 
-            return new ListingCustomersViewModel
+            return new ListingCustomersModel
             {
                 Customers = result.ToList()
             };
         }
 
-        public static ListingCarsViewModel GetCarsFromMake(CarDealerDbContext db, string make)
+        public static ListingCarsModel GetCarsFromMake(CarDealerDbContext db, string make)
         {
             var result = db
                 .Cars
 
-                .Select(c => new CarViewModel
+                .Select(c => new CarModel
                 {
                     Make = c.Make,
                     Model = c.Model,
@@ -48,17 +45,17 @@
                 .OrderBy(c => c.Model)
                 .ThenByDescending(c => c.TravelledDistance);
 
-            return new ListingCarsViewModel
+            return new ListingCarsModel
             {
                 Cars = result.ToList()
             };
         }
 
-        public static ListingSuppliersViewModel GetFilterSuppliers(CarDealerDbContext db, string type)
+        public static ListingSuppliersModel GetFilterSuppliers(CarDealerDbContext db, string type)
         {
             var result = db
                 .Suppliers
-                .Select(s => new SupplierViewModel
+                .Select(s => new SupplierModel
                 {
                     Id = s.Id,
                     Name = s.Name,
@@ -75,28 +72,31 @@
                 result = result.Where(s => s.IsImporter);
             }
 
-            return new ListingSuppliersViewModel
+            return new ListingSuppliersModel
             {
                 Suppliers = result.ToList()
             };
         }
 
-        public static void GetCarsWithPartsById(CarDealerDbContext db, int id)
+        public static CarWithPartsModel GetCarsWithPartsById(CarDealerDbContext db, int id)
         {
             var result = db
                 .Cars
                 .Where(c => c.Id == id)
-                .Select(c => new
+                .Select(c => new CarWithPartsModel
                 {
-                    c.Make,
-                    c.Model,
-                    c.TravelledDistance,
-                    Parts = c.Parts.Select(p => new
+                    Make = c.Make,
+                    Model = c.Model,
+                    TravelledDistance = c.TravelledDistance,
+                    Parts = c.Parts.Select(p => new PartModel
                     {
-                        p.Part.Name,
-                        p.Part.Price
-                    })
-                });
+                        Name = p.Part.Name,
+                        Price = p.Part.Price
+                    }).ToList()
+                })
+                .FirstOrDefault();
+
+            return result;
         }
 
         public static void GetTotalSalesByCustomer(CarDealerDbContext db, int id)
@@ -109,7 +109,7 @@
                 {
                     c.Name,
                     Cars = c.Sales.Count
-
+                   
                 });
         }
 

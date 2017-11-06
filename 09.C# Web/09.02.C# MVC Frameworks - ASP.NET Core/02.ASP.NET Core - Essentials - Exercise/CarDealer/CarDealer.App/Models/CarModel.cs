@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.App.Models
 {
-    public class CarViewModel
+    public class CarModel
     {
         public string Make { get; set; }
 

@@ -13,7 +13,6 @@
             this.db = db;
         }
 
-        //TODO: Make all constants :) 
         [HttpGet("suppliers/{type}")]
         public IActionResult All(string type)
         {

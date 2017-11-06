@@ -19,5 +19,13 @@
             var model = CarDealerDbQueries.GetCarsFromMake(this.db, make);
             return this.View(model);
         }
+
+        [HttpGet("/cars/{id}/parts")]
+        public IActionResult Parts(string id)
+        {
+            var model = CarDealerDbQueries.GetCarsWithPartsById(this.db, int.Parse(id));
+
+            return this.View(model);
+        }
     }
 }

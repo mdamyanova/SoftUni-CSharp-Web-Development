@@ -1,21 +1,23 @@
 ﻿namespace CarDealer.Web.Controllers
 {
     using CarDealer.Web.Data;
+    using CarDealer.Web.Services.Contracts;
     using Microsoft.AspNetCore.Mvc;
 
     public class SuppliersController : Controller
     {
-        private CarDealerDbContext db;
+        private readonly ISupplierService suppliers;
 
-        public SuppliersController(CarDealerDbContext db)
+        public SuppliersController(ISupplierService suppliers)
         {
-            this.db = db;
+            this.suppliers = suppliers;
         }
 
         [HttpGet("suppliers/{type}")]
         public IActionResult All(string type)
         {
-            return null;
+            var model = suppliers.FilterSuppliers(type);
+            return this.View(model);
         }
     }
 }

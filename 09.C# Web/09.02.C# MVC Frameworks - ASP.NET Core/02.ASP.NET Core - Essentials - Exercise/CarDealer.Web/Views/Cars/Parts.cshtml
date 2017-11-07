@@ -6,23 +6,3 @@
 <h2>Parts</h2>
 
 <h2>All</h2>
-<table style="width:100%">
-    <tr>
-        <th>Model</th>
-        <th>Make</th>
-        <th>Travelled distance</th>
-        <th>Parts</th>
-    </tr>
-    <tr>
-        <td>@this.Model.Model</td>
-        <td>@this.Model.Make</td>
-        <td>@this.Model.TravelledDistance</td>
-    </tr>
-    <tr>
-    @foreach (var part in this.Model.Parts)
-    {
-        <td>@part.Name</td>
-        <td>@part.Price</td>
-    }
-    </tr>
-</table>

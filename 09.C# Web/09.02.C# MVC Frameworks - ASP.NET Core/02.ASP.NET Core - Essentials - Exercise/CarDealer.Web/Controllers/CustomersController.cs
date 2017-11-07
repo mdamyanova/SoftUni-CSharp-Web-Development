@@ -25,7 +25,8 @@
         [HttpGet("customers/{id}")]
         public IActionResult Sales(string id)
         {
-            return null;
+            var model = customers.TotalSalesById(int.Parse(id));
+            return this.View(model);
         }
     }
 }

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Sales";
+}
+
+<h2>Sales</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Bought cars</th>
+            <th>Total money spent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>@this.Model.Name</th>
+            <th>@this.Model.TotalBoughtCars</th>
+            <th>@this.Model.TotalMoneySpent</th>
+        </tr>
+    </tbody>
+</table>

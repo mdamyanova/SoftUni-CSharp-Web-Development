@@ -3,7 +3,5 @@
     public class SaleModel
     {
         public CarModel Car { get; set; }
-
-
     }
 }

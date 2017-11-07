@@ -35,5 +35,25 @@
 
             return result.ToList();
         }
+
+        public CustomerTotalSalesModel TotalSalesById(int id)
+        {
+            var result = db
+                   .Customers
+                   .Where(c => c.Id == id)
+                   .Select(c => new CustomerTotalSalesModel
+                   {
+                       Name = c.Name,
+                       IsYoungDriver = c.IsYoungDriver,
+                       BoughtCars = c.Sales.Select(s => new CarPriceModel
+                       {
+                           Price = s.Car.Parts.Sum(p => p.Part.Price),
+                           Discount = s.Discount
+                       })
+                   })
+                   .FirstOrDefault();
+
+            return result;
+        }
     }
 }

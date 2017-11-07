@@ -31,9 +31,12 @@ namespace CarDealer.Web
                 .AddEntityFrameworkStores<CarDealerDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Add Weblication services.
             // here goes the services 
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<ICarService, CarService>();
+            services.AddTransient<ISaleService, SaleService>();
+            services.AddTransient<IPartService, PartService>();
+            services.AddTransient<ISupplierService, SupplierService>();
             services.AddMvc();
             services.AddDbContext<CarDealerDbContext>(options =>
                 options.UseSqlServer(AppSettings.DatabaseConnectionString));

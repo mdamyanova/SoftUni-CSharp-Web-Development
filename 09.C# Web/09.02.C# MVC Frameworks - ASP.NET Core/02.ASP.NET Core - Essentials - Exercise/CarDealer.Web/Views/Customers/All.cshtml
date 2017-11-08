@@ -3,18 +3,22 @@
 }
 
 <h2>All</h2>
-<table style="width:100%">
-    <tr>
-        <th>Name</th>
-        <th>Birth date</th> 
-        <th>Is young driver</th>
-    </tr>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birth date</th> 
+            <th>Is young driver</th>
+        </tr>
+    </thead>
+<tbody>            
     @foreach (var customer in this.Model)
     {
         <tr>
             <td>@customer.Name</td>
-            <td>@customer.BirthDate</td> 
+            <td>@customer.BirthDate</td>
             <td>@customer.IsYoungDriver</td>
         </tr>
     }
+    </tbody>
 </table>

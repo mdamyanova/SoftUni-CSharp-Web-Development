@@ -1,5 +1,3 @@
-using System;
-
 namespace CarDealer.Web.Models
 {
     public class ErrorModel

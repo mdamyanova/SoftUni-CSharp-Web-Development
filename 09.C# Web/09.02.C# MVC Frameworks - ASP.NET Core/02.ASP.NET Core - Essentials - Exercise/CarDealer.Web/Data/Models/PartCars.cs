@@ -1,4 +1,4 @@
-﻿namespace CarDealer.Domain
+﻿namespace CarDealer.Web.Data.Models
 {
     public class PartCars
     {

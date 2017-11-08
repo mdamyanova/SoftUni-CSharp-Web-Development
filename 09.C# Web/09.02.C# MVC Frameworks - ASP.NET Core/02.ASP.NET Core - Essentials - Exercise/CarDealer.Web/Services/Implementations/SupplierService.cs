@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using CarDealer.Web.Services.Contracts;
-using CarDealer.Web.Services.Models;
-using CarDealer.Web.Data;
-using System.Linq;
-
-namespace CarDealer.Web.Services.Implementations
+﻿namespace CarDealer.Web.Services.Implementations
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using CarDealer.Web.Data;
+    using CarDealer.Web.Services.Contracts;
+    using CarDealer.Web.Services.Models;
+
     public class SupplierService : ISupplierService
     {
         private readonly CarDealerDbContext db;

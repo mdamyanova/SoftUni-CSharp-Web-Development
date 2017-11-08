@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace CarDealer.Web.Services.Models
+﻿namespace CarDealer.Web.Services.Models
 {
+    using System.Collections.Generic;
+
     public class CarWithPartsModel
     {
         public string Make { get; set; }

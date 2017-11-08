@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CarDealer.Web.Services.Contracts
+﻿namespace CarDealer.Web.Services.Contracts
 {
-    interface ISaleService
+    using System.Collections.Generic;
+    using CarDealer.Web.Services.Models;
+
+    public interface ISaleService
     {
+        IEnumerable<SaleModel> Sales();
+        SaleDetailsModel Sale(int id);
+        IEnumerable<SaleModel> DiscountedSales();
+        IEnumerable<SaleModel> DiscountedSalesWithPercent(double percent);
     }
 }

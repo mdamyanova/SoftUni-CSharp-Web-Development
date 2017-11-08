@@ -3,18 +3,22 @@
 }
 
 <h2>All</h2>
-<table style="width:100%">
+<table class="table table-bordered table-hover">
+    <thead>
     <tr>
         <th>Model</th>
         <th>Make</th> 
         <th>Travelled distance</th>
     </tr>
-    @foreach (var car in this.Model)
-    {
-        <tr>
-            <td>@car.Model</td>
-            <td>@car.Make</td> 
-            <td>@car.TravelledDistance</td>
-        </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var car in this.Model)
+        {
+            <tr>
+                <td>@car.Model</td>
+                <td>@car.Make</td>
+                <td>@car.TravelledDistance</td>
+            </tr>
+        }
+    </tbody>
 </table>

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CarDealer.Web.Models.ManageModels
+﻿namespace CarDealer.Web.Models.ManageModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class IndexViewModel
     {
         public string Username { get; set; }

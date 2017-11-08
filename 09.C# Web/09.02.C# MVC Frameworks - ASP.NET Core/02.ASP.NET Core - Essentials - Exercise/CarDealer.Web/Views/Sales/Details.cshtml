@@ -5,3 +5,25 @@
 
 <h2>Details</h2>
 
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Discount</th>
+            <th>Price</th>
+            <th>Car model</th>
+            <th>Car make</th>
+            <th>Car travelled distance</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>@this.Model.CustomerName</td>
+        <td>@this.Model.Discount</td>
+        <td>@this.Model.Price</td>
+        <td>@this.Model.Car.Model</td>
+        <td>@this.Model.Car.Make</td>
+        <td>@this.Model.Car.TravelledDistance</td>
+    </tr>
+    </tbody>
+</table>

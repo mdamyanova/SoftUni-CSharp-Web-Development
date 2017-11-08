@@ -5,3 +5,22 @@
 
 <h2>All</h2>
 
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Customer</th>
+        <th>Discount</th> 
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var sale in this.Model)
+    {
+        <tr>
+            <td>@sale.CustomerName</td>
+            <td>@sale.Discount</td>
+            <td>@sale.Price</td>
+        </tr>
+    }
+    </tbody>
+</table>

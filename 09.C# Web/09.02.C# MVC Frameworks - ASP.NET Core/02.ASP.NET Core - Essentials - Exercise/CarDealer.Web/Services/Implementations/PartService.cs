@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CarDealer.Web.Services.Contracts;
-
-namespace CarDealer.Web.Services.Implementations
+﻿namespace CarDealer.Web.Services.Implementations
 {
+    using CarDealer.Web.Services.Contracts;
+
     public class PartService : IPartService
     {
     }

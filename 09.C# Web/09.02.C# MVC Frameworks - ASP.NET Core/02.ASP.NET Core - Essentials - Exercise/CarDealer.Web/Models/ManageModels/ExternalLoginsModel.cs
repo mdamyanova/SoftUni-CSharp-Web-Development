@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-
-namespace CarDealer.Web.Models.ManageModels
+﻿namespace CarDealer.Web.Models.ManageModels
 {
+    using System.Collections.Generic;
+    using Microsoft.AspNetCore.Authentication;
+    using Microsoft.AspNetCore.Identity;
+
     public class ExternalLoginsModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }

@@ -1,6 +1,5 @@
 ﻿namespace CarDealer.Web.Controllers
 {
-    using CarDealer.Web.Data;
     using CarDealer.Web.Services.Contracts;
     using Microsoft.AspNetCore.Mvc;
 

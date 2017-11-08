@@ -1,40 +1,43 @@
 ﻿namespace CarDealer.Web.Controllers
 {
-    using Data;
+    using CarDealer.Web.Services.Contracts;
     using Microsoft.AspNetCore.Mvc;
 
     public class SalesController : Controller
     {
-        private CarDealerDbContext db;
+        private readonly ISaleService sales;
 
-        public SalesController(CarDealerDbContext db)
+        public SalesController(ISaleService sales)
         {
-            this.db = db;
+            this.sales = sales;
         }
 
         [HttpGet("/Sales")]
         public IActionResult All()
         {
-           
-            return this.View();
+            var model = this.sales.Sales();
+            return this.View(model);
         }
 
         [HttpGet("/Sales/{id}")]
         public IActionResult Details(string id)
         {
-            return null;
+            var model = this.sales.Sale(int.Parse(id));
+            return this.View(model);
         }
 
         [HttpGet("/Sales/discounted")]
-        public IActionResult AllDiscounted(string make)
+        public IActionResult Discounted()
         {
-            return null;
+            var model = this.sales.DiscountedSales();
+            return this.View("All", model);
         }
 
         [HttpGet("/Sales/discounted/{percent}")]
-        public IActionResult AllDiscountedWithPercent(string make)
+        public IActionResult Percent(string percent)
         {
-            return null;
+            var model = this.sales.DiscountedSalesWithPercent(double.Parse(percent));
+            return this.View("All", model);
         }
     }
 }

@@ -3,18 +3,22 @@
 }
 
 <h2>All</h2>
-<table style="width:100%">
+<table class="table table-bordered table-hover">
+    <thead>
     <tr>
         <th>Id</th>
         <th>Name</th> 
         <th>Parts</th>
     </tr>
-    @foreach (var supplier in this.Model)
-    {
-        <tr>
-            <td>@supplier.Id</td>
-            <td>@supplier.Name</td> 
-            <td>@supplier.Parts</td>
-        </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var supplier in this.Model)
+        {
+            <tr>
+                <td>@supplier.Id</td>
+                <td>@supplier.Name</td>
+                <td>@supplier.Parts</td>
+            </tr>
+        }
+    </tbody>
 </table>

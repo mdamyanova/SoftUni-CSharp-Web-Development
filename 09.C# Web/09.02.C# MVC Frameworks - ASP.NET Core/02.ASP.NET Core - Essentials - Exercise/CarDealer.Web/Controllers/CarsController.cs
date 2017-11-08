@@ -15,14 +15,14 @@
         [HttpGet("/cars/{make}")]
         public IActionResult All(string make)
         {
-            var model = cars.CarsFromMake(make);
+            var model = this.cars.CarsFromMake(make);
             return this.View(model);
         }
 
         [HttpGet("/cars/{id}/parts")]
         public IActionResult Parts(string id)
         {
-            var model = cars.CarWithParts(int.Parse(id));
+            var model = this.cars.CarWithParts(int.Parse(id));
             return this.View(model);
         }
     }

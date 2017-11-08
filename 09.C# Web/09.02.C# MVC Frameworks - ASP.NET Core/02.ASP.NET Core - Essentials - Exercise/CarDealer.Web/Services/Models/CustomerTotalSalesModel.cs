@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace CarDealer.Web.Services.Models
+﻿namespace CarDealer.Web.Services.Models
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class CustomerTotalSalesModel
     {
         public string Name { get; set; }

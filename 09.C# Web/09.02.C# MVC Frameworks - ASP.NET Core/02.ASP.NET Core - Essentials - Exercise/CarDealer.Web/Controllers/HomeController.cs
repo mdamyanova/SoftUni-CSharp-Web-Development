@@ -2,7 +2,7 @@
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using CarDealer.Web.Models;
+    using Models;
 
     public class HomeController : Controller
     {

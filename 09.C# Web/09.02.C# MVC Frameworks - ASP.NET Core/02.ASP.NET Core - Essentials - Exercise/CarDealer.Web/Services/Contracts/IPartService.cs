@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.Web.Services.Contracts
 {
-    interface IPartService
+    public interface IPartService
     {
     }
 }

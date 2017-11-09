@@ -1,4 +1,4 @@
-﻿namespace CarDealer.Web.Services.Models
+﻿namespace CarDealer.Web.Services.Models.Suppliers
 {
     public class SupplierModel
     {

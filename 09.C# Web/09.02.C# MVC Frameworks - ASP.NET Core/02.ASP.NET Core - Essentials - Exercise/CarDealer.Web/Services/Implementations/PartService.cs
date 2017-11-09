@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.Web.Services.Implementations
 {
-    using CarDealer.Web.Services.Contracts;
+    using Contracts;
 
     public class PartService : IPartService
     {

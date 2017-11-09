@@ -1,7 +1,8 @@
-﻿namespace CarDealer.Web.Services.Models
+﻿namespace CarDealer.Web.Services.Models.Customers
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Cars;
 
     public class CustomerTotalSalesModel
     {

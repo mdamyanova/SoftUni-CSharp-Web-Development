@@ -5,7 +5,7 @@
     using System.Text;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
-    using CarDealer.Web.Models;
+    using Models;
     using CarDealer.Web.Models.ManageModels;
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Authorization;

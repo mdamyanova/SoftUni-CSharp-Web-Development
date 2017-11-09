@@ -2,9 +2,10 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using CarDealer.Web.Data;
-    using CarDealer.Web.Services.Contracts;
-    using CarDealer.Web.Services.Models;
+    using CarDealer.Web.Services.Models.Suppliers;
+    using Data;
+    using Contracts;
+    using Models;
 
     public class SupplierService : ISupplierService
     {

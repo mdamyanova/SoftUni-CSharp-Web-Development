@@ -1,11 +1,14 @@
 ﻿namespace CarDealer.Web.Services.Implementations
 {
+    using System;
     using System.Collections.Generic;
     using Contracts;
-    using Models;
     using Models.Enums;
-    using CarDealer.Web.Data;
+    using Data;
     using System.Linq;
+    using Data.Models;
+    using Models.Cars;
+    using Models.Customers;
 
     public class CustomerService : ICustomerService
     {
@@ -20,6 +23,7 @@
         {
             var result = db.Customers.Select(c => new CustomerModel
             {
+                Id = c.Id,
                 Name = c.Name,
                 BirthDate = c.BirthDate,
                 IsYoungDriver = c.IsYoungDriver
@@ -54,6 +58,55 @@
                    .FirstOrDefault();
 
             return result;
+        }
+
+        public void Create(string name, DateTime birthDate, bool isYoungDriver)
+        {
+            var customer = new Customer
+            {
+                Name = name,
+                BirthDate = birthDate,
+                IsYoungDriver = isYoungDriver
+            };
+
+            this.db.Add(customer);
+            this.db.SaveChanges();
+        }
+
+        public CustomerModel ById(int id)
+        {
+            return this.db
+                .Customers
+                .Where(c => c.Id == id)
+                .Select(c => new CustomerModel
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    BirthDate = c.BirthDate,
+                    IsYoungDriver = c.IsYoungDriver
+                })
+                .FirstOrDefault();
+        }
+
+        public bool Exists(int id)
+        {
+            return this.db.Customers.Any(c => c.Id == id);
+        }
+
+        public void Edit(int id, string name, DateTime birthDate, bool isYoungDriver)
+        {
+            var customer = this.db.Customers.Find(id);
+
+            if (customer == null)
+            {
+                return;
+            }
+
+            customer.Name = name;
+            customer.BirthDate = birthDate;
+            customer.IsYoungDriver = isYoungDriver;
+
+            this.db.SaveChanges();
         }
     }
 }

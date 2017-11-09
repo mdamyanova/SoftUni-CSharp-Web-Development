@@ -1,10 +1,11 @@
 ﻿namespace CarDealer.Web.Services.Implementations
 {
-    using CarDealer.Web.Data;
-    using CarDealer.Web.Services.Contracts;
-    using CarDealer.Web.Services.Models;
+    using Data;
+    using Contracts;
     using System.Collections.Generic;
     using System.Linq;
+    using Models.Parts;
+    using Models.Cars;
 
     public class CarService : ICarService
     {

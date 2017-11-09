@@ -1,17 +1,16 @@
-﻿using CarDealer.Web.Data;
-using CarDealer.Web.Models;
-using CarDealer.Web.Services.Contracts;
-using CarDealer.Web.Services.Implementations;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Builder;
-
-
-namespace CarDealer.Web
+﻿namespace CarDealer.Web
 {
+    using Data;
+    using Models;
+    using Services.Contracts;
+    using Services.Implementations;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.AspNetCore.Builder;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)

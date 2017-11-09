@@ -3,8 +3,8 @@
     using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
-    using CarDealer.Web.Models;
-    using CarDealer.Web.Models.AccountModels;
+    using Models;
+    using Models.AccountModels;
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;

@@ -1,7 +1,7 @@
 ﻿namespace CarDealer.Web.Services.Contracts
 {
-    using CarDealer.Web.Services.Models;
     using System.Collections.Generic;
+    using Models.Cars;
 
     public interface ICarService
     {

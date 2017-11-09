@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.Web.Data
 {
-    using CarDealer.Web.Data.Models;
+    using Models;
     using Microsoft.EntityFrameworkCore;
 
     public class CarDealerDbContext : DbContext

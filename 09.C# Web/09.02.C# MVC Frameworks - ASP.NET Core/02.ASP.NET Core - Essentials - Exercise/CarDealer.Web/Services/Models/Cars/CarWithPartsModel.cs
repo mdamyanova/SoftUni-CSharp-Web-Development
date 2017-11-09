@@ -1,6 +1,7 @@
-﻿namespace CarDealer.Web.Services.Models
+﻿namespace CarDealer.Web.Services.Models.Cars
 {
     using System.Collections.Generic;
+    using Parts;
 
     public class CarWithPartsModel
     {

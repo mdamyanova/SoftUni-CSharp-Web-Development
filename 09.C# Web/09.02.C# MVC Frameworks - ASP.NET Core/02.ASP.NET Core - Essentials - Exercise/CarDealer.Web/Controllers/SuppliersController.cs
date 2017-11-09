@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.Web.Controllers
 {
-    using CarDealer.Web.Services.Contracts;
+    using Services.Contracts;
     using Microsoft.AspNetCore.Mvc;
 
     public class SuppliersController : Controller

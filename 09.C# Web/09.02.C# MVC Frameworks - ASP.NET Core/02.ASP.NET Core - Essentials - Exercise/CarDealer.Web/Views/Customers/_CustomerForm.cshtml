@@ -1,0 +1,23 @@
+﻿@using CarDealer.Web.Services.Models.Customers
+@model CarDealer.Web.Services.Models.Customers.CustomerFormModel
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="form-text text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BirthDate">Birth date</label>
+        <input asp-for="BirthDate" type="date" class="form-control" />
+        <span asp-validation-for="BirthDate" class="form-text text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="IsYoungDriver" />
+        <label asp-for="IsYoungDriver"></label>
+        <span asp-validation-for="IsYoungDriver" class="form-text text-danger"></span>
+    </div>
+    <div>
+        <input class="btn btn-success" type="submit" value="Save Customer" />
+    </div>
+</form>

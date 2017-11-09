@@ -1,7 +1,8 @@
 ﻿namespace CarDealer.Web.Services.Contracts
 {
-    using CarDealer.Web.Services.Models;
+    using Models;
     using System.Collections.Generic;
+    using CarDealer.Web.Services.Models.Suppliers;
 
     public interface ISupplierService
     {

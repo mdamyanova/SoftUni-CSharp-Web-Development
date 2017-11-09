@@ -1,0 +1,23 @@
+﻿!DOCTYPE html>
+
+<h2>All</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th> 
+        <th>Supplier name</th>
+    </tr>
+    </thead>
+    <tbody>            
+    @foreach (var part in this.Model)
+    {
+        <tr>
+            <td>@part.Name</td>
+            <td>@part.Price</td>
+            <td>@part.SupplierName</td>
+            <td><a class="btn btn-warning btn-sm" href="/parts/edit/@part.Id">Edit</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

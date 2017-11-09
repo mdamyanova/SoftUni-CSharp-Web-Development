@@ -1,0 +1,13 @@
+﻿@model CarDealer.Web.Services.Models.Parts.PartModel
+
+@{
+    ViewData["Title"] = "Edit Part";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.Partial("_PartsForm", this.Model)
+    </div>
+</div>

@@ -1,9 +1,7 @@
 ﻿namespace CarDealer.Web.Services.Models.Parts
 {
-    public class PartModel
+    public class PartFormModel
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public double? Price { get; set; }

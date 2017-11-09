@@ -18,7 +18,7 @@
         public IActionResult All(string order)
         {
             var orderDirection = order.ToLower() == "ascending" ? OrderType.Ascending : OrderType.Descending;
-            var model = customers.OrderedCustomers(orderDirection);
+            var model = this.customers.OrderedCustomers(orderDirection);
 
             return this.View(model);
         }
@@ -26,7 +26,7 @@
         [HttpGet("customers/{id}")]
         public IActionResult Sales(string id)
         {
-            var model = customers.TotalSalesById(int.Parse(id));
+            var model = this.customers.TotalSalesById(int.Parse(id));
             return this.View(model);
         }
 

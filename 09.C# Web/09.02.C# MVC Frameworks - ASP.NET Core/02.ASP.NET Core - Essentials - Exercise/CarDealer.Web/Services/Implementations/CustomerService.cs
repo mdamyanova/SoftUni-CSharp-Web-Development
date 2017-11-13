@@ -21,7 +21,7 @@
 
         public IEnumerable<CustomerModel> OrderedCustomers(OrderType type)
         {
-            var result = db.Customers.Select(c => new CustomerModel
+            var result = this.db.Customers.Select(c => new CustomerModel
             {
                 Id = c.Id,
                 Name = c.Name,
@@ -42,7 +42,7 @@
 
         public CustomerTotalSalesModel TotalSalesById(int id)
         {
-            var result = db
+            var result = this.db
                    .Customers
                    .Where(c => c.Id == id)
                    .Select(c => new CustomerTotalSalesModel

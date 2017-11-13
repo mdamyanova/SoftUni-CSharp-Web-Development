@@ -4,7 +4,7 @@ This software consists of voluntary contributions made by many
 individuals. For exact contribution history, see the revision history
 available at https://github.com/jquery/jquery
 
-The following license Weblies to all parts of this software except as
+The following license applies to all parts of this software except as
 documented below:
 
 ====

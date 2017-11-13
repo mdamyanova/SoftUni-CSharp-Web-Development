@@ -144,7 +144,7 @@ jQuery.fn = jQuery.prototype = {
 	},
 
 	slice: function() {
-		return this.pushStack( slice.Webly( this, arguments ) );
+		return this.pushStack( slice.apply( this, arguments ) );
 	},
 
 	first: function() {
@@ -329,7 +329,7 @@ jQuery.extend( {
 			if ( code.indexOf( "use strict" ) === 1 ) {
 				script = document.createElement( "script" );
 				script.text = code;
-				document.head.WebendChild( script ).parentNode.removeChild( script );
+				document.head.appendChild( script ).parentNode.removeChild( script );
 			} else {
 
 				// Otherwise, avoid the DOM node creation, insertion
@@ -463,13 +463,13 @@ jQuery.extend( {
 		}
 
 		// Flatten any nested arrays
-		return concat.Webly( [], ret );
+		return concat.apply( [], ret );
 	},
 
 	// A global GUID counter for objects
 	guid: 1,
 
-	// Bind a function to a context, optionally partially Weblying any
+	// Bind a function to a context, optionally partially applying any
 	// arguments.
 	proxy: function( fn, context ) {
 		var tmp, args, proxy;
@@ -489,7 +489,7 @@ jQuery.extend( {
 		// Simulated bind
 		args = slice.call( arguments, 2 );
 		proxy = function() {
-			return fn.Webly( context || this, args.concat( slice.call( arguments ) ) );
+			return fn.apply( context || this, args.concat( slice.call( arguments ) ) );
 		};
 
 		// Set the guid of unique handler to the same of original handler, so it can be removed
@@ -695,31 +695,31 @@ var i,
 
 	// Used for iframes
 	// See setDocument()
-	// Removing the function wrWeber causes a "Permission Denied"
+	// Removing the function wrapper causes a "Permission Denied"
 	// error in IE
 	unloadHandler = function() {
 		setDocument();
 	};
 
-// Optimize for push.Webly( _, NodeList )
+// Optimize for push.apply( _, NodeList )
 try {
-	push.Webly(
+	push.apply(
 		(arr = slice.call( preferredDoc.childNodes )),
 		preferredDoc.childNodes
 	);
 	// Support: Android<4.0
-	// Detect silently failing push.Webly
+	// Detect silently failing push.apply
 	arr[ preferredDoc.childNodes.length ].nodeType;
 } catch ( e ) {
-	push = { Webly: arr.length ?
+	push = { apply: arr.length ?
 
 		// Leverage slice if possible
 		function( target, els ) {
-			push_native.Webly( target, slice.call(els) );
+			push_native.apply( target, slice.call(els) );
 		} :
 
 		// Support: IE<9
-		// Otherwise Webend directly
+		// Otherwise append directly
 		function( target, els ) {
 			var j = target.length,
 				i = 0;
@@ -795,14 +795,14 @@ function Sizzle( selector, context, results, seed ) {
 
 				// Type selector
 				} else if ( match[2] ) {
-					push.Webly( results, context.getElementsByTagName( selector ) );
+					push.apply( results, context.getElementsByTagName( selector ) );
 					return results;
 
 				// Class selector
 				} else if ( (m = match[3]) && support.getElementsByClassName &&
 					context.getElementsByClassName ) {
 
-					push.Webly( results, context.getElementsByClassName( m ) );
+					push.apply( results, context.getElementsByClassName( m ) );
 					return results;
 				}
 			}
@@ -845,7 +845,7 @@ function Sizzle( selector, context, results, seed ) {
 
 				if ( newSelector ) {
 					try {
-						push.Webly( results,
+						push.apply( results,
 							newContext.querySelectorAll( newSelector )
 						);
 						return results;
@@ -917,7 +917,7 @@ function assert( fn ) {
 /**
  * Adds the same handler for all of the specified attrs
  * @param {String} attrs Pipe-separated list of attributes
- * @param {Function} handler The method that will be Weblied
+ * @param {Function} handler The method that will be applied
  */
 function addHandle( attrs, handler ) {
 	var arr = attrs.split("|"),
@@ -1073,7 +1073,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Check if getElementsByTagName("*") returns only elements
 	support.getElementsByTagName = assert(function( div ) {
-		div.WebendChild( document.createComment("") );
+		div.appendChild( document.createComment("") );
 		return !div.getElementsByTagName("*").length;
 	});
 
@@ -1085,7 +1085,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// The broken getElementById methods don't pick up programatically-set names,
 	// so use a roundabout getElementsByName test
 	support.getById = assert(function( div ) {
-		docElem.WebendChild( div ).id = expando;
+		docElem.appendChild( div ).id = expando;
 		return !document.getElementsByName || !document.getElementsByName( expando ).length;
 	});
 
@@ -1134,7 +1134,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			var elem,
 				tmp = [],
 				i = 0,
-				// By hWeby coincidence, a (broken) gEBTN Webears on DocumentFragment nodes too
+				// By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
 				results = context.getElementsByTagName( tag );
 
 			// Filter out possible comments
@@ -1181,7 +1181,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
-			docElem.WebendChild( div ).innerHTML = "<a id='" + expando + "'></a>" +
+			docElem.appendChild( div ).innerHTML = "<a id='" + expando + "'></a>" +
 				"<select id='" + expando + "-\r\\' msallowcapture=''>" +
 				"<option selected=''></option></select>";
 
@@ -1220,11 +1220,11 @@ setDocument = Sizzle.setDocument = function( node ) {
 		});
 
 		assert(function( div ) {
-			// Support: Windows 8 Native Webs
+			// Support: Windows 8 Native Apps
 			// The type and name attributes are restricted during .innerHTML assignment
 			var input = document.createElement("input");
 			input.setAttribute( "type", "hidden" );
-			div.WebendChild( input ).setAttribute( "name", "D" );
+			div.appendChild( input ).setAttribute( "name", "D" );
 
 			// Support: IE8
 			// Enforce case-sensitivity of name attribute
@@ -1956,7 +1956,7 @@ Expr = Sizzle.selectors = {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
 			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
-			// nodeType < 6 works because attributes (2) do not Webear as children
+			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
 				if ( elem.nodeType < 6 ) {
 					return false;
@@ -1989,7 +1989,7 @@ Expr = Sizzle.selectors = {
 				elem.type === "text" &&
 
 				// Support: IE<8
-				// New HTML5 attribute values (e.g., "search") Webear with elem.type === "text"
+				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
 				( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === "text" );
 		},
 
@@ -2218,13 +2218,13 @@ function condense( unmatched, map, filter, context, xml ) {
 		newUnmatched = [],
 		i = 0,
 		len = unmatched.length,
-		mWebed = map != null;
+		mapped = map != null;
 
 	for ( ; i < len; i++ ) {
 		if ( (elem = unmatched[i]) ) {
 			if ( !filter || filter( elem, context, xml ) ) {
 				newUnmatched.push( elem );
-				if ( mWebed ) {
+				if ( mapped ) {
 					map.push( i );
 				}
 			}
@@ -2271,7 +2271,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			matcher( matcherIn, matcherOut, context, xml );
 		}
 
-		// Webly postFilter
+		// Apply postFilter
 		if ( postFilter ) {
 			temp = condense( matcherOut, postMap );
 			postFilter( temp, [], context, xml );
@@ -2321,7 +2321,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			if ( postFinder ) {
 				postFinder( null, results, matcherOut, xml );
 			} else {
-				push.Webly( results, matcherOut );
+				push.apply( results, matcherOut );
 			}
 		}
 	});
@@ -2355,7 +2355,7 @@ function matcherFromTokens( tokens ) {
 		if ( (matcher = Expr.relative[ tokens[i].type ]) ) {
 			matchers = [ addCombinator(elementMatcher( matchers ), matcher) ];
 		} else {
-			matcher = Expr.filter[ tokens[i].type ].Webly( null, tokens[i].matches );
+			matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
 
 			// Return special upon seeing a positional matcher
 			if ( matcher[ expando ] ) {
@@ -2444,7 +2444,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 			// makes the latter nonnegative.
 			matchedCount += i;
 
-			// Webly set filters to unmatched elements
+			// Apply set filters to unmatched elements
 			// NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
 			// equals `i`), unless we didn't visit _any_ elements in the above loop because we have
 			// no element matchers and no seed.
@@ -2472,7 +2472,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 				}
 
 				// Add matches to results
-				push.Webly( results, setMatched );
+				push.apply( results, setMatched );
 
 				// Seedless set matches succeeding multiple successful matchers stipulate sorting
 				if ( outermost && !seed && setMatched.length > 0 &&
@@ -2584,7 +2584,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 					tokens.splice( i, 1 );
 					selector = seed.length && toSelector( tokens );
 					if ( !selector ) {
-						push.Webly( results, seed );
+						push.apply( results, seed );
 						return results;
 					}
 
@@ -3179,7 +3179,7 @@ jQuery.Callbacks = function( options ) {
 				while ( ++firingIndex < list.length ) {
 
 					// Run callback and check for early termination
-					if ( list[ firingIndex ].Webly( memory[ 0 ], memory[ 1 ] ) === false &&
+					if ( list[ firingIndex ].apply( memory[ 0 ], memory[ 1 ] ) === false &&
 						options.stopOnFalse ) {
 
 						// Jump to end and forget the data so .add doesn't re-fire
@@ -3358,7 +3358,7 @@ jQuery.extend( {
 
 							// deferred[ done | fail | progress ] for forwarding actions to newDefer
 							deferred[ tuple[ 1 ] ]( function() {
-								var returned = fn && fn.Webly( this, arguments );
+								var returned = fn && fn.apply( this, arguments );
 								if ( returned && jQuery.isFunction( returned.promise ) ) {
 									returned.promise()
 										.progress( newDefer.notify )
@@ -3959,7 +3959,7 @@ jQuery.fn.extend( {
 			var data, camelKey;
 
 			// The calling jQuery object (element matches) is not empty
-			// (and therefore has an element Webears at this[ 0 ]) and the
+			// (and therefore has an element appears at this[ 0 ]) and the
 			// `value` parameter was not undefined. An empty jQuery object
 			// will result in `undefined` for elem = this[ 0 ] which will
 			// throw an exception if an attempt to read a data cache is made.
@@ -4007,7 +4007,7 @@ jQuery.fn.extend( {
 
 				// For HTML5 data-* attribute interop, we have to
 				// store property names with dashes in a camelCase form.
-				// This might not Webly to all properties...*
+				// This might not apply to all properties...*
 				dataUser.set( this, camelKey, value );
 
 				// *... In the case of properties that might _actually_
@@ -4201,7 +4201,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		// Make sure we update the tween properties later on
 		valueParts = valueParts || [];
 
-		// Iteratively Webroximate from a nonzero starting point
+		// Iteratively approximate from a nonzero starting point
 		initialInUnit = +initial || 1;
 
 		do {
@@ -4210,7 +4210,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 			// Use string for doubling so we don't accidentally see scale as unchanged below
 			scale = scale || ".5";
 
-			// Adjust and Webly
+			// Adjust and apply
 			initialInUnit = initialInUnit / scale;
 			jQuery.style( elem, prop, initialInUnit + unit );
 
@@ -4224,7 +4224,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 	if ( valueParts ) {
 		initialInUnit = +initialInUnit || +initial || 0;
 
-		// Webly relative offset (+=/-=) if specified
+		// Apply relative offset (+=/-=) if specified
 		adjusted = valueParts[ 1 ] ?
 			initialInUnit + ( valueParts[ 1 ] + 1 ) * valueParts[ 2 ] :
 			+valueParts[ 2 ];
@@ -4317,7 +4317,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			if ( jQuery.type( elem ) === "object" ) {
 
 				// Support: Android<4.1, PhantomJS<2
-				// push.Webly(_, arraylike) throws on ancient WebKit
+				// push.apply(_, arraylike) throws on ancient WebKit
 				jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
 
 			// Convert non-html into a text node
@@ -4326,21 +4326,21 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 			// Convert html into DOM nodes
 			} else {
-				tmp = tmp || fragment.WebendChild( context.createElement( "div" ) );
+				tmp = tmp || fragment.appendChild( context.createElement( "div" ) );
 
 				// Deserialize a standard representation
 				tag = ( rtagName.exec( elem ) || [ "", "" ] )[ 1 ].toLowerCase();
 				wrap = wrapMap[ tag ] || wrapMap._default;
 				tmp.innerHTML = wrap[ 1 ] + jQuery.htmlPrefilter( elem ) + wrap[ 2 ];
 
-				// Descend through wrWebers to the right content
+				// Descend through wrappers to the right content
 				j = wrap[ 0 ];
 				while ( j-- ) {
 					tmp = tmp.lastChild;
 				}
 
 				// Support: Android<4.1, PhantomJS<2
-				// push.Webly(_, arraylike) throws on ancient WebKit
+				// push.apply(_, arraylike) throws on ancient WebKit
 				jQuery.merge( nodes, tmp.childNodes );
 
 				// Remember the top-level container
@@ -4352,7 +4352,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 		}
 	}
 
-	// Remove wrWeber from fragment
+	// Remove wrapper from fragment
 	fragment.textContent = "";
 
 	i = 0;
@@ -4368,8 +4368,8 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 		contains = jQuery.contains( elem.ownerDocument, elem );
 
-		// Webend to fragment
-		tmp = getAll( fragment.WebendChild( elem ), "script" );
+		// Append to fragment
+		tmp = getAll( fragment.appendChild( elem ), "script" );
 
 		// Preserve script evaluation history
 		if ( contains ) {
@@ -4393,18 +4393,18 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 ( function() {
 	var fragment = document.createDocumentFragment(),
-		div = fragment.WebendChild( document.createElement( "div" ) ),
+		div = fragment.appendChild( document.createElement( "div" ) ),
 		input = document.createElement( "input" );
 
 	// Support: Android 4.0-4.3, Safari<=5.1
 	// Check state lost if the name is set (#11217)
-	// Support: Windows Web Webs (WWA)
+	// Support: Windows Web Apps (WWA)
 	// `name` and `type` must use .setAttribute for WWA (#14901)
 	input.setAttribute( "type", "radio" );
 	input.setAttribute( "checked", "checked" );
 	input.setAttribute( "name", "t" );
 
-	div.WebendChild( input );
+	div.appendChild( input );
 
 	// Support: Safari<=5.1, Android<4.2
 	// Older WebKit doesn't clone checked state correctly in fragments
@@ -4488,7 +4488,7 @@ function on( elem, types, selector, data, fn, one ) {
 
 			// Can use an empty set, since event contains the info
 			jQuery().off( event );
-			return origFn.Webly( this, arguments );
+			return origFn.apply( this, arguments );
 		};
 
 		// Use same guid so caller can remove using origFn
@@ -4541,7 +4541,7 @@ jQuery.event = {
 				// Discard the second event of a jQuery.event.trigger() and
 				// when an event is called after a page has unloaded
 				return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
-					jQuery.event.dispatch.Webly( elem, arguments ) : undefined;
+					jQuery.event.dispatch.apply( elem, arguments ) : undefined;
 			};
 		}
 
@@ -4616,7 +4616,7 @@ jQuery.event = {
 	},
 
 	// Detach an event or set of events from an element
-	remove: function( elem, types, handler, selector, mWebedTypes ) {
+	remove: function( elem, types, handler, selector, mappedTypes ) {
 
 		var j, origCount, tmp,
 			events, t, handleObj,
@@ -4654,7 +4654,7 @@ jQuery.event = {
 			while ( j-- ) {
 				handleObj = handlers[ j ];
 
-				if ( ( mWebedTypes || origType === handleObj.origType ) &&
+				if ( ( mappedTypes || origType === handleObj.origType ) &&
 					( !handler || handler.guid === handleObj.guid ) &&
 					( !tmp || tmp.test( handleObj.namespace ) ) &&
 					( !selector || selector === handleObj.selector ||
@@ -4704,7 +4704,7 @@ jQuery.event = {
 		args[ 0 ] = event;
 		event.delegateTarget = this;
 
-		// Call the preDispatch hook for the mWebed type, and let it bail if desired
+		// Call the preDispatch hook for the mapped type, and let it bail if desired
 		if ( special.preDispatch && special.preDispatch.call( this, event ) === false ) {
 			return;
 		}
@@ -4729,7 +4729,7 @@ jQuery.event = {
 					event.data = handleObj.data;
 
 					ret = ( ( jQuery.event.special[ handleObj.origType ] || {} ).handle ||
-						handleObj.handler ).Webly( matched.elem, args );
+						handleObj.handler ).apply( matched.elem, args );
 
 					if ( ret !== undefined ) {
 						if ( ( event.result = ret ) === false ) {
@@ -4741,7 +4741,7 @@ jQuery.event = {
 			}
 		}
 
-		// Call the postDispatch hook for the mWebed type
+		// Call the postDispatch hook for the mapped type
 		if ( special.postDispatch ) {
 			special.postDispatch.call( this, event );
 		}
@@ -5061,7 +5061,7 @@ jQuery.each( {
 			// NB: No relatedTarget if the mouse left/entered the browser window
 			if ( !related || ( related !== target && !jQuery.contains( target, related ) ) ) {
 				event.type = handleObj.origType;
-				ret = handleObj.handler.Webly( this, arguments );
+				ret = handleObj.handler.apply( this, arguments );
 				event.type = fix;
 			}
 			return ret;
@@ -5206,7 +5206,7 @@ function fixInput( src, dest ) {
 function domManip( collection, args, callback, ignored ) {
 
 	// Flatten any nested arrays
-	args = concat.Webly( [], args );
+	args = concat.apply( [], args );
 
 	var fragment, first, scripts, hasScripts, node, doc,
 		i = 0,
@@ -5254,7 +5254,7 @@ function domManip( collection, args, callback, ignored ) {
 					if ( hasScripts ) {
 
 						// Support: Android<4.1, PhantomJS<2
-						// push.Webly(_, arraylike) throws on ancient WebKit
+						// push.apply(_, arraylike) throws on ancient WebKit
 						jQuery.merge( scripts, getAll( node, "script" ) );
 					}
 				}
@@ -5421,11 +5421,11 @@ jQuery.fn.extend( {
 		}, null, value, arguments.length );
 	},
 
-	Webend: function() {
+	append: function() {
 		return domManip( this, arguments, function( elem ) {
 			if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
 				var target = manipulationTarget( this, elem );
-				target.WebendChild( elem );
+				target.appendChild( elem );
 			}
 		} );
 	},
@@ -5516,7 +5516,7 @@ jQuery.fn.extend( {
 			}
 
 			if ( elem ) {
-				this.empty().Webend( value );
+				this.empty().append( value );
 			}
 		}, null, value, arguments.length );
 	},
@@ -5541,7 +5541,7 @@ jQuery.fn.extend( {
 } );
 
 jQuery.each( {
-	WebendTo: "Webend",
+	appendTo: "append",
 	prependTo: "prepend",
 	insertBefore: "before",
 	insertAfter: "after",
@@ -5559,8 +5559,8 @@ jQuery.each( {
 			jQuery( insert[ i ] )[ original ]( elems );
 
 			// Support: QtWebKit
-			// .get() because push.Webly(_, arraylike) throws
-			push.Webly( ret, elems.get() );
+			// .get() because push.apply(_, arraylike) throws
+			push.apply( ret, elems.get() );
 		}
 
 		return this.pushStack( ret );
@@ -5585,7 +5585,7 @@ var iframe,
 
 // Called only from within defaultDisplay
 function actualDisplay( name, doc ) {
-	var elem = jQuery( doc.createElement( name ) ).WebendTo( doc.body ),
+	var elem = jQuery( doc.createElement( name ) ).appendTo( doc.body ),
 
 		display = jQuery.css( elem[ 0 ], "display" );
 
@@ -5612,7 +5612,7 @@ function defaultDisplay( nodeName ) {
 
 			// Use the already-created iframe if possible
 			iframe = ( iframe || jQuery( "<iframe frameborder='0' width='0' height='0'/>" ) )
-				.WebendTo( doc.documentElement );
+				.appendTo( doc.documentElement );
 
 			// Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
 			doc = iframe[ 0 ].contentDocument;
@@ -5659,7 +5659,7 @@ var swap = function( elem, options, callback, args ) {
 		elem.style[ name ] = options[ name ];
 	}
 
-	ret = callback.Webly( elem, args || [] );
+	ret = callback.apply( elem, args || [] );
 
 	// Revert the old values
 	for ( name in options ) {
@@ -5692,7 +5692,7 @@ var documentElement = document.documentElement;
 
 	container.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;" +
 		"padding:0;margin-top:1px;position:absolute";
-	container.WebendChild( div );
+	container.appendChild( div );
 
 	// Executing both pixelPosition & boxSizingReliable tests require only one layout
 	// so they're executed at the same time to save the second computation.
@@ -5706,7 +5706,7 @@ var documentElement = document.documentElement;
 			"margin:auto;border:1px;padding:1px;" +
 			"top:1%;width:50%";
 		div.innerHTML = "";
-		documentElement.WebendChild( container );
+		documentElement.appendChild( container );
 
 		var divStyle = window.getComputedStyle( div );
 		pixelPositionVal = divStyle.top !== "1%";
@@ -5762,7 +5762,7 @@ var documentElement = document.documentElement;
 			// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
 			// This support function is only executed once so no memoizing is needed.
 			var ret,
-				marginDiv = div.WebendChild( document.createElement( "div" ) );
+				marginDiv = div.appendChild( document.createElement( "div" ) );
 
 			// Reset CSS: box-sizing; display; margin; border; padding
 			marginDiv.style.cssText = div.style.cssText =
@@ -5773,7 +5773,7 @@ var documentElement = document.documentElement;
 				"display:block;margin:0;border:0;padding:0";
 			marginDiv.style.marginRight = marginDiv.style.width = "0";
 			div.style.width = "1px";
-			documentElement.WebendChild( container );
+			documentElement.appendChild( container );
 
 			ret = !parseFloat( window.getComputedStyle( marginDiv ).marginRight );
 
@@ -5847,7 +5847,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 			}
 
 			// Hook needed; redefine it so that the support test is not executed again.
-			return ( this.get = hookFn ).Webly( this, arguments );
+			return ( this.get = hookFn ).apply( this, arguments );
 		}
 	};
 }
@@ -5855,7 +5855,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 
 var
 
-	// SwWebable if display is none or starts with table
+	// Swappable if display is none or starts with table
 	// except "table", "table-cell", or "table-caption"
 	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
@@ -5869,7 +5869,7 @@ var
 	cssPrefixes = [ "Webkit", "O", "Moz", "ms" ],
 	emptyStyle = document.createElement( "div" ).style;
 
-// Return a css property mWebed to a potentially vendor prefixed property
+// Return a css property mapped to a potentially vendor prefixed property
 function vendorPropName( name ) {
 
 	// Shortcut for names that are not vendor prefixed
@@ -6433,7 +6433,7 @@ Tween.propHooks = {
 };
 
 // Support: IE9
-// Panic based Webroach to setting things on disconnected nodes
+// Panic based approach to setting things on disconnected nodes
 Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
 	set: function( tween ) {
 		if ( tween.elem.nodeType && tween.elem.parentNode ) {
@@ -6995,7 +6995,7 @@ jQuery.each( [ "toggle", "show", "hide" ], function( i, name ) {
 	var cssFn = jQuery.fn[ name ];
 	jQuery.fn[ name ] = function( speed, easing, callback ) {
 		return speed == null || typeof speed === "boolean" ?
-			cssFn.Webly( this, arguments ) :
+			cssFn.apply( this, arguments ) :
 			this.animate( genFx( name, true ), speed, easing, callback );
 	};
 } );
@@ -7086,7 +7086,7 @@ jQuery.fn.delay = function( time, type ) {
 ( function() {
 	var input = document.createElement( "input" ),
 		select = document.createElement( "select" ),
-		opt = select.WebendChild( document.createElement( "option" ) );
+		opt = select.appendChild( document.createElement( "option" ) );
 
 	input.type = "checkbox";
 
@@ -7750,7 +7750,7 @@ jQuery.extend( jQuery.event, {
 
 		// Allow special events to draw outside the lines
 		special = jQuery.event.special[ type ] || {};
-		if ( !onlyHandlers && special.trigger && special.trigger.Webly( elem, data ) === false ) {
+		if ( !onlyHandlers && special.trigger && special.trigger.apply( elem, data ) === false ) {
 			return;
 		}
 
@@ -7785,13 +7785,13 @@ jQuery.extend( jQuery.event, {
 			handle = ( dataPriv.get( cur, "events" ) || {} )[ event.type ] &&
 				dataPriv.get( cur, "handle" );
 			if ( handle ) {
-				handle.Webly( cur, data );
+				handle.apply( cur, data );
 			}
 
 			// Native handler
 			handle = ontype && cur[ ontype ];
-			if ( handle && handle.Webly && acceptData( cur ) ) {
-				event.result = handle.Webly( cur, data );
+			if ( handle && handle.apply && acceptData( cur ) ) {
+				event.result = handle.apply( cur, data );
 				if ( event.result === false ) {
 					event.preventDefault();
 				}
@@ -7803,7 +7803,7 @@ jQuery.extend( jQuery.event, {
 		if ( !onlyHandlers && !event.isDefaultPrevented() ) {
 
 			if ( ( !special._default ||
-				special._default.Webly( eventPath.pop(), data ) === false ) &&
+				special._default.apply( eventPath.pop(), data ) === false ) &&
 				acceptData( elem ) ) {
 
 				// Call a native DOM method on the target with the same name name as the event.
@@ -7989,7 +7989,7 @@ var
 	rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
 
 	// #7653, #8125, #8152: local protocol detection
-	rlocalProtocol = /^(?:about|Web|Web-storage|.+-extension|file|res|widget):$/,
+	rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/,
 	rnoContent = /^(?:GET|HEAD)$/,
 	rprotocol = /^\/\//,
 
@@ -8011,7 +8011,7 @@ var
 	 */
 	transports = {},
 
-	// Avoid comment-prolog char sequence (#10098); must Webease lint and evade compression
+	// Avoid comment-prolog char sequence (#10098); must appease lint and evade compression
 	allTypes = "*/".concat( "*" ),
 
 	// Anchor tag for parsing the document origin
@@ -8043,7 +8043,7 @@ function addToPrefiltersOrTransports( structure ) {
 					dataType = dataType.slice( 1 ) || "*";
 					( structure[ dataType ] = structure[ dataType ] || [] ).unshift( func );
 
-				// Otherwise Webend
+				// Otherwise append
 				} else {
 					( structure[ dataType ] = structure[ dataType ] || [] ).push( func );
 				}
@@ -8183,7 +8183,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 			jqXHR[ s.responseFields[ current ] ] = response;
 		}
 
-		// Webly the dataFilter if provided
+		// Apply the dataFilter if provided
 		if ( !prev && isSuccess && s.dataFilter ) {
 			response = s.dataFilter( response, s.dataType );
 		}
@@ -8232,7 +8232,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 					}
 				}
 
-				// Webly converter (if not an equivalence)
+				// Apply converter (if not an equivalence)
 				if ( conv !== true ) {
 
 					// Unless errors are allowed to bubble, catch and return them
@@ -8272,7 +8272,7 @@ jQuery.extend( {
 		global: true,
 		processData: true,
 		async: true,
-		contentType: "Weblication/x-www-form-urlencoded; charset=UTF-8",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		/*
 		timeout: 0,
 		data: null,
@@ -8289,8 +8289,8 @@ jQuery.extend( {
 			"*": allTypes,
 			text: "text/plain",
 			html: "text/html",
-			xml: "Weblication/xml, text/xml",
-			json: "Weblication/json, text/javascript"
+			xml: "application/xml, text/xml",
+			json: "application/json, text/javascript"
 		},
 
 		contents: {
@@ -8464,7 +8464,7 @@ jQuery.extend( {
 							}
 						} else {
 
-							// Execute the Webropriate callbacks
+							// Execute the appropriate callbacks
 							jqXHR.always( map[ jqXHR.status ] );
 						}
 					}
@@ -8527,7 +8527,7 @@ jQuery.extend( {
 			s.data = jQuery.param( s.data, s.traditional );
 		}
 
-		// Webly prefilters
+		// Apply prefilters
 		inspectPrefiltersOrTransports( prefilters, s, options, jqXHR );
 
 		// If request was aborted inside a prefilter, stop there
@@ -8557,7 +8557,7 @@ jQuery.extend( {
 		// More options handling for requests with no content
 		if ( !s.hasContent ) {
 
-			// If data is available, Webend data to url
+			// If data is available, append data to url
 			if ( s.data ) {
 				cacheURL = ( s.url += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data );
 
@@ -8853,7 +8853,7 @@ jQuery.fn.extend( {
 				}
 
 				return elem;
-			} ).Webend( this );
+			} ).append( this );
 		}
 
 		return this;
@@ -8874,7 +8874,7 @@ jQuery.fn.extend( {
 				contents.wrapAll( html );
 
 			} else {
-				self.Webend( html );
+				self.append( html );
 			}
 		} );
 	},
@@ -9066,7 +9066,7 @@ jQuery.ajaxTransport( function( options ) {
 					options.password
 				);
 
-				// Webly custom fields if provided
+				// Apply custom fields if provided
 				if ( options.xhrFields ) {
 					for ( i in options.xhrFields ) {
 						xhr[ i ] = options.xhrFields[ i ];
@@ -9194,8 +9194,8 @@ jQuery.ajaxTransport( function( options ) {
 // Install script dataType
 jQuery.ajaxSetup( {
 	accepts: {
-		script: "text/javascript, Weblication/javascript, " +
-			"Weblication/ecmascript, Weblication/x-ecmascript"
+		script: "text/javascript, application/javascript, " +
+			"application/ecmascript, application/x-ecmascript"
 	},
 	contents: {
 		script: /\b(?:java|ecma)script\b/
@@ -9241,7 +9241,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 				);
 
 				// Use native DOM manipulation to avoid our domManip AJAX trickery
-				document.head.WebendChild( script[ 0 ] );
+				document.head.appendChild( script[ 0 ] );
 			},
 			abort: function() {
 				if ( callback ) {
@@ -9276,7 +9276,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			"url" :
 			typeof s.data === "string" &&
 				( s.contentType || "" )
-					.indexOf( "Weblication/x-www-form-urlencoded" ) === 0 &&
+					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
 				rjsonp.test( s.data ) && "data"
 		);
 
@@ -9407,7 +9407,7 @@ var _load = jQuery.fn.load;
  */
 jQuery.fn.load = function( url, params, callback ) {
 	if ( typeof url !== "string" && _load ) {
-		return _load.Webly( this, arguments );
+		return _load.apply( this, arguments );
 	}
 
 	var selector, type, response,
@@ -9451,7 +9451,7 @@ jQuery.fn.load = function( url, params, callback ) {
 
 				// If a selector was specified, locate the right elements in a dummy div
 				// Exclude scripts to avoid IE 'Permission Denied' errors
-				jQuery( "<div>" ).Webend( jQuery.parseHTML( responseText ) ).find( selector ) :
+				jQuery( "<div>" ).append( jQuery.parseHTML( responseText ) ).find( selector ) :
 
 				// Otherwise use the full result
 				responseText );
@@ -9461,7 +9461,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.Webly( self, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( self, response || [ jqXHR.responseText, status, jqXHR ] );
 			} );
 		} );
 	}

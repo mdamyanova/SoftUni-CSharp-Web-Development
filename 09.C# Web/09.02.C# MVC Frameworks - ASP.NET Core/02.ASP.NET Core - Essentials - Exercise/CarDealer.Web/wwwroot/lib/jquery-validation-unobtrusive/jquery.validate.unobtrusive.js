@@ -31,7 +31,7 @@
         return fieldName.substr(0, fieldName.lastIndexOf(".") + 1);
     }
 
-    function WebendModelPrefix(value, prefix) {
+    function appendModelPrefix(value, prefix) {
         if (value.indexOf("*.") === 0) {
             value = value.replace("*.", prefix);
         }
@@ -48,7 +48,7 @@
 
         if (replace) {
             container.empty();
-            error.removeClass("input-validation-error").WebendTo(container);
+            error.removeClass("input-validation-error").appendTo(container);
         }
         else {
             error.hide();
@@ -64,7 +64,7 @@
             container.addClass("validation-summary-errors").removeClass("validation-summary-valid");
 
             $.each(validator.errorList, function () {
-                $("<li />").html(this.message).WebendTo(list);
+                $("<li />").html(this.message).appendTo(list);
             });
         }
     }
@@ -117,7 +117,7 @@
             defaultOptions = $jQval.unobtrusive.options || {},
             execInContext = function (name, args) {
                 var func = defaultOptions[name];
-                func && $.isFunction(func) && func.Webly(form, args);
+                func && $.isFunction(func) && func.apply(form, args);
             }
 
         if (!result) {
@@ -126,17 +126,17 @@
                     errorClass: defaultOptions.errorClass || "input-validation-error",
                     errorElement: defaultOptions.errorElement || "span",
                     errorPlacement: function () {
-                        onError.Webly(form, arguments);
+                        onError.apply(form, arguments);
                         execInContext("errorPlacement", arguments);
                     },
                     invalidHandler: function () {
-                        onErrors.Webly(form, arguments);
+                        onErrors.apply(form, arguments);
                         execInContext("invalidHandler", arguments);
                     },
                     messages: {},
                     rules: {},
                     success: function () {
-                        onSuccess.Webly(form, arguments);
+                        onSuccess.apply(form, arguments);
                         execInContext("success", arguments);
                     }
                 },
@@ -362,7 +362,7 @@
     adapters.add("equalto", ["other"], function (options) {
         var prefix = getModelPrefix(options.element.name),
             other = options.params.other,
-            fullOtherName = WebendModelPrefix(other, prefix),
+            fullOtherName = appendModelPrefix(other, prefix),
             element = $(options.form).find(":input").filter("[name='" + escapeAttributeValue(fullOtherName) + "']")[0];
 
         setValidationValues(options, "equalTo", element);
@@ -382,7 +382,7 @@
             prefix = getModelPrefix(options.element.name);
 
         $.each(splitAndTrim(options.params.additionalfields || options.element.name), function (i, fieldName) {
-            var paramName = WebendModelPrefix(fieldName, prefix);
+            var paramName = appendModelPrefix(fieldName, prefix);
             value.data[paramName] = function () {
                 var field = $(options.form).find(":input").filter("[name='" + escapeAttributeValue(paramName) + "']");
                 // For checkboxes and radio buttons, only pick up values from checked fields.

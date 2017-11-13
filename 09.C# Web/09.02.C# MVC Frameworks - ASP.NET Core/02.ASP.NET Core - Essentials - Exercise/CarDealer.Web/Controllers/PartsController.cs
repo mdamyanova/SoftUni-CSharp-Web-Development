@@ -41,42 +41,5 @@
             this.parts.Create(model.Name, model.Price, model.SupplierName);
             return this.RedirectToAction(nameof(this.Create));
         }
-
-        [HttpGet("parts/edit/{id}")]
-        public IActionResult Edit(int id)
-        {
-            var part = this.parts.ById(id);
-
-            if (part == null)
-            {
-                return this.NotFound();
-            }
-
-            return this.View(new PartModel
-            {
-                Name = part.Name,
-                Price = part.Price,
-                SupplierName = part.SupplierName
-            });
-        }
-
-        [HttpPost("parts/edit/{id}")]
-        public IActionResult Edit(int id, PartModel model)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
-            var partExists = this.parts.Exists(id);
-
-            if (!partExists)
-            {
-                return this.NotFound();
-            }
-
-            this.parts.Edit(id, model.Name, model.Price, model.SupplierName);
-            return this.RedirectToAction(nameof(this.All));
-        }
     }
 }

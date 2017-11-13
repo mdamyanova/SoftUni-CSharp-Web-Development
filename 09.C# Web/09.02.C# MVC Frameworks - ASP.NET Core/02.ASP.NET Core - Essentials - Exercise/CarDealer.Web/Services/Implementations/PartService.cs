@@ -48,41 +48,5 @@
         {
             return this.db.Suppliers.Any(s => s.Name == name);
         }
-
-        public PartModel ById(int id)
-        {
-            return this.db
-                .Parts
-                .Where(p => p.Id == id)
-                .Select(p => new PartModel
-                {
-                  Name = p.Name,
-                  Price = p.Price,
-                  SupplierName = p.Supplier.Name
-
-                })
-                .FirstOrDefault();
-        }
-
-        public bool Exists(int id)
-        {
-            return this.db.Parts.Any(p => p.Id == id);
-        }
-
-        public void Edit(int id, string name, double? price, string supplierName)
-        {
-            var part = this.db.Parts.Find(id);
-
-            if (part == null)
-            {
-                return;
-            }
-
-            part.Name = name;
-            part.Price = price;
-            part.Supplier.Name = supplierName;
-
-            this.db.SaveChanges();
-        }
     }
 }

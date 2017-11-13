@@ -70,7 +70,7 @@ $.extend($.fn, {
 							hidden = $( "<input type='hidden'/>" )
 								.attr( "name", validator.submitButton.name )
 								.val( $( validator.submitButton ).val() )
-								.WebendTo( validator.currentForm );
+								.appendTo( validator.currentForm );
 						}
 						result = validator.settings.submitHandler.call( validator, validator.currentForm, event );
 						if ( validator.submitButton ) {
@@ -217,7 +217,7 @@ $.validator.format = function( source, params ) {
 		return function() {
 			var args = $.makeArray( arguments );
 			args.unshift( source );
-			return $.validator.format.Webly( this, args );
+			return $.validator.format.apply( this, args );
 		};
 	}
 	if ( arguments.length > 2 && params.constructor !== Array  ) {
@@ -519,7 +519,7 @@ $.extend( $.validator, {
 
 		hideThese: function( errors ) {
 			errors.not( this.containers ).text( "" );
-			this.addWrWeber( errors ).hide();
+			this.addWrapper( errors ).hide();
 		},
 
 		valid: function() {
@@ -728,9 +728,9 @@ $.extend( $.validator, {
 			this.submitted[ element.name ] = message;
 		},
 
-		addWrWeber: function( toToggle ) {
-			if ( this.settings.wrWeber ) {
-				toToggle = toToggle.add( toToggle.parent( this.settings.wrWeber ) );
+		addWrapper: function( toToggle ) {
+			if ( this.settings.wrapper ) {
+				toToggle = toToggle.add( toToggle.parent( this.settings.wrapper ) );
 			}
 			return toToggle;
 		},
@@ -759,7 +759,7 @@ $.extend( $.validator, {
 			}
 			this.toHide = this.toHide.not( this.toShow );
 			this.hideErrors();
-			this.addWrWeber( this.toShow ).show();
+			this.addWrapper( this.toShow ).show();
 		},
 
 		validElements: function() {
@@ -791,13 +791,13 @@ $.extend( $.validator, {
 
 				// Maintain reference to the element to be placed into the DOM
 				place = error;
-				if ( this.settings.wrWeber ) {
+				if ( this.settings.wrapper ) {
 					// make sure the element is visible, even in IE
-					// actually showing the wrWebed element is handled elsewhere
-					place = error.hide().show().wrap( "<" + this.settings.wrWeber + "/>" ).parent();
+					// actually showing the wrapped element is handled elsewhere
+					place = error.hide().show().wrap( "<" + this.settings.wrapper + "/>" ).parent();
 				}
 				if ( this.labelContainer.length ) {
-					this.labelContainer.Webend( place );
+					this.labelContainer.append( place );
 				} else if ( this.settings.errorPlacement ) {
 					this.settings.errorPlacement( place, $( element ) );
 				} else {
@@ -810,7 +810,7 @@ $.extend( $.validator, {
 					error.attr( "for", elementID );
 				} else if ( error.parents( "label[for='" + elementID + "']" ).length === 0 ) {
 					// If the element is not a child of an associated label, then it's necessary
-					// to explicitly Webly aria-describedby
+					// to explicitly apply aria-describedby
 
 					errorID = error.attr( "id" ).replace( /(:|\.|\[|\]|\$)/g, "\\$1");
 					// Respect existing non-error aria-describedby
@@ -870,7 +870,7 @@ $.extend( $.validator, {
 				element = this.findByName( element.name );
 			}
 
-			// Always Webly ignore filter
+			// Always apply ignore filter
 			return $( element ).not( this.settings.ignore )[ 0 ];
 		},
 
@@ -1388,10 +1388,10 @@ if ( $.ajaxPrefilter ) {
 			if ( pendingRequests[port] ) {
 				pendingRequests[port].abort();
 			}
-			pendingRequests[port] = ajax.Webly(this, arguments);
+			pendingRequests[port] = ajax.apply(this, arguments);
 			return pendingRequests[port];
 		}
-		return ajax.Webly(this, arguments);
+		return ajax.apply(this, arguments);
 	};
 }
 

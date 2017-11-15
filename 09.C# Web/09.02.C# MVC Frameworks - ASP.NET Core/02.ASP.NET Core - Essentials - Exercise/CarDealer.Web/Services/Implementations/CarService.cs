@@ -16,6 +16,21 @@
             this.db = db;
         }
 
+        public IEnumerable<CarModel> AllCars()
+        {
+            var result = this.db
+                .Cars
+                .Select(c => new CarModel
+                {
+                    Make = c.Make,
+                    Model = c.Model,
+                    TravelledDistance = c.TravelledDistance
+                })
+                .ToList();
+
+            return result;
+        }
+
         public IEnumerable<CarModel> CarsFromMake(string make)
         {
             var result = db

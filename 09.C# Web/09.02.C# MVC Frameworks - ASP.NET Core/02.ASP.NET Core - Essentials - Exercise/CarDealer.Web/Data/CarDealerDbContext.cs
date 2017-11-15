@@ -1,5 +1,6 @@
 ﻿namespace CarDealer.Web.Data
 {
+    using CarDealer.Web.Models;
     using Models;
     using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,8 @@
         public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Sale> Sales { get; set; }
+
+        public DbSet<ApplicationUser> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

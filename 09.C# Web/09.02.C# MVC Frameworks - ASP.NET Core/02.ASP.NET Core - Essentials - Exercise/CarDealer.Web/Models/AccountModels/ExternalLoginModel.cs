@@ -4,6 +4,9 @@ namespace CarDealer.Web.Models.AccountModels
 
     public class ExternalLoginModel
     {
+        [StringLength(50)]
+        public string Username { get; set; }
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }

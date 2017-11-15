@@ -5,6 +5,7 @@
 
     public interface ICarService
     {
+        IEnumerable<CarModel> AllCars();
         IEnumerable<CarModel> CarsFromMake(string make);
         CarWithPartsModel CarWithParts(int id);
     }

@@ -21,23 +21,28 @@
 
         public IEnumerable<CustomerModel> OrderedCustomers(OrderType type)
         {
-            var result = this.db.Customers.Select(c => new CustomerModel
+            var customersQuery = this.db.Customers.AsQueryable();
+
+            switch (type)
             {
-                Id = c.Id,
-                Name = c.Name,
-                BirthDate = c.BirthDate,
-                IsYoungDriver = c.IsYoungDriver
-            });
+                case OrderType.Ascending:
+                    customersQuery = customersQuery.OrderBy(c => c.BirthDate).ThenBy(c => c.Name);
+                    break;
+                case OrderType.Descending:
+                    customersQuery = customersQuery.OrderByDescending(c => c.BirthDate).ThenBy(c => c.Name);
+                    break;
+                    default:
+                        throw new InvalidOperationException($"Invalid order type: {type}");
+            }
 
-            result = type == OrderType.Ascending
-                ? result
-                    .OrderBy(c => c.BirthDate)
-                    .ThenBy(c => c.IsYoungDriver)
-                : result
-                    .OrderByDescending(c => c.BirthDate)
-                    .ThenBy(c => c.IsYoungDriver);
-
-            return result.ToList();
+            return customersQuery
+                .Select(c => new CustomerModel
+                {
+                    Name = c.Name,
+                    BirthDate = c.BirthDate,
+                    IsYoungDriver = c.IsYoungDriver
+                })
+                .ToList();
         }
 
         public CustomerTotalSalesModel TotalSalesById(int id)

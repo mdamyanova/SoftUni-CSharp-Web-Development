@@ -12,6 +12,13 @@
             this.cars = cars;
         }
 
+        [HttpGet("/cars/all")]
+        public IActionResult All()
+        {
+            var model = this.cars.AllCars();
+            return this.View(model);
+        }
+
         [HttpGet("/cars/{make}")]
         public IActionResult All(string make)
         {

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "All Cameras";
+}
+
+<h2>All Cameras</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var cam in this.Model)
+        {
+            <tr>
+                <td><img src="@cam.ImageUrl" alt="Camera image" width="200" /></td>
+                <td>@cam.Make</td>
+                <td>@cam.Model</td>
+                <td>@cam.Price</td>
+                <td><a href="">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

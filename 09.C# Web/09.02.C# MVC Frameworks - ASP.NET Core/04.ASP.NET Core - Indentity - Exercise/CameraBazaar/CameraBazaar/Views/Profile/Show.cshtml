@@ -1,0 +1,50 @@
+﻿@model ProfileViewModel
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h2>Show</h2>
+<h3>@this.Model.UserName</h3>
+<a href="" class="btn btn-success">Edit Profile</a>
+<h6>Email: @this.Model.Email</h6>
+<h6>Phone: @this.Model.PhoneNumber</h6>
+<h6>Cameras: <!--TODO--></h6>
+
+<h3>Cameras:</h3>
+@if (this.Model.Cameras.Count() != 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cam in this.Model.Cameras)
+            {
+                <tr>
+                    <td><img src="@cam.ImageUrl" alt="Camera image" width="200" /></td>
+                    <td>@cam.Make</td>
+                    <td>@cam.Model</td>
+                    <td>@cam.Price</td>
+                    <td><a href="">Details</a></td>
+                    <td>
+                        <a href="cameras/edit/@cam.Id" class="btn btn-warning">Edit</a>
+                        <a href="cameras/delete" class="btn btn-warning">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <p>This user is not selling any cameras. Got to <a href="">home page</a>
+    to find more offers of other users.</p>
+}

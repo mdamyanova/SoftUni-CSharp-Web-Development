@@ -34,6 +34,7 @@
                 @if (this.User.IsInRole(WebConstants.AdministratorRole))
                 {
                     <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a></li>
+                    <li><a asp-area="Admin" asp-controller="Courses" asp-action="Create">Create Course</a></li>
                 }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")

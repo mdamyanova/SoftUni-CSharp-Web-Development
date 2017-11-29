@@ -1,0 +1,13 @@
+﻿@model BlogArticleDetailsServiceModel
+
+@{
+    ViewData["Title"] = this.Model.Title;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>published by @this.Model.Author on @this.Model.PublishDate.ToShortDateString()</h4>
+
+<div>
+    @Html.Raw(this.Model.Content)
+</div>

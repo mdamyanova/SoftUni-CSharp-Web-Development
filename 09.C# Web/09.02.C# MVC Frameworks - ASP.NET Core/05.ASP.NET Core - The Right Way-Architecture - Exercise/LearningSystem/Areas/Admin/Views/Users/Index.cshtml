@@ -19,7 +19,7 @@
                 <td>@user.Username</td>
                 <td>@user.Email</td>
                 <td>
-                    <form asp-controller="Users" asp-action="AddToRole" method="post">
+                    <form asp-action="AddToRole" method="post">
                         <div class="row">
                             <div class="col-md-9">
                                 <input type="hidden" name="UserId" value="@user.Id" />

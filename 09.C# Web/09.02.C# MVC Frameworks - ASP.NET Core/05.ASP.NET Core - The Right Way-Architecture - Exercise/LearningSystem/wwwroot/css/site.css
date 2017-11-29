@@ -33,3 +33,20 @@
         display: none;
     }
 }
+
+/* our styles */
+.article-list li {
+    margin-bottom: 25px;
+}
+
+.pagination li.disabled {
+    pointer-events: none;
+}
+
+.home-jumbotron {
+    margin-top: 50px;
+}
+
+.home-page .img-responsive {
+    height: 200px !important;
+}

@@ -36,6 +36,10 @@
                     <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a></li>
                     <li><a asp-area="Admin" asp-controller="Courses" asp-action="Create">Create Course</a></li>
                 }
+                @if (this.User.IsInRole(WebConstants.BlogAuthorRole))
+                {
+                    <li><a asp-area="Blog" asp-controller="Articles" asp-action="Create">Publish Article</a></li>
+                }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

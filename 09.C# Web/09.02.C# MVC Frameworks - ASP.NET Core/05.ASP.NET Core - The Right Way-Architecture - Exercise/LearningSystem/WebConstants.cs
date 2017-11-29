@@ -9,5 +9,6 @@
         public const string TempDataSuccessMessageKey = "SuccessMessage";
 
         public const string AdminArea = "Admin";
+        public const string BlogArea = "Blog";
     }
 }

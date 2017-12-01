@@ -14,10 +14,12 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">@course.Name</h3>
+                    <h3 class="panel-title text-center">
+                         <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id">@course.Name</a>
+                    </h3>
                 </div>
                 <div class="panel-body">
-                    <img height="200" src="http://thecatapi.com/api/images/get?format=src&type=gif&guid=@{Guid.NewGuid();}" class="img-responsive"/>
+                    <img height="200" src="http://thecatapi.com/api/images/get?format=src&type=gif&guid=@(Guid.NewGuid())" class="img-responsive"/>
                     @course.StartDate.ToShortDateString() - @course.EndDate.ToShortDateString()
                 </div>
             </div>

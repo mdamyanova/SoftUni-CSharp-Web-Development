@@ -37,7 +37,7 @@
         [HttpPost]
         public async Task<IActionResult> Create(AddCourseFormModel model)
         {
-            if (!this.ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 model.Trainers = await this.GetTrainers();
                 return this.View(model);

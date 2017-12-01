@@ -17,7 +17,7 @@
 
         public async Task<IActionResult> Index()
         {
-            var result = await this.courses.Active();
+            var result = await this.courses.ActiveAsync();
 
             return View(result);
         }

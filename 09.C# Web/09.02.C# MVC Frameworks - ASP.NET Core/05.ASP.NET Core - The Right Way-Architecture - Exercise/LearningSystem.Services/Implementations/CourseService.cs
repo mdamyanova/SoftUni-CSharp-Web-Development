@@ -36,15 +36,7 @@
 
         public async Task<bool> SignInStudent(int courseId, string studentId)
         {
-            var courseInfo = await this.db
-                .Courses
-                .Where(c => c.Id == courseId)
-                .Select(c => new
-                {
-                    c.StartDate,
-                    UserIsSignedIn = c.Students.Any(s => s.StudentId == studentId)
-                })
-                .FirstOrDefaultAsync();
+            var courseInfo = await this.GetCourseInfo(courseId, studentId);
 
             if (courseInfo == null
                 || courseInfo.StartDate < DateTime.UtcNow
@@ -60,6 +52,29 @@
             };
 
             this.db.Add(studentInCourse);
+
+            await this.db.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> SignOutStudent(int courseId, string studentId)
+        {
+            var courseInfo = await this.GetCourseInfo(courseId, studentId);
+
+            if (courseInfo == null
+                || courseInfo.StartDate < DateTime.UtcNow
+                || !courseInfo.UserIsSignedIn)
+            {
+                return false;
+            }
+
+            var studentInCourse = await this.db.FindAsync<StudentCourse>(             
+                courseId,
+                studentId);
+
+            this.db.Remove(studentInCourse);
+
             await this.db.SaveChangesAsync();
 
             return true;
@@ -70,5 +85,16 @@
                 .Courses
                 .AnyAsync(c => c.Id == courseId
                     && c.Students.Any(s => s.StudentId == studentId));
+
+        private async Task<CourseWithStudentInfo> GetCourseInfo(int courseId, string studentId)
+            => await this.db
+                .Courses
+                .Where(c => c.Id == courseId)
+                .Select(c => new CourseWithStudentInfo
+                {
+                    StartDate = c.StartDate,
+                    UserIsSignedIn = c.Students.Any(s => s.StudentId == studentId)
+                })
+                .FirstOrDefaultAsync();
     }
 }

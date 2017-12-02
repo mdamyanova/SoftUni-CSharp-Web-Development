@@ -20,8 +20,8 @@
     {
         if (this.Model.UserIsSignedInCourse)
         {
-            <form method="post">
-                <a class="btn btn-primary">Sign Out</a>
+            <form asp-action="SignOut" asp-route-id="@this.Model.Course.Id" method="post">
+                <input type="submit" class="btn btn-primary" value="Sign Out" />
             </form>
         }
         else

@@ -54,7 +54,24 @@
                 return this.BadRequest();
             }
 
-            this.TempData.AddSuccessMessage("Thank you for your registration");
+            this.TempData.AddSuccessMessage("Thank you for your registration.");
+
+            return this.RedirectToAction(nameof(Details), new { id });
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> SignOutAsync(int id)
+        {
+            var userId = this.userManager.GetUserId(User);
+            var result = await this.courses.SignOutStudent(id, userId);
+
+            if (!result)
+            {
+                return this.BadRequest();
+            }
+
+            this.TempData.AddSuccessMessage("Bb!");
 
             return this.RedirectToAction(nameof(Details), new { id });
         }

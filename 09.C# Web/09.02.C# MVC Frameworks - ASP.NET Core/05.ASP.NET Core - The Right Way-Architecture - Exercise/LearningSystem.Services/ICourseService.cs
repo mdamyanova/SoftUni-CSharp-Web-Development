@@ -12,6 +12,8 @@
 
         Task<bool> SignInStudent(int courseId, string studentId);
 
+        Task<bool> SignOutStudent(int courseId, string studentId);
+
         Task<bool> StudentIsSignedInCourse(int courseId, string studentId);
     }
 }

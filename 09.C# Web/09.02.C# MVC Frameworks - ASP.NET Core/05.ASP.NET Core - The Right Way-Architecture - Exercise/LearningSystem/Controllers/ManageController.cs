@@ -51,6 +51,8 @@
             var model = new IndexViewModel
             {
                 Username = user.UserName,
+                Name = user.Name,
+                Birthdate = user.Birthdate,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
@@ -93,6 +95,16 @@
                 {
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }
+            }
+
+            if(model.Name != user.Name)
+            {
+                user.Name = model.Name;
+            }
+
+            if(model.Birthdate != user.Birthdate)
+            {
+                user.Birthdate = model.Birthdate;
             }
 
             StatusMessage = "Your profile has been updated";

@@ -8,8 +8,8 @@ namespace LearningSystem.Data.Migrations
     using System;
 
     [DbContext(typeof(LearningSystemDbContext))]
-    [Migration("20171128105856_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20171201124032_AddGrades")]
+    partial class AddGrades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,6 +72,8 @@ namespace LearningSystem.Data.Migrations
                     b.Property<string>("StudentId");
 
                     b.Property<int>("CourseId");
+
+                    b.Property<int?>("Grade");
 
                     b.HasKey("StudentId", "CourseId");
 

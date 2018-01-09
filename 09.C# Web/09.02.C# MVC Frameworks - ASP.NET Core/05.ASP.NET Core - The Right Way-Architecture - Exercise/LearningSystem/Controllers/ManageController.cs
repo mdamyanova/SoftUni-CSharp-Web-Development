@@ -97,14 +97,22 @@
                 }
             }
 
-            if(model.Name != user.Name)
+            var nameIsChanged = model.Name != user.Name;
+            var birthdateIsChanged = model.Birthdate != user.Birthdate;
+
+            if (nameIsChanged)
             {
                 user.Name = model.Name;
             }
 
-            if(model.Birthdate != user.Birthdate)
+            if (birthdateIsChanged)
             {
                 user.Birthdate = model.Birthdate;
+            }
+            
+            if (nameIsChanged || birthdateIsChanged)
+            {
+                await this._userManager.UpdateAsync(user);
             }
 
             StatusMessage = "Your profile has been updated";

@@ -1,12 +1,13 @@
 ﻿namespace LearningSystem.Web.Controllers
 {
     using Data.Models;
-    using LearningSystem.Web.Infrastructure.Extensions;
+    using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Models.Courses;
     using Services;
+    using Services.Models;
     using System.Threading.Tasks;
 
     public class CoursesController : Controller
@@ -24,7 +25,7 @@
         {
             var model = new CourseDetailsViewModel
             {
-                Course = await this.courses.ByIdAsync(id)
+                Course = await this.courses.ByIdAsync<CourseDetailsServiceModel>(id)
             };
 
             if(model.Course == null)

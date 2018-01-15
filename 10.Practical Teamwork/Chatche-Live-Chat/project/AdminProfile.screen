@@ -1,0 +1,103 @@
+﻿<?Infragistics.Models format="xaml" version="29" appVersion="9.2.1000.51"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                                                   xmlns:i="http://prototypes.infragistics.com/ios7/"
+                                                                                   Id="12bec03c-60ab-481d-9aa7-84feee46512c">
+    <Page.Content>
+        <Content Width="414" Height="716" Id="b99fcae2-78e2-4d10-ad55-4fa37b0b9eb5">
+            <Content.Layers>
+                <Layer Id="6579ae6e-efa0-4b8a-920a-2656aacf4a78" Panel.Layout="Stretch" />
+                <AnnotationsLayer Id="07c395cb-5ce6-415d-9069-3e2984d1a74e" Panel.Layout="Stretch" />
+            </Content.Layers>
+            <Content.Viewbox>
+                <Viewbox Size="414,716" Id="f8f0f3fb-6c47-43a3-98d8-94eef89beb8f" />
+            </Content.Viewbox>
+            <Content.GuidesInfo>
+                <GuidesInfo Id="56275c79-da5e-4f53-94fd-745ba1bb1e40" />
+            </Content.GuidesInfo>
+        </Content>
+    </Page.Content>
+    <Page.Device>
+        <DeviceInfo Id="iPhone6" Orientation="Portrait" />
+    </Page.Device>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/06/2017 21:16:05" Id="c870d974-2e41-44cf-a465-a41e9d2ee059">
+            <Scene.KeyFrames>
+                <KeyFrame Id="b9c3a5d7-6ac7-401d-bbba-496b4166bdb2">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <Ellipse Id="e8a25b26-bcc1-43aa-af8b-2c8348641864" Panel.Bounds="34,118,100{5,2147483647},100{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <Group GroupName="Group" Id="9a0e1ca3-9d1a-4b74-b3b4-af9e998c3a25" Panel.Bounds="138,647,0*,0*">
+                                    <Group.Children>
+                                        <i:Label RichText="go back" Align="Center" FontFamily="Open Sans" Id="4c32ab49-b363-4f3a-8a8a-396b36c13cf5" Panel.Bounds="0,42,136{5,2147483647},20*{5,2147483647}" />
+                                        <Icon CatalogId="iOS 7 Back" Id="83b3f0c9-2c5e-444a-8a01-23ff051a2f30" Panel.Bounds="52,0,32{5,2147483647},32{5,2147483647}" />
+                                    </Group.Children>
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/LoginUser.screen" Created="11/06/2017 21:24:26" Id="81c77f70-940d-443a-a9c6-4499e4fce6fb">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </Group.Click>
+                                </Group>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <i:Title RichText="profile picture" Align="Center" FontSize="10" FontFamily="Open Sans" Opacity="0.4" Id="90591903-bbd0-433d-830e-b54260878c45" Panel.Bounds="23,160,121{5,2147483647},25{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <i:Button Text="edit profile" Foreground="#FF555555" FontFamily="Open Sans" Id="a413aa2a-1cba-4988-8c1d-c14922c301fc" Panel.Bounds="235,155,109{16,2147483647},35{16,2147483647}">
+                                    <i:Button.Click>
+                                        <CommandNavigate Screen="/RegisterUser.screen" Created="11/06/2017 21:21:43" Id="1201006e-5860-4dca-8a38-8c5cadffb2e4">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </i:Button.Click>
+                                </i:Button>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <i:ActionSheetButton ButtonType="Action" Text="users" Foreground="#FF555555" FontFamily="Open Sans" Id="e31914ae-018b-4b10-a8a0-ad9912c2bcbb" Panel.Bounds="8,264,398{25,2147483647},44*{44,2147483647}">
+                                    <i:ActionSheetButton.Click>
+                                        <CommandNavigate Screen="/ManageUsers.screen" Created="11/06/2017 21:23:42" Id="f004196e-4405-4aa3-b88d-6b5e18f33fcc">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </i:ActionSheetButton.Click>
+                                </i:ActionSheetButton>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <i:ActionSheetButton ButtonType="Action" Text="chat rooms" Foreground="#FF555555" FontFamily="Open Sans" Id="c7c49d89-8862-4440-a71e-24b5fa4a3113" Panel.Bounds="8,339,398{25,2147483647},44*{44,2147483647}">
+                                    <i:ActionSheetButton.Click>
+                                        <CommandNavigate Screen="/PublicChatRoomExample.screen" Created="11/06/2017 21:23:36" Id="56c9ed1a-e733-430b-8f16-989eeb3da41d">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </i:ActionSheetButton.Click>
+                                </i:ActionSheetButton>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="6579ae6e-efa0-4b8a-920a-2656aacf4a78">
+                            <Add.Item>
+                                <i:Header Text="Hello, Admin!" Foreground="#FF555555" FontSize="16" FontFamily="Open Sans" Opacity="1" Id="4065a3a0-6a2a-41bb-bd73-6c22dcbcb3d0" Panel.Bounds="0,0,414{5,2147483647},45{20,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

@@ -1,0 +1,110 @@
+﻿<?Infragistics.Models format="xaml" version="29" appVersion="9.2.1000.51"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                                                   xmlns:i="http://prototypes.infragistics.com/ios7/"
+                                                                                   Id="9216fd56-54dd-4f2b-bd23-00f39c1a6f08">
+    <Page.Content>
+        <Content Width="414" Height="716" Id="efdd6258-5882-4c23-b251-5cca739d8ac4">
+            <Content.Layers>
+                <Layer Id="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1" Panel.Layout="Stretch" />
+                <AnnotationsLayer Id="c9298319-a7db-4a3d-be98-fed8dc1a12a4" Panel.Layout="Stretch" />
+            </Content.Layers>
+            <Content.Viewbox>
+                <Viewbox Size="414,716" Id="16f4396b-6363-4c29-9e66-6bd201dfa49d" />
+            </Content.Viewbox>
+            <Content.GuidesInfo>
+                <GuidesInfo Id="030c4bc1-0fe3-4a13-92e2-898ae0971b48" />
+            </Content.GuidesInfo>
+        </Content>
+    </Page.Content>
+    <Page.Device>
+        <DeviceInfo Id="iPhone6" Orientation="Portrait" />
+    </Page.Device>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/05/2017 23:03:01" Id="14d3ee91-8276-4173-9271-9d277a14d176">
+            <Scene.KeyFrames>
+                <KeyFrame Id="e0598dda-f300-4bf2-974e-4eda5761b6f7">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1">
+                            <Add.Item>
+                                <i:Title RichText="&lt;Run FontSize=&quot;48&quot; &gt;chatche&lt;/Run&gt;" Align="Center" FontFamily="Open Sans" Id="210a2458-06b4-4246-902a-673f2de9bfde" Panel.Bounds="95,88,223{5,2147483647},72{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1">
+                            <Add.Item>
+                                <i:Label RichText="register to chatche" FontFamily="Open Sans" Id="56dbf56f-82c2-4333-bde8-ecf9bcb6f8ee" Panel.Bounds="146,644,5*{5,2147483647},5*{5,2147483647}">
+                                    <i:Label.Click>
+                                        <CommandNavigate Screen="/RegisterUser.screen" Created="11/05/2017 23:15:52" Id="7235a51a-0a87-4325-afa3-ec059fffd536">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </i:Label.Click>
+                                </i:Label>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1">
+                            <Add.Item>
+                                <Ellipse Background="#FF555555" Id="490901c1-cc66-4053-9dda-1153823d87e7" Panel.Bounds="157,205,100{5,2147483647},100{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1">
+                            <Add.Item>
+                                <Group GroupName="Group" Id="b8bf71be-4d46-4293-944f-481c9b369a10" Panel.Bounds="95,390,0*,0*">
+                                    <Group.Children>
+                                        <Ellipse Id="af86e348-41b0-4bc0-b805-0ddc4d8a7d32" Panel.Bounds="0,0,44{5,2147483647},43{5,2147483647}" />
+                                        <i:Label RichText="anonymous login" FontSize="18" FontFamily="Open Sans" Id="aa8854ce-3289-4b91-b95d-761b9c68dfb6" Panel.Bounds="67,7,156{5,2147483647},29{5,2147483647}">
+                                            <i:Label.Click>
+                                                <CommandNavigate Screen="/AnonymouslyLoggedUser.screen" Created="11/05/2017 23:11:21" Id="635a0869-119e-439c-adb8-d0c21121357d">
+                                                    <CommandNavigate.Transition>
+                                                        <NavigateTransition Type="Push" Duration="300" />
+                                                    </CommandNavigate.Transition>
+                                                </CommandNavigate>
+                                            </i:Label.Click>
+                                        </i:Label>
+                                    </Group.Children>
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/AnonymouslyLoggedUser.screen" Created="11/05/2017 23:40:29" Id="f8e42690-fdf2-4978-9a71-cfeee67da724">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" Direction="Right" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </Group.Click>
+                                </Group>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1">
+                            <Add.Item>
+                                <Group GroupName="Group" Id="a43eb979-92f0-4e93-83b0-b94ea2a13fef" Panel.Bounds="95,455,0*,0*">
+                                    <Group.Children>
+                                        <Ellipse Background="#FF8D8D8D" Id="be026053-0434-4ff0-aeb6-459ca47238bb" Panel.Bounds="0,0,44{5,2147483647},43{5,2147483647}" />
+                                        <i:Label RichText="already registered" FontSize="18" FontFamily="Open Sans" Id="1a06b874-d8af-4e67-b74c-fd548c63595a" Panel.Bounds="67,7,156{5,2147483647},29{5,2147483647}">
+                                            <i:Label.Click>
+                                                <CommandNavigate Screen="/Screen2.screen" Created="11/05/2017 23:15:13" Id="24b2ef4a-e16d-4689-af52-e31af3c817c8">
+                                                    <CommandNavigate.Transition>
+                                                        <NavigateTransition Type="Push" Duration="300" />
+                                                    </CommandNavigate.Transition>
+                                                </CommandNavigate>
+                                            </i:Label.Click>
+                                        </i:Label>
+                                    </Group.Children>
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/LoginUser.screen" Created="11/05/2017 23:41:40" Id="fd817789-4870-4ee6-a867-0897d60b3237">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" Direction="Right" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </Group.Click>
+                                </Group>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="f2a454f4-fe3b-40f3-9a56-3a0ca7c31ce1">
+                            <Add.Item>
+                                <i:Title RichText="app logo" Foreground="#FFFFFFFF" FontFamily="Open Sans" Id="9259665f-eb26-4f8a-8479-525175bcab66" Panel.Bounds="170,243,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

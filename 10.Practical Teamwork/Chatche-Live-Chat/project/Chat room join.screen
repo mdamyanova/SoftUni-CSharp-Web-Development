@@ -1,0 +1,134 @@
+﻿<?Infragistics.Models format="xaml" version="29" appVersion="9.2.0.72"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                                                xmlns:i="http://prototypes.infragistics.com/ios7/"
+                                                                                Id="2406d6a7-1784-4f62-ade6-2baa641fa557">
+    <Page.Content>
+        <Content Width="414" Height="716" Id="d37ca9c0-2439-4550-9eac-e3fd3b9fb6db">
+            <Content.Layers>
+                <Layer Id="aa1ec19f-fa51-4eb6-84d4-87a6832affb4" Panel.Layout="Stretch" />
+                <AnnotationsLayer Id="5e36f57f-3755-47b7-bafa-57abdb3e01d2" Panel.Layout="Stretch" />
+            </Content.Layers>
+            <Content.Viewbox>
+                <Viewbox Size="414,716" Id="4a13b5f5-eaf3-4be1-9797-b0a0f1e3b32f" />
+            </Content.Viewbox>
+            <Content.GuidesInfo>
+                <GuidesInfo Id="b5941c50-a607-4c4b-9e48-7f06ec97d90f" />
+            </Content.GuidesInfo>
+        </Content>
+    </Page.Content>
+    <Page.Device>
+        <DeviceInfo Id="iPhone6" Orientation="Portrait" />
+    </Page.Device>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/06/2017 15:14:38" Id="8fe57f88-446b-4a77-80b5-6ff84f97939c">
+            <Scene.KeyFrames>
+                <KeyFrame Id="faa08fc5-a6e6-4025-9e6f-ebabb5e8dada">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="aa1ec19f-fa51-4eb6-84d4-87a6832affb4">
+                            <Add.Item>
+                                <i:Header Text="Chat room" FontSize="16" FontFamily="Open Sans" Id="4c77995a-4aea-43eb-966f-e4ffac2375d2" Panel.Bounds="0,0,414{5,2147483647},45{20,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="aa1ec19f-fa51-4eb6-84d4-87a6832affb4">
+                            <Add.Item>
+                                <i:ActionSheetButton ButtonType="Action" Text="Create new chat room" FontFamily="Open Sans" Id="28c2acd2-cfe6-4f63-85dd-420637be8e42" Panel.Bounds="8,625,398{25,2147483647},44*{44,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="aa1ec19f-fa51-4eb6-84d4-87a6832affb4">
+                            <Add.Item>
+                                <i:ActionSheetButton ButtonType="Action" Text="Join to chat room" FontFamily="Open Sans" Id="21d177d9-329d-4b92-9e3a-05d9f232d05f" Panel.Bounds="8,510,398{25,2147483647},44*{44,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="aa1ec19f-fa51-4eb6-84d4-87a6832affb4">
+                            <Add.Item>
+                                <i:Title RichText="All rooms&#xD;&#xA;" FontFamily="Open Sans" Id="5833c405-3746-4088-bbd0-87c5b2dc6537" Panel.Bounds="42,60,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="aa1ec19f-fa51-4eb6-84d4-87a6832affb4">
+                            <Add.Item>
+                                <i:ContentList Direction="Vertical" Thickness="0" Id="806eeac5-4bba-4027-a9c6-2cc2631c9d9c" Panel.Bounds="-5,185,414{5,2147483647},5*{5,2147483647}">
+                                    <i:ContentList.Template>
+                                        <Template Id="206de4bc-bd8d-493d-981e-0a815b74c62c">
+                                            <Template.Content>
+                                                <ListItemContent Color="#FFFFFFFF" Thickness="0" Padding="0" Id="c5c23e0c-e2fa-48ef-9bb7-c0ee3c9c809f" Panel.Bounds="0,0,0*,96" Panel.Layout="Stretch">
+                                                    <ListItemContent.Content>
+                                                        <Container ClipToContainer="True" Id="69d45c03-7e2c-4297-bcd4-f94fd9e086d0">
+                                                            <Container.Children>
+                                                                <i:Label RichText="Indigo Studio" Foreground="#FF000000" FontSize="17" FontStyle="Bold" Id="ef911294-1c7d-4cee-b142-ea16f3b4f309" Panel.Bounds="73,7,0*,0*" />
+                                                                <Ellipse Thickness="0" Background="#FF0070FF" Id="9820bc6c-2ed1-4c4e-b54a-b36146c5f147" Panel.Bounds="54,13,12,12" />
+                                                                <Icon CatalogId="iOS 7 Contacts" Id="259e5888-e471-4f23-b712-9fe500cd4aba" Panel.Bounds="12,11,30,30" />
+                                                                <Icon Color="#FFCCCCCC" CatalogId="Greater Than" Id="f3576384-c1d3-4d42-bef2-ae0828473f8b" Panel.Bounds="391,15,13,13" />
+                                                                <i:Label RichText="Tuesday" Align="Right" Foreground="#FF8E8E8E" Id="b3d63012-94f0-46e6-9942-265e8a252af4" Panel.Bounds="303,11,80,18*" />
+                                                                <i:Label RichText="Subject line of the message" Foreground="#FF000000" Id="8764add9-a444-45db-b2bc-feac8afcfaf0" Panel.Bounds="53,30,0*,0*" />
+                                                                <i:Label RichText="First line of the message summary." Foreground="#FF8E8E8E" Id="5e38ee84-bc9f-45f0-9fcc-df15adfe03d0" Panel.Bounds="53,51,0*,0*" />
+                                                                <i:Label RichText="Second line of the message summary." Foreground="#FF8E8E8E" Id="3f591b06-e616-4b60-acee-cc7245dc4097" Panel.Bounds="53,69,0*,0*" />
+                                                                <Line Thickness="1" Color="#FFE3E3E5" Id="3aee259d-4b3e-4425-a9e0-648827f1bc53" Panel.Bounds="53,0,361,3">
+                                                                    <Line.StartPoint>
+                                                                        <Point X="42" Id="0684a172-8431-46ba-b2ff-b56fa67f6592" />
+                                                                    </Line.StartPoint>
+                                                                    <Line.Segments>
+                                                                        <Segment Id="3dbe36df-e454-45dd-9ea3-b7ef82a71b71">
+                                                                            <Segment.EndPoint>
+                                                                                <Point X="310" Id="2996b2b2-76e4-4070-b5d5-1cdfc7f7f230" />
+                                                                            </Segment.EndPoint>
+                                                                        </Segment>
+                                                                    </Line.Segments>
+                                                                </Line>
+                                                            </Container.Children>
+                                                        </Container>
+                                                    </ListItemContent.Content>
+                                                </ListItemContent>
+                                            </Template.Content>
+                                        </Template>
+                                    </i:ContentList.Template>
+                                    <i:ContentList.Items>
+                                        <ListItem Id="3be28a7a-d6ab-4105-9c4b-6a78db610123">
+                                            <ListItem.Content>
+                                                <SharedPart Id="f7de97e1-56b5-4f11-9cc9-95881b5050c6">
+                                                    <SharedPart.Customizations>
+                                                        <Set Property="Label.RichText" Value="9:03 AM" Target="b3d63012-94f0-46e6-9942-265e8a252af4" />
+                                                        <Set Property="Label.RichText" Value="Caht room 1" Target="ef911294-1c7d-4cee-b142-ea16f3b4f309" />
+                                                        <Remove Target="3aee259d-4b3e-4425-a9e0-648827f1bc53" />
+                                                    </SharedPart.Customizations>
+                                                </SharedPart>
+                                            </ListItem.Content>
+                                        </ListItem>
+                                        <ListItem Id="b72c7ae2-b66a-4a9e-be9b-d46189fcf767">
+                                            <ListItem.Content>
+                                                <SharedPart Id="91836be4-12a0-4d75-b2fa-c6f3e9f16db9">
+                                                    <SharedPart.Customizations>
+                                                        <Add Property="Panel.Children" Target="69d45c03-7e2c-4297-bcd4-f94fd9e086d0">
+                                                            <Add.Item>
+                                                                <Icon Color="#FFCCCCCC" CatalogId="Greater Than" Id="4a2e8d66-b285-4fbf-9306-55bccd8826c7" Panel.Bounds="385,15,13,13" />
+                                                            </Add.Item>
+                                                        </Add>
+                                                        <Set Property="Label.RichText" Value="A different subject line" Target="8764add9-a444-45db-b2bc-feac8afcfaf0" />
+                                                        <Set Property="Label.RichText" Value="Chat room 2&#xD;&#xA;" Target="ef911294-1c7d-4cee-b142-ea16f3b4f309" />
+                                                    </SharedPart.Customizations>
+                                                </SharedPart>
+                                            </ListItem.Content>
+                                        </ListItem>
+                                        <ListItem Id="da72cbf9-8f71-4aa8-93c9-e3a24efe3095">
+                                            <ListItem.Content>
+                                                <SharedPart Id="101c75a2-5cac-43d4-aa00-0abf0dc665b6">
+                                                    <SharedPart.Customizations>
+                                                        <Set Property="Label.RichText" Value="Chat room 3&#xD;&#xA;" Target="ef911294-1c7d-4cee-b142-ea16f3b4f309" />
+                                                    </SharedPart.Customizations>
+                                                </SharedPart>
+                                            </ListItem.Content>
+                                        </ListItem>
+                                    </i:ContentList.Items>
+                                </i:ContentList>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="aa1ec19f-fa51-4eb6-84d4-87a6832affb4">
+                            <Add.Item>
+                                <i:SearchBar WatermarkText="Search" FontFamily="Open Sans" Id="499d7f0b-b2a0-4cc1-b3db-9a2c8debe18f" Panel.Bounds="18,114,375{105,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

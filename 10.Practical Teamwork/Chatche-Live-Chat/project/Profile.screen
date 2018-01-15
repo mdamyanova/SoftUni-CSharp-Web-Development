@@ -1,0 +1,92 @@
+﻿<?Infragistics.Models format="xaml" version="29" appVersion="9.2.1000.51"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                                                   xmlns:i="http://prototypes.infragistics.com/ios7/"
+                                                                                   Id="e83e66d2-1eea-43ab-9764-e11fc3442088">
+    <Page.Content>
+        <Content Width="414" Height="716" Id="5138adf3-a608-4681-b275-ae58e0154f96">
+            <Content.Layers>
+                <Layer Id="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb" Panel.Layout="Stretch" />
+                <AnnotationsLayer Id="1f041817-3c8b-48b8-a2c3-91e4c2ef53dd" Panel.Layout="Stretch" />
+            </Content.Layers>
+            <Content.Viewbox>
+                <Viewbox Size="414,716" Id="da5efb6e-cb63-45f7-a89a-230532979f40" />
+            </Content.Viewbox>
+            <Content.GuidesInfo>
+                <GuidesInfo Id="88c92e1c-203e-429c-8558-f991b9797936" />
+            </Content.GuidesInfo>
+        </Content>
+    </Page.Content>
+    <Page.Device>
+        <DeviceInfo Id="iPhone6" Orientation="Portrait" />
+    </Page.Device>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/06/2017 15:07:28" Id="bb192fd5-449d-4a5f-8725-270beaa2a769">
+            <Scene.KeyFrames>
+                <KeyFrame Id="49bda05e-68f1-4efc-9c94-524b5a1073c5">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <Image DevicePixelRatio="0.333333333333333" Id="f8203de5-5d8f-41bf-9e9a-361f6fd4f1ca" Panel.Bounds="162,97,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:ActionButton ButtonType="Edit" Text="Edit" FontFamily="Open Sans" Id="afe11d8a-4993-43a3-8784-01e2b1892cae" Panel.Bounds="137,235,50{20,2147483647},30{12,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:ActionButton ButtonType="Edit" Text="Edit" FontFamily="Open Sans" Id="b6951bd5-0f23-43d2-9650-c1ba9170d128" Panel.Bounds="137,275,50{20,2147483647},30{12,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:ActionButton ButtonType="Edit" Text="Edit" FontFamily="Open Sans" Id="ee6f97ef-80b4-445c-bd1b-daf523facffb" Panel.Bounds="137,315,50{20,2147483647},30{12,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:ActionButton ButtonType="Edit" Text="Edit" FontFamily="Open Sans" Id="26ccd453-2b4f-45f1-87f0-7d5d0ff84bc5" Panel.Bounds="137,355,50{20,2147483647},30{12,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:Title RichText="Name" FontFamily="Open Sans" Id="b7ee63e9-7015-4e57-8088-139f2d400e92" Panel.Bounds="214,238,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:Title RichText="Age" FontFamily="Open Sans" Id="1a083d8c-11f0-4f70-8aee-24ff52a567b8" Panel.Bounds="214,278,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:Title RichText="City" FontFamily="Open Sans" Id="688d91e5-cb0c-4e64-aaa1-39a10ab18749" Panel.Bounds="214,318,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:Title RichText="Gender&#xD;&#xA;" FontFamily="Open Sans" Id="33625f7a-d3f9-4e7d-b8c8-076ff8a4d494" Panel.Bounds="214,358,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:Button Text="Change Password&#xA;" FontFamily="Open Sans" Id="520e14dc-d276-4bfa-9a22-f43aaf24f0e4" Panel.Bounds="109,426,195{16,2147483647},43{16,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:ActionSheetButton ButtonType="Action" Text="Save" FontFamily="Open Sans" Id="3d885130-dac7-4355-8a1c-a3a1885fd6ce" Panel.Bounds="7,572,398{25,2147483647},44*{44,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="a76b3cdf-91b1-40c2-b29c-42266e4bb4cb">
+                            <Add.Item>
+                                <i:Header Text="Hello Username" FontSize="16" FontFamily="Open Sans" Id="1ecdc4a4-c11f-4d47-95f4-b006a6e214fc" Panel.Bounds="0,0,414{5,2147483647},45{20,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

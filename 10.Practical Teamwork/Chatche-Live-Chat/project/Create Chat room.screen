@@ -1,0 +1,62 @@
+﻿<?Infragistics.Models format="xaml" version="29" appVersion="9.2.0.72"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                                                xmlns:i="http://prototypes.infragistics.com/ios7/"
+                                                                                Id="867dba2c-eebe-4f11-a09c-07fb58ca1e8b">
+    <Page.Content>
+        <Content Width="414" Height="716" Id="7a0a1f27-1dad-423a-ada5-18b1719b4a5d">
+            <Content.Layers>
+                <Layer Id="c60e74c7-29d6-4c75-bcf4-eff4c9acee53" Panel.Layout="Stretch" />
+                <AnnotationsLayer Id="a897eb03-f7f0-4932-aa68-f063ce276f78" Panel.Layout="Stretch" />
+            </Content.Layers>
+            <Content.Viewbox>
+                <Viewbox Size="414,716" Id="672ad023-46e2-4402-92f1-2ebca2bab5bb" />
+            </Content.Viewbox>
+            <Content.GuidesInfo>
+                <GuidesInfo Id="7853b2e5-d395-4064-8957-ceeadabecc4d" />
+            </Content.GuidesInfo>
+        </Content>
+    </Page.Content>
+    <Page.Device>
+        <DeviceInfo Id="iPhone6" Orientation="Portrait" />
+    </Page.Device>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/06/2017 15:22:58" Id="a260fe1a-bf5f-4f20-9f7c-69f92ee0881d">
+            <Scene.KeyFrames>
+                <KeyFrame Id="a37736fb-07cf-4bb0-98ca-757e3b2fec64">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="c60e74c7-29d6-4c75-bcf4-eff4c9acee53">
+                            <Add.Item>
+                                <i:Header Text="Create chat room" FontSize="16" FontFamily="Open Sans" Id="85555f00-83e9-40a0-8f89-67c67ba31203" Panel.Bounds="0,0,414{5,2147483647},45{20,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="c60e74c7-29d6-4c75-bcf4-eff4c9acee53">
+                            <Add.Item>
+                                <i:ActionSheetButton ButtonType="Action" Text="Create" FontFamily="Open Sans" Id="fd3cb0c2-4a17-4a14-8a44-3cdcae3fd889" Panel.Bounds="9,440,398{25,2147483647},44*{44,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="c60e74c7-29d6-4c75-bcf4-eff4c9acee53">
+                            <Add.Item>
+                                <i:TextField FontFamily="Open Sans" Id="028ed757-c2a5-42a2-8786-3c967adad973" Panel.Bounds="21,235,371{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="c60e74c7-29d6-4c75-bcf4-eff4c9acee53">
+                            <Add.Item>
+                                <i:PasswordField FontFamily="Open Sans" Id="65139ed3-5b26-44df-aed7-c98d14987462" Panel.Bounds="24,330,368{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="c60e74c7-29d6-4c75-bcf4-eff4c9acee53">
+                            <Add.Item>
+                                <i:Label RichText="Room name&#xD;&#xA;" FontFamily="Open Sans" Id="83582c10-ebc1-4921-a79c-5f0340b91288" Panel.Bounds="47,185,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="c60e74c7-29d6-4c75-bcf4-eff4c9acee53">
+                            <Add.Item>
+                                <i:Label RichText="Password" FontFamily="Open Sans" Id="0a4d60ed-1c41-4383-aac4-297307fd022a" Panel.Bounds="40,292,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

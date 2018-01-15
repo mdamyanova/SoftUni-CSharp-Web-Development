@@ -1,0 +1,131 @@
+﻿<?Infragistics.Models format="xaml" version="29" appVersion="9.2.1000.51"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                                                   xmlns:i="http://prototypes.infragistics.com/ios7/"
+                                                                                   Id="9297f696-b802-4be6-9854-417d618e2a91">
+    <Page.Content>
+        <Content Width="414" Height="716" Id="d2ff07b0-be73-4a38-ba43-c2e9b4aec1f0">
+            <Content.Layers>
+                <Layer Id="8479f3ff-c767-4c98-abcb-64e59695ebeb" Panel.Layout="Stretch" />
+                <AnnotationsLayer Id="513ff33b-916d-4255-8b94-f99272cd365d" Panel.Layout="Stretch" />
+            </Content.Layers>
+            <Content.Viewbox>
+                <Viewbox Size="414,716" Id="8bf23939-9e34-43de-95f8-66c5962f54a1" />
+            </Content.Viewbox>
+            <Content.GuidesInfo>
+                <GuidesInfo Id="72510edc-21ab-476a-8262-3057602cdc57" />
+            </Content.GuidesInfo>
+        </Content>
+    </Page.Content>
+    <Page.Device>
+        <DeviceInfo Id="iPhone6" Orientation="Portrait" />
+    </Page.Device>
+    <Page.Scenes>
+        <Scene Title="Start" Created="11/06/2017 20:34:41" Id="f3d4d6f5-acf5-45cf-a639-41015cac3202">
+            <Scene.KeyFrames>
+                <KeyFrame Id="3bd3af62-955c-4640-9b7a-df86bc822e33">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:TextField Text="username" Foreground="#FFC6C6C6" FontFamily="Open Sans" Opacity="1" Id="fd41cdca-5aba-4858-b4bc-bfc6422bccd9" Panel.Bounds="162,126,200{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:PasswordField FontFamily="Open Sans" Id="93844464-9dc3-4097-a3d8-263152f1a292" Panel.Bounds="159,366,200{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:PasswordField FontFamily="Open Sans" Id="016bf029-0220-4845-a3cb-b9a192567960" Panel.Bounds="162,439,200{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:TextField Text="e-mail" Foreground="#FFC6C6C6" FontFamily="Open Sans" Opacity="1" Id="3422275e-9b3b-48e7-85df-77ab3a8038e0" Panel.Bounds="162,173,200{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:TextField Text="city" Foreground="#FFC6C6C6" FontFamily="Open Sans" Id="81393a5d-9b02-4fb8-b940-281ebc9781f2" Panel.Bounds="162,220,200{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:TextField Text="age" Foreground="#FFC6C6C6" FontFamily="Open Sans" Id="ea666254-c2bc-4de9-af22-b3575b378449" Panel.Bounds="288,259,71{22,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:SegmentedToggle Id="54d17442-31fb-49d1-b649-852457b6f1e5" Panel.Bounds="159,302,200{30,2147483647},5*{5,2147483647}">
+                                    <i:SegmentedToggle.Items>
+                                        <i:SegmentedToggleItem Text="Male" Id="3d029743-4e1a-4bd5-a393-bb041d5a44c6" />
+                                        <i:SegmentedToggleItem Text="Female" IsSelected="True" Id="2bc81053-afb8-43d2-9243-88b6d3aa30c9" />
+                                    </i:SegmentedToggle.Items>
+                                </i:SegmentedToggle>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <Ellipse Id="d413ad9e-3a2a-460b-acf7-e38b86d8b5d8" Panel.Bounds="29,130,100{5,2147483647},100{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:Title RichText="profile picture" Align="Center" FontSize="10" FontFamily="Open Sans" Opacity="0.4" Id="333b34ea-ec49-4a53-b250-fa22e86aac9b" Panel.Bounds="18,167,121{5,2147483647},25{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:Title RichText="password" FontSize="14" FontFamily="Open Sans" Opacity="0.4" Id="8ae0162b-1227-4001-965f-84498fee74c5" Panel.Bounds="159,340,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:Title RichText="confirm password" FontSize="14" FontFamily="Open Sans" Opacity="0.4" Id="e390ec81-de0d-4fab-bb66-bedc131c8699" Panel.Bounds="159,406,5*{5,2147483647},5*{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <Group GroupName="Group" Id="0aefbac1-1c80-424e-985e-49343a7caca0" Panel.Bounds="145,510,0*,0*">
+                                    <Group.Children>
+                                        <Ellipse Opacity="1" Id="bb004554-351b-48b9-b3ff-0dae9a2451cd" Panel.Bounds="0,0,123{5,2147483647},117{5,2147483647}" />
+                                        <i:Button Text="register" Foreground="#FF555555" FontSize="21" FontFamily="Open Sans" Id="26acc3a5-fbd0-4ff2-b562-ef9912a6d5b1" Panel.Bounds="8,33,107{16,2147483647},51{16,2147483647}" />
+                                    </Group.Children>
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/LoginUser.screen" Created="11/06/2017 20:47:01" Id="141681c6-227d-405e-b6a7-73de58a289bc">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" Direction="Right" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </Group.Click>
+                                </Group>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <Group GroupName="Group" Id="5c525b3e-15a6-402a-beee-acad5bdca224" Panel.Bounds="138,647,0*,0*">
+                                    <Group.Children>
+                                        <i:Label RichText="go back" Align="Center" FontFamily="Open Sans" Id="74605694-1c73-4093-98b5-f88a9121df8f" Panel.Bounds="0,42,136{5,2147483647},20*{5,2147483647}" />
+                                        <Icon CatalogId="iOS 7 Back" Id="8e7bc4a0-55fb-455b-bd33-0ddf67adc4ec" Panel.Bounds="52,0,32{5,2147483647},32{5,2147483647}" />
+                                    </Group.Children>
+                                    <Group.Click>
+                                        <CommandNavigate Screen="/Home.screen" Created="11/06/2017 20:47:18" Id="3f7c8d66-0194-4b7e-878b-6727ee16c5b7">
+                                            <CommandNavigate.Transition>
+                                                <NavigateTransition Type="Push" Duration="300" />
+                                            </CommandNavigate.Transition>
+                                        </CommandNavigate>
+                                    </Group.Click>
+                                </Group>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="8479f3ff-c767-4c98-abcb-64e59695ebeb">
+                            <Add.Item>
+                                <i:Header Text="register to chatche" Foreground="#FF717171" FontSize="18" FontFamily="Open Sans" Id="aa61aee5-325c-4390-ac6a-1f878d222f19" Panel.Bounds="0,0,414{5,2147483647},45{20,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

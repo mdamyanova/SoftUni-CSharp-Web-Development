@@ -1,0 +1,2 @@
+num = gets.to_i
+puts num.to_s(2).count('1')

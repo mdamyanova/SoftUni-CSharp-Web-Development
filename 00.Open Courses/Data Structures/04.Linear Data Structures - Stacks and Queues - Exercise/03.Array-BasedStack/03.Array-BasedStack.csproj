@@ -7,7 +7,7 @@
     <ProjectGuid>{D9AE169B-6880-42EC-BD6E-1804288EBC4B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_03.Array_BasedStack</RootNamespace>
-    <AssemblyName>_03.Array_BasedStack</AssemblyName>
+    <AssemblyName>03.Array-BasedStack</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ArrayStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

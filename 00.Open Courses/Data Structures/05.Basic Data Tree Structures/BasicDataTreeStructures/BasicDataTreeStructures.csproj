@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{48679634-C183-4BCB-B552-F261806D2CEB}</ProjectGuid>
+    <ProjectGuid>{2244241C-1AA0-4CFE-B347-C67B9BABB867}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02.CalculateSequence</RootNamespace>
-    <AssemblyName>02.CalculateSequence</AssemblyName>
+    <RootNamespace>BasicDataTreeStructures</RootNamespace>
+    <AssemblyName>BasicDataTreeStructures</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BinaryTree.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

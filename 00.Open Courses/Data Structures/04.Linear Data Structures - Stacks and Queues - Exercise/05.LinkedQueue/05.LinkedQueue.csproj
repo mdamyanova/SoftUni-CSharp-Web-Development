@@ -7,7 +7,7 @@
     <ProjectGuid>{4E5A7632-E9EF-4A8E-B632-FB0FB3EAC30A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_05.LinkedQueue</RootNamespace>
-    <AssemblyName>_05.LinkedQueue</AssemblyName>
+    <AssemblyName>05.LinkedQueue</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="LinkedQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

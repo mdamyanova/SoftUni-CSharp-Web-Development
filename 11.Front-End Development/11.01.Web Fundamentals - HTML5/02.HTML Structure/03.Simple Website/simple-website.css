@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+nav#topmenu ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav#topmenu li {
+  font-size: 24px;
+  line-height: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 20px;
+}
+nav#topmenu a {
+  text-decoration: none;
+  color: #fff;  
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+
+section {
+  margin-left: 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
+header > p {
+  font-style: italic;
+}
+article > p {
+  font-size: 24px;
+}
+
+footer {
+  background: #444;
+  color: #fff;
+  text-align: center;
+}

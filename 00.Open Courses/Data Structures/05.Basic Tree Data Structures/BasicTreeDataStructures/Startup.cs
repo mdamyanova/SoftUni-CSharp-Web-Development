@@ -1,4 +1,4 @@
-﻿namespace BasicDataTreeStructures
+﻿namespace BasicTreeDataStructures
 {
     public class Startup
     {

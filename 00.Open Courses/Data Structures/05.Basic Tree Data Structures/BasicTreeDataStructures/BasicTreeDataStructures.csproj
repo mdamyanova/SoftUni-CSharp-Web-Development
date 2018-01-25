@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2244241C-1AA0-4CFE-B347-C67B9BABB867}</ProjectGuid>
+    <ProjectGuid>{709DF60D-1D09-43BB-87BB-3A105D39BC2D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BasicDataTreeStructures</RootNamespace>
-    <AssemblyName>BasicDataTreeStructures</AssemblyName>
+    <RootNamespace>BasicTreeDataStructures</RootNamespace>
+    <AssemblyName>BasicTreeDataStructures</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTree.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Tree.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,50 @@
+@font-face {
+    font-family: Lato;
+    src: url(https://fonts.googleapis.com/css?family=Lato:300,400,900);
+}
+
+body {
+    color: rgb(255, 255, 255);
+    font-family: "Lato", sans-serif;
+}
+
+.container{
+    background: url("img/background-image.jpg") no-repeat center center;
+    padding: 0 10px;
+    background-size:cover;
+    height: 800px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    font-size: 80px;
+    padding: 80px 0;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    font-size: 27px;
+    font-weight: 100;
+    margin: 20px;
+    text-align: center;
+}
+
+.btn{
+    color: rgb(255, 255, 255);
+    background: none;
+    border: 5px solid white;
+    border-radius: 15px;
+    padding: 15px 45px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button:hover {
+    background: #000;
+    border: 2px solid black;
+    cursor: pointer;
+}

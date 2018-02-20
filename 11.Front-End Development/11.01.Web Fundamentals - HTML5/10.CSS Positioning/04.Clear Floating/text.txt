@@ -1,0 +1,15 @@
+Clear Floating
+
+Chania
+
+The Flight
+The City
+The Island
+The Food
+
+The City
+Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.
+
+You will learn more about web layout and responsive web pages in a later chapter.
+
+Footer Text

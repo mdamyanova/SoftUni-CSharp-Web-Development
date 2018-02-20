@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User Form</title>
+    <link rel="stylesheet" href="edit-user-form.css">
+</head>
+<body>
+<header>
+    <h1>edit user</h1>
+</header>
+    <main>
+        <form method="post">
+            <div class="form-group">
+                <label class="block" for="username">Username</label>
+                <input class="big" type="text" name="username" id="username"/>
+            </div>
+
+            <div class="form-group">
+                <label class="block" for="email">Email</label>
+                <input class="big" type="email" name="email" id="email"/>
+            </div>
+
+            <div class="form-group">
+                <label class="block" for="phone-number">Phone number</label>
+                <input class="big" type="text" name="phone-number" id="phone-number"/>
+            </div>
+
+            <div class="form-group">
+                <label class="block">User type</label>
+                <label class="radio"><input type="radio" name="user-type">Broadband</label>
+                <label class="radio"><input type="radio" name="user-type">Radio</label>
+            </div>
+
+            <div class="form-group">
+                <label class="block" for="password">Change Password</label>
+                <input class="big" type="password" name="password" id="password"/>
+            </div>
+
+            <div class="form-group">
+                <label class="block">Groups</label>
+                <div class="groups">
+                    <label class="block"><input type="checkbox" name="group">All groups</label>
+                    <label class="block"><input type="checkbox" name="group">Group 1</label>
+                    <label class="block"><input type="checkbox" name="group">Group 2</label>
+                    <label class="block"><input type="checkbox" name="group">Group 3</label>
+                    <label class="block"><input type="checkbox" name="group">Group 4</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="block">Contacts</label>
+                <a href="#" class="block">See Contacts list</a>
+            </div>
+
+            <div class="form-group">
+                <button type="reset">CANCEL</button>
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

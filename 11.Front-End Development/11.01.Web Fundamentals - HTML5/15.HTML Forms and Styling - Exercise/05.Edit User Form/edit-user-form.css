@@ -1,0 +1,85 @@
+@import "https://fonts.googleapis.com/css?family=Roboto";
+
+body {
+    background-color: #EEEEEE;
+    font-family: 'Roboto', sans-serif;
+    width: 800px;
+    color: #1E1917;
+    margin: 40px auto;
+}
+
+header {
+    background-color: #fff;
+    border-top: solid 13px #324E5B;
+    border-right: solid 13px #324E5B;
+    padding: 40px 30px;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    color: #324E5B;
+}
+
+form {
+    margin: 40px;
+}
+
+.block {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.radio {
+    margin-right: 150px;
+}
+
+.form-group .big{
+    border-top: solid 4px #324E5B;
+    border-left: solid 4px #324E5B;
+    height: 30px;
+    width: 550px;
+    outline: none;
+}
+
+.groups {
+    background-color: #fff;
+    border-top: solid 4px #324E5B;
+    border-left: solid 4px #324E5B;
+    width: 530px;
+    padding: 10px;
+}
+
+.form-group input.big {
+    font-size: 20px;
+}
+
+.form-group a {
+    font-size: 15px;
+    color: #136F63;
+}
+
+.form-group button {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 70px;
+    margin: 10px 0 10px 50px;
+}
+
+.form-group button:first-of-type {
+    border-right: solid 3px #FF5427;
+    border-bottom: solid 3px #FF5427;
+    color: #FF5427;
+}
+
+.form-group button:nth-of-type(2) {
+    border-right: solid 3px #157065;
+    border-bottom: solid 3px #157065;
+    color: #157065;
+}

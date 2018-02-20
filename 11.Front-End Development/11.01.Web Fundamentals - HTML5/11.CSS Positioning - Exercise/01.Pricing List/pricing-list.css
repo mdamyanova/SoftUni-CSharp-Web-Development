@@ -1,0 +1,65 @@
+@import url("https://www.google.com/fonts#UsePlace:use/Collection:Vollkorn");
+
+* {
+    font: 16px "Tahoma", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #778495;
+}
+
+section {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: "Vollkorn", serif;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 60px;
+}
+
+article {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 500px;
+    margin: 0 15px;
+}
+
+p {
+    padding: 5px;
+    border-bottom: 1px solid #e9e9eb;
+}
+
+button {
+    color: white;
+    background: #dddddd;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+article:hover {
+    cursor: pointer;
+}
+
+article:hover h2, article:hover h3, article:hover button {
+    background-color: #65d3e2;
+}

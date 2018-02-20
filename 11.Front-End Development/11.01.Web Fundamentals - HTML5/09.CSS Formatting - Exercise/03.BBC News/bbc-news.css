@@ -1,0 +1,30 @@
+* {
+    font-family: "Calibri Light", "Verdana", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 890px;
+}
+
+section {
+    width: 880px;
+    margin: 0 auto;
+    border: 1px solid #a5b3b3;
+}
+
+article {
+    width: 210px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+img {
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+}

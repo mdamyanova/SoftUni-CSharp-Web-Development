@@ -1,0 +1,12 @@
+Floating Elements
+
+float:left
+The float CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container, where text and inline elements will wrap around it.
+		
+float:right
+The float CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container, where text and inline elements will wrap around it.
+		
+Without floating, the inline-block elements float like words in a text and block elements just do not float and stay in a vertical block of full width.
+		
+no floating block
+Without floating, the inline-block elements float like words in a text and block elements just do not float and stay in a vertical block of full width.

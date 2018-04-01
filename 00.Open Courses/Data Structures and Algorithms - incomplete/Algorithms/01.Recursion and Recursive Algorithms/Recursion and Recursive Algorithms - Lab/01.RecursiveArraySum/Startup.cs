@@ -1,12 +1,13 @@
-﻿using System;
-
-namespace _01.RecursiveArraySum
+﻿namespace _01.RecursiveArraySum
 {
+    using System;
+
     public class Startup
     {
         public static void Main()
         {
-            int sum = FindSum(new int[] {1, 2, 3}, 0);
+            var nums = Console.ReadLine().Split().Select(int.Parse);
+            var sum = FindSum(nums, 0);
             Console.WriteLine(sum);
         }
 

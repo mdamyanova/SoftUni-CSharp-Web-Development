@@ -1,5 +1,5 @@
 # C-Sharp-Web-Development
-Software University 2015/ 
+Software University 2015/2018
 all Homeworks and some Exam Preparations
 
 1. [Java Fundamentals](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/01.Java%20Fundamentals) - October 2015
@@ -25,7 +25,7 @@ all Homeworks and some Exam Preparations
    * [C# MVC Frameworks - ASP.NET Core](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/09.C%23%20Web/09.02.C%23%20MVC%20Frameworks%20-%20ASP.NET%20Core) - October 2017
 1. [Front-End Development](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/11.Front-End%20Development)
    * [Web Fundamentals - HTML5](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/11.Front-End%20Development/11.01.Web%20Fundamentals%20-%20HTML5) - January 2018
+   * [JavaScript for Front-End](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/11.Front-End%20Development/11.02.JavaScript%20for%20Front-End) - March 2018
 ##### Open Courses
 1. [Python Programming](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/00.Open%20Courses/Python) - January 2016
 1. [Unity 3D](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/00.Open%20Courses/Unity3D) - February 2016
-1. [Data Structures](https://github.com/mdamyanova/C-Sharp-Web-Development/tree/master/00.Open%20Courses/Data%20Structures) - January 2018

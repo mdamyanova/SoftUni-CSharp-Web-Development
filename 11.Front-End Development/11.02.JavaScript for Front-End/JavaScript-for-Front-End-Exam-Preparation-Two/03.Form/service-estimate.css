@@ -1,0 +1,183 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v6/NaPecZTIAOhVxoMyOr9n_E7fdM3mDbRS.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v6/NaPecZTIAOhVxoMyOr9n_E7fdMPmDQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+main {
+  margin: auto;
+}
+div#header-ctr {
+  width: 40%;
+  margin: auto;
+}
+h1 {
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid grey;
+}
+.after-success{
+  text-align: center;
+}
+.after-success h1{
+  border:none;
+  font-size: 38px;
+  color:gray;
+}
+.hidden{
+  display: none;
+
+}
+hr {
+  width: 60px;
+  position: relative;
+  right: 274px;
+  bottom: 14px;
+  border: none;
+  border-bottom: 1px solid orange;
+}
+form {
+  margin: auto;
+  width: 40%;
+}
+.one {
+  text-transform: uppercase;
+}
+.one input[type="text"] {
+  border: 1px solid orange;
+  margin: 15px 0 15px 0;
+  padding: 10px;
+  padding-left: 15px;
+  font-size: 15px;
+  width: 520px;
+}
+.two{
+  text-transform: uppercase;
+}
+.two span, input[type="text"] {
+  display: block;
+}
+.two input[type="text"] {
+  margin: 15px 0 15px 0;
+  padding: 10px;
+  padding-left: 15px;
+  font-size: 15px;
+  width: 245px;
+}
+.two .fragile, select {
+  display: block;
+  position: relative;
+  bottom: 90px;
+  left: 289px;
+}
+.two select {
+  margin: 15px 0 15px 0;
+  padding: 11px;
+  font-size: 13px;
+  width: 260px;
+}
+.three {
+  position: relative;
+  bottom: 70px;
+  width: 800px;
+}
+.three span{
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 80px;
+  margin-bottom: 15px;
+}
+.three input[type="number"] {
+  padding: 10px;
+  width: 145px;
+  margin-right: 5px;
+  font-size: 13px;
+  display: inline-block;
+}
+.four {
+  display: flex;
+  width: 600px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+    position: relative;
+    bottom: 70px;
+
+}
+.width{
+  margin-left: 4px;
+}
+.height{
+  margin-left: 2px;
+}
+.four h3 {
+  text-transform: uppercase;
+  margin-right: 40px;
+}
+.four p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 70px;
+}
+.price {
+   text-transform: uppercase;
+   display: flex;
+   border-top: 1px solid grey;
+   border-bottom: 1px solid grey;
+   padding-top: 15px;
+   position: relative;
+   bottom: 70px;
+ }
+.price span {
+  text-align: left;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+  .price p {
+   margin-left: 440px;
+   color: orange;
+   font-size: 20px;
+  }
+  .submit{
+    border:1px solid black;
+    width: 100px;
+    padding: 15px;
+    text-align: center;
+    margin-left: 230px;
+    margin-top: 0;
+
+  }
+  .submit:hover{
+    color:orange;
+  }

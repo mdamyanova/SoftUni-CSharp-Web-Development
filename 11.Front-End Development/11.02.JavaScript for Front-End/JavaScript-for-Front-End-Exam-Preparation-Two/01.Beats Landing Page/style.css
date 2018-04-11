@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,900");
+
+* {
+    font-family: Open Sans, sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+.btn {
+    padding: 8px 25px 8px 25px;
+    background-color: red;
+    color: white;
+}
+
+.btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+/*navbar*/
+.navbar-nav > li:hover {
+    border-bottom: lightgray solid 3px;
+}
+
+/*center navbar*/
+.navbar-nav {
+    padding: 0;
+    margin:0 auto;
+}
+
+.navbar-nav > li {
+    margin: 0 140px 50px 10px;
+}
+
+/*solo wireless*/
+.solo-wireless {
+    padding: 50px 0 50px 0;
+}
+
+.solo-wireless p {
+    padding: 15px 88px 15px 0;
+}
+
+/*powerbeats*/
+.first-word {
+    font-weight: bold;
+}
+
+.powebeats {
+    padding: 93px;
+    background-color: ghostwhite;
+}
+
+.powebeats p {
+    padding: 39px 113px 23px 1px;
+}
+
+.powebeats h6 {
+    padding-right: 174px;
+}
+
+.price {
+    font-size: 50px;
+    font-weight: bold;
+    padding-right: 66px;
+}
+
+.powebeats .btn {
+    margin-bottom: 25px;
+}
+
+.powebeats article {
+    margin: 12px -44px 0 45px;
+}

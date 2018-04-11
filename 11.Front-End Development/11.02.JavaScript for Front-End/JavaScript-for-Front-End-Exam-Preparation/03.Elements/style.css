@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+
+body{
+    background: #333333;
+}
+.containers{
+    display: flex;
+    justify-content: center;
+
+}
+
+h1{
+    color:lightgreen;
+    text-align: center;
+    font-size: 55px;
+    line-height: 15px;
+    font-family: Alegreya;
+}
+h2 {
+    color: #AAAAAA;
+    text-align: center;
+}
+.container{
+    width: 50%;
+    padding: 5px 0;
+    margin:5px auto;
+    border-radius: 1%;
+    background: lightgreen;
+    text-align: center;
+    height: 650px;
+}
+.first{
+
+    border: 2px solid red;
+    border-top-left-radius:40%;
+    background: url("images/air.png") no-repeat center top ;
+    transition: .5s;
+}
+.second{
+    border: 2px solid red;
+    border-top-right-radius:40%;
+    background: url("images/fire.png") no-repeat scroll center top ;
+    transition: .5s;
+}
+.third{
+
+    border: 2px solid red;
+    border-bottom-left-radius:40%;
+    background: url("images/water.png") no-repeat scroll center top ;
+    transition: .5s;
+}
+.fourth{
+
+    border: 2px solid red;
+    border-bottom-right-radius:40%;
+    background: url("images/earth.png") no-repeat scroll center top ;
+    transition: .5s;
+}
+.first:hover,.second:hover,.third:hover,.fourth:hover{
+    transform: scale(1.1);
+}
+.first,.second,.third,.fourth{
+
+    width: 310px;
+    height: 310px;
+    margin: 3px;
+    border: 2px solid black;
+    border-radius: 30%;
+}
+/*After Click*/
+#backToElements {
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    text-decoration: none;
+    background: #333333;
+    border:none;
+    color:skyblue;
+    font-family: Alegreya;
+}
+#backToElements:hover{
+    color:yellow;
+    border-radius: 50%;
+    width: 30%;
+}
+.container ul{
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     overflow: auto;
+ }
+ ul li{
+
+     display: inline-block;
+     position: relative;
+     float: left;
+     width: 100%;
+     height:100px;
+     color: #0DFF92;
+     font-size: 30px;
+     padding-left: 20%;
+     padding-top: 5%;
+     border-bottom: none;
+ }
+ ul{
+     word-wrap: break-word;
+ }
+.second-layout{
+    display: flex;
+    margin-top: 60px;
+    width: 100%;
+}
+.no-display {
+    display: none;
+}
+.back-button{
+    text-align: center;
+}
+.first-after-click{
+    /*//\\border: 2px solid black;*/
+    border-radius: 20%;
+    width: 30%;
+    height: 420px;
+    position: relative;
+}
+.center-after-click{
+    width: 40%;
+    margin-left: 10px;
+    text-align: center;
+}
+.center-after-click #creature-image{
+
+    height: 100%;
+    border-radius: 10%;
+    width: 95%;
+}
+.radio-button{
+    cursor: pointer;
+}
+#right-after-click{
+
+    width: 30%;
+    color:#0DFF92;
+    float: left;
+    font-size: 30px;
+    padding-left: 20px;
+}
+#right-after-click p{
+    padding: 10px;
+}
+

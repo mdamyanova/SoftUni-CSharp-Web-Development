@@ -1,0 +1,42 @@
+form{
+    width: 30%;
+    border:3px solid darkslategray;
+    background: lightgray;
+    margin: auto;
+    padding: 25px 15px;
+
+}
+h1{
+    text-align: center;
+}
+.img-ctr{
+    text-align: center;
+}
+input{
+    border:none;
+    background: none;
+    font-size:36px;
+    text-align: center;
+}
+.container{
+    text-align: center;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+}
+i.fa{
+    color:limegreen;
+    font-size:32px;
+}
+i.fa.fa-play-circle,i.fa.fa-pause-circle{
+    font-size:66px;
+    position: relative;
+    bottom: 15px;
+}
+i.fa.fa-pause-circle{
+    color:orangered;
+}
+i.fa.hidden{
+    display:none;
+}

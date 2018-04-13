@@ -1,0 +1,77 @@
+@import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
+
+main {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    width: 45%;
+    margin: auto;
+    padding: 20px;
+}
+
+.left-section {
+    background: linear-gradient(rgba(0, 20, 250, 0.2), rgba(220, 10, 180, 0.6)), url("img/peak.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.left-section p {
+    margin-top: 230px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.left-section i.fa {
+    margin-bottom: 30px;
+}
+
+.right-section {
+    border: 2px solid purple;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.right-section .cross-container {
+    text-align: right;
+    padding: 10px 10px 0 0;
+}
+
+.right-section i.fa {
+    color: purple;
+    font-size: 20px;
+}
+
+form {
+    padding: 50px;
+}
+
+form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+form .input-ctr {
+    margin-bottom: 10px;
+}
+
+form div {
+    color: darkgray;
+    font-size: 14px;
+}
+
+form .bottom-ctr a {
+    text-decoration: none;
+}
+
+button {
+    background: purple;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+}
